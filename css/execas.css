@@ -88,7 +88,10 @@ list of matching posts beneath tag name header
     text-decoration: none;
 }
      
-
+.post-date {
+     font-weight:bold;
+     color: #999;
+}
 
 .page-title {
     text-transform: uppercase;
