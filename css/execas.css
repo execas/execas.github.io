@@ -73,6 +73,20 @@ list of matching posts beneath tag name header
     text-decoration: none;
 }
 
+.post-tag {
+    padding: .1rem .3rem .1rem .3rem;
+    font-size: 60%;
+    background: #707070;
+    color: #ffffff;
+}
+
+.post-tag:hover {
+    background-color: #aaaaaa;
+    color: #ffffff;
+    text-decoration: none;
+}
+     
+
 
 .page-title {
     text-transform: uppercase;
