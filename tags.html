@@ -41,7 +41,7 @@ Here we generate all the tags.
 {% endfor %}
 
 {% for tag in tags %}
-<h2 style="text-transform: capitalize" id="{{ tag | slugify }}">{{ tag }}</h2>
+<h2 style="color: #d33682; text-transform: capitalize" id="{{ tag | slugify }}">{{ tag }}</h2>
 <ul class="category-list">
   {% for post in site.posts %}
   {% if post.tags contains tag %}
