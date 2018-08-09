@@ -23,7 +23,8 @@
     color: #999;
 }
 .category-list li a:hover {
-    background-color: #555555;
+    background-color: #707070;
+    color: #000;
     text-decoration: none;
 }
 .category-list li a:hover small {
