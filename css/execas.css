@@ -5,6 +5,10 @@
     background: #e7f2f7;
     color: #6a9fb5;
     }
+
+.tag-mark a {
+    font-weight: normal;
+}
     
 .category-list {
     padding-left: 1rem;
