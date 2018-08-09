@@ -51,7 +51,7 @@ Here we generate all the tags.
         {{ post.title }}
         <small>{{ post.date | date_to_string }}</small>
       </a>
-      </h3>
+      </h3>&#8209;
       {% for tag in post.tags %}
       <a class="tag-mark" href="/tags/#{{ tag | slugify }}">{{ tag }}</a>
       {% endfor %}
