@@ -62,12 +62,12 @@ list of matching posts beneath tag name header
 
 .tag-posts .tag-mark {
     background: #707070;
-    color: #333333;
+    color: #ffffff;
 }
 
 .tag-mark:hover {
-    background-color: #333333;
-    color: #fff;
+    background-color: #707070;
+    color: #ffffff;
     text-decoration: none;
 }
 
