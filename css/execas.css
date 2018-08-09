@@ -11,6 +11,23 @@
     list-style: none;
 }
 
+}
+.category-list h3 {
+    font-size: 1rem;
+    margin-top: 0;
+}
+.category-list li small {
+    font-size: 75%;
+    color: #999;
+}
+.category-list li a:hover {
+    color: #6a9fb5;
+    text-decoration: none;
+}
+.category-list li a:hover small {
+    color: inherit;
+}
+
 .page-title {
     text-transform: uppercase;
 }
