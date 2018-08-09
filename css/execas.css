@@ -18,23 +18,31 @@ a:focus {
   text-decoration: underline;
 }
 
-.category-list {
+/* 
+list of matching posts beneath tag name header 
+*/
+.tag-header {
+     color: #d33682;
+     text-transform: capitalize
+}
+
+.tag-posts {
     padding-left: 1rem;
     list-style: none;
 }
 
-.category-list h3 {
+.tag-posts h3 {
     font-size: 1rem;
     margin-right: 1rem;
     margin-top: 0;
     display:inline;
 }
-.category-list li small {
+.tag-posts li small {
     font-size: 75%;
     color: #999;
 }
 
-.category-list a {
+.tag-posts h3 a {
      color: #333333;
 }
 
@@ -51,6 +59,18 @@ a:focus {
     color: #fff;
     text-decoration: none;
 }
+
+.tag-posts .tag-mark {
+    background: #707070;
+    color: #333333;
+}
+
+.tag-mark:hover {
+    background-color: #333333;
+    color: #fff;
+    text-decoration: none;
+}
+
 
 .page-title {
     text-transform: uppercase;
