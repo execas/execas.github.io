@@ -1,3 +1,17 @@
+a {
+  color: #333333;
+  text-decoration:none;
+}
+a strong {
+  color: inherit;
+}
+/* `:focus` is linked to `:hover` for basic accessibility */
+a:hover,
+a:focus {
+  text-decoration: underline;
+}
+
+
 .tag-mark {
     font-size: 60%;
     padding: .2rem .5rem .2rem .5rem;
@@ -5,6 +19,8 @@
     background: #333333;
     color: #fff;
     }
+
+.
 
 html {
      font-family: 'PT Sans', sans-serif;
@@ -39,17 +55,4 @@ h1,h2,h3,h4,h5,h6 {
 
 .page-title {
     text-transform: uppercase;
-}
-
-a {
-  color: #333333;
-  text-decoration:none;
-}
-a strong {
-  color: inherit;
-}
-/* `:focus` is linked to `:hover` for basic accessibility */
-a:hover,
-a:focus {
-  text-decoration: underline;
 }
