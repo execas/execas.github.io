@@ -18,14 +18,6 @@ a:focus {
   text-decoration: underline;
 }
 
-.tag-mark {
-    font-size: 60%;
-    padding: .2rem .5rem .2rem .5rem;
-    border-radius: 5px;
-    background: #333333;
-    color: #fff;
-    }
-
 .category-list {
     padding-left: 1rem;
     list-style: none;
@@ -45,7 +37,15 @@ a:focus {
 .category-list a {
      color: #333333;
 }
-  
+
+.tag-mark {
+    font-size: 60%;
+    padding: .2rem .5rem .2rem .5rem;
+    border-radius: 5px;
+    background: #333333;
+    color: #fff;
+    }
+
 .tag-mark:hover {
     background-color: #707070;
     color: #fff;
