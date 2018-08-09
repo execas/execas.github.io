@@ -1,5 +1,13 @@
+html {
+     font-family: 'PT Sans', sans-serif;
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: 700;
+}
+
 a {
-  color: #333333;
   text-decoration:none;
 }
 a strong {
@@ -20,16 +28,6 @@ a:focus {
     color: #fff;
     }
 
-.
-
-html {
-     font-family: 'PT Sans', sans-serif;
-}
-
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'PT Sans Narrow', sans-serif;
-  font-weight: 700;
-}
 
 
 .category-list {
@@ -47,6 +45,18 @@ h1,h2,h3,h4,h5,h6 {
     font-size: 75%;
     color: #999;
 }
+
+.category-list a {
+  color: #333333;
+}
+  
+
+.category-list a:hover {
+  color: #333333;
+  text-decoration: underline;
+}
+  
+  
 .tag-mark a:hover {
     background-color: #707070;
     color: #fff;
