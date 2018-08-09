@@ -45,17 +45,6 @@ a:focus {
     font-size: 75%;
     color: #999;
 }
-
-.category-list a {
-  color: #333333;
-}
-  
-
-.category-list a:hover {
-  color: #333333;
-  text-decoration: underline;
-}
-  
   
 .tag-mark a:hover {
     background-color: #707070;
