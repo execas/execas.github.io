@@ -13,12 +13,10 @@ a {
 a strong {
   color: inherit;
 }
-/* `:focus` is linked to `:hover` for basic accessibility */
 a:hover,
 a:focus {
   text-decoration: underline;
 }
-
 
 .tag-mark {
     font-size: 60%;
@@ -28,8 +26,6 @@ a:focus {
     color: #fff;
     }
 
-
-
 .category-list {
     padding-left: 1rem;
     list-style: none;
@@ -37,6 +33,7 @@ a:focus {
 
 .category-list h3 {
     font-size: 1rem;
+    color: #333333;
     margin-right: 1rem;
     margin-top: 0;
     display:inline;
