@@ -33,7 +33,7 @@ list of matching posts beneath tag name header
 
 .tag-posts h3 {
     font-size: 1rem;
-    margin-right: 1rem;
+    margin-right: 0.5rem;
     margin-top: 0;
     display:inline;
 }
@@ -61,6 +61,7 @@ list of matching posts beneath tag name header
 }
 
 .tag-posts .tag-mark {
+    padding: .1rem .3rem .1rem .3rem;
     font-size: 60%;
     background: #707070;
     color: #ffffff;
