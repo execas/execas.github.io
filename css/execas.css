@@ -5,23 +5,11 @@ html {
 }
 
 body {
-     width: 50%;
-     max-width: 600px;
+     max-width: 720px;
      background-color: #ffffff;
      margin: 0 auto;
      padding:1rem;
 }
-
-/* Tablet Landscape */
-@media screen and (max-width: 1060px) {
-     body { width:100%} 
-}
-/* Tabled Portrait */
-@media screen and (max-width: 768px) {
-    body { width:100%; }
-
-}
-
 
 pre {
      white-space: pre;
