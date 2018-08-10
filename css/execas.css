@@ -30,6 +30,7 @@ list of matching posts beneath tag name header
 .tag-posts {
     padding-left: 1rem;
     list-style: none;
+    list-style-type: square;
 }
 
 .tag-posts h3 {
