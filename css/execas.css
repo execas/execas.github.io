@@ -8,9 +8,27 @@ body {
      width: 50%;
      background-color: #ffffff;
      margin: 0 auto;
-     min-width:600px;
-     max-width:2000px;
      padding:1rem;
+}
+
+@media screen and (max-width: 991px) {
+     body {
+          width: 100%;
+     }
+}
+
+@media screen and (max-width: 767px) {
+     /* start of medium tablet styles */
+     body {
+          width: 100%;
+     }
+}
+
+@media screen and (max-width: 479px) {
+     /* start of phone styles */
+     body {
+          width: 100%;
+     }
 }
 
 h1,h2,h3,h4,h5,h6 {
