@@ -5,8 +5,7 @@ html {
 }
 
 body {
-     width: 50%;
-     min-width:600px;
+     width:600px;
      background-color: #ffffff;
      margin: 0 auto;
      padding:1rem;
