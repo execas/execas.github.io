@@ -113,10 +113,14 @@ list of matching posts beneath tag name header
 
 .post h2 {
      color: #d33682;
+     font-size: 2rem;
+     margin-top: 1.5rem;
 }
 
 .post h3 {
      color: #333333;
+     margin-top:1.5rem;
+     margin-bottom:0.6rem;
 }
 
 
