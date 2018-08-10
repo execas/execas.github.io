@@ -12,7 +12,12 @@ body {
      padding:1rem;
 }
 
-pre { white-space: pre; overflow: auto; }
+pre {
+     white-space: pre;
+     overflow: auto;
+     border-width: 1px;
+     border-color: #707070;
+}
 
 h1,h2,h3,h4,h5,h6 {
   font-family: 'PT Sans Narrow', sans-serif;
