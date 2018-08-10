@@ -12,11 +12,14 @@ body {
      padding:1rem;
 }
 
-/* On screens that are 992px or less, set the background color to blue */
-@media screen and (max-width: 1080px) {
-     body {
-         width: 100%;
-  }
+/* Tablet Landscape */
+@media screen and (max-width: 1060px) {
+     body { width:100%} 
+}
+/* Tabled Portrait */
+@media screen and (max-width: 768px) {
+    body { width:100%; }
+
 }
 
 
