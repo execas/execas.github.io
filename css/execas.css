@@ -1,5 +1,6 @@
 html {
      font-family: 'PT Sans', sans-serif;
+     font-size: 14px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -91,6 +92,10 @@ list of matching posts beneath tag name header
 .post-date {
      font-weight:bold;
      color: #999;
+}
+
+.post-title {
+     font-size: 3rem;
 }
 
 .page-title {
