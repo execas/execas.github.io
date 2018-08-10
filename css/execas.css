@@ -12,6 +12,8 @@ body {
      padding:1rem;
 }
 
+pre { white-space: pre; overflow: auto; }
+
 h1,h2,h3,h4,h5,h6 {
   font-family: 'PT Sans Narrow', sans-serif;
   font-weight: 700;
