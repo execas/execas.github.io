@@ -115,6 +115,10 @@ list of matching posts beneath tag name header
      color: #d33682;
 }
 
+.post h3 {
+     color: #333333;
+}
+
 
 .post-title {
      font-size: 3rem;
