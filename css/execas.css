@@ -13,7 +13,7 @@ body {
 }
 
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1000px) {
      /* start of large tablet styles */
      body {
           width: 100%;
