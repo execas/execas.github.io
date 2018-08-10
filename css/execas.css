@@ -15,6 +15,7 @@ body {
 @media screen and (max-width: 991px) {
      body {
           width: 100%;
+          max-width: 331px;
      }
      html {
           font-family: 'PT Sans', sans-serif;
