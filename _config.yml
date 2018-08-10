@@ -1,3 +1,3 @@
 markdown: kramdown
-tag_page: '/tags/'
+tag_page: '/tags.html/'
 tagline: 'Example tagline'
