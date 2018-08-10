@@ -6,7 +6,7 @@ html {
 
 body {
      width: 50%;
-     max-width: 1080px;
+     max-width: 600px;
      background-color: #ffffff;
      margin: 0 auto;
      padding:1rem;
@@ -14,8 +14,9 @@ body {
 
 /* On screens that are 992px or less, set the background color to blue */
 @media screen and (max-width: 1080px) {
-  body {
-    width: 100%;
+     body {
+         width: 100%;
+         font-size: 1vw;   
   }
 }
 
