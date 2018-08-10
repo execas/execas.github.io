@@ -16,7 +16,7 @@ body {
 @media screen and (max-width: 1081px) {
      /* start of large tablet styles */
      body {
-          width: 50%;
+          width: 100%;
      }
 }
 
