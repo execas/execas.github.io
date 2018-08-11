@@ -130,10 +130,10 @@ list of matching posts beneath tag name header
 
 
 /* 
-list of matching posts beneath tag name header 
+postinfo: title, date, tags
 */
 .post-info {
-     margin-bottom-3rem;
+     margin-bottom:3rem;
 }
        
 .post-title {
@@ -159,7 +159,9 @@ list of matching posts beneath tag name header
     color: #ffffff;
     text-decoration: none;
 }
-     
+/*
+END: postinfo
+*/
 
      
 .post h2 {
