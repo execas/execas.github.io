@@ -122,6 +122,7 @@ list of matching posts beneath tag name header
     border-radius: 3px;
     background: #aaaaaa;
     color: #ffffff;
+    text-decoration:none;
 }
 
 .tag-posts .tag-mark:hover {
