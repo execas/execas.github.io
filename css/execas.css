@@ -24,6 +24,7 @@ pre code {
      overflow: auto;
      font-size:12px;
      border-style: none;
+     background-color: #f8f8f8;
 }
 
 code {
