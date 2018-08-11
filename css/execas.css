@@ -17,7 +17,7 @@ body {
 
 pre {
      background-color: #f8f8ff;
-     padding: 0px 5px 0px 0px
+     padding-left: 5px;
 }
 
 pre code {
