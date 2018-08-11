@@ -102,12 +102,11 @@ list of matching posts beneath tag name header
 .top-tagmarks {
      max-width: 600px;
      margin: 0 auto;
-     display:block;
 }
 
 .tag-mark {
     font-size: 80%;
-    padding: .2rem .5rem .2rem .5rem;
+    margin: .2rem .5rem .2rem .5rem;
     border-radius: 5px;
     margin-top:3rem;
     background: #333333;
