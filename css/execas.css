@@ -23,8 +23,10 @@ pre code {
 }
 
 code {
-     background-color: #eeeeee;
+     background-color: #fefefe;
      font-size:12px;
+     border-color: #eeeeee;
+     border-size: 1px;
 }
 
 h1,h2,h3,h4,h5,h6 {
