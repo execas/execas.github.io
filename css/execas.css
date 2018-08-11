@@ -23,6 +23,15 @@ img {
 }
 
 
+/* On screens that are 992px or less, set the background color to blue */
+@media screen and (max-width: 1080px) {
+  #wrapper {
+     padding: 25px 10px 25px 10px;
+     max-width: 720px;
+     background-color: #ffffff;
+     margin: 0 auto; 
+     }
+
 pre {
      background-color: #f8f8ff;
      padding-left: 5px;
