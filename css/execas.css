@@ -128,6 +128,23 @@ list of matching posts beneath tag name header
     text-decoration: none;
 }
 
+
+/* 
+list of matching posts beneath tag name header 
+*/
+.post-info {
+     margin-bottom-3rem;
+}
+       
+.post-title {
+     font-size: 3rem;
+     margin-bottom:0.5rem;
+}
+
+.post-date {
+     font-weight:bold;
+     color: #999;
+}
 .post-tag {
     padding: .1rem .3rem .1rem .3rem;
     font-size: 80%;
@@ -143,11 +160,8 @@ list of matching posts beneath tag name header
     text-decoration: none;
 }
      
-.post-date {
-     font-weight:bold;
-     color: #999;
-}
 
+     
 .post h2 {
      color: #d33682;
      font-size: 2rem;
@@ -158,11 +172,6 @@ list of matching posts beneath tag name header
      color: #333333;
      margin-top:1.5rem;
      margin-bottom:0.6rem;
-}
-
-
-.post-title {
-     font-size: 3rem;
 }
 
 .page-title {
