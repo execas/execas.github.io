@@ -2,6 +2,7 @@
 layout: post
 title: Copy and paste between Vim, terminals and graphical applications
 date: 2018-08-11
+tags: [vim, linux, tools]
 ---
 
 Being able to move text between web browsers, terminals and Vim is essential for programmers.
