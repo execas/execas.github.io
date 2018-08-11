@@ -106,18 +106,14 @@ list of matching posts beneath tag name header
 
 .tag-mark {
     font-size: 80%;
-    margin: .2rem .5rem .2rem .5rem;
-    padding: .2rem .5rem .2rem .5rem;
-    border-radius: 5px;
-    margin-top:3rem;
-    background: #333333;
-    color: #fff;
+    color: #333;
+    text-decoration: underline;
+    
     }
 
 .tag-mark:hover {
-    background-color: #707070;
-    color: #fff;
-    text-decoration: none;
+    color: #d33682;
+    font-weigth: bold;
 }
 
 .tag-posts .tag-mark {
