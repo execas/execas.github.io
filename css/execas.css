@@ -19,11 +19,11 @@ pre {
      background-color: #f8f8ff;
      padding-left: 5px;
      border-left: 5px solid #707070;
+     white-space: pre;
+     overflow: auto;
 }
 
 pre code {
-     white-space: pre;
-     overflow: auto;
      font-size:12px;
      border-style: none;
      background-color: #f8f8ff;
