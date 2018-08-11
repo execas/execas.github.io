@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Measures of central tendency using C and Python
+date: 2018-08-11
 tags: [math, statistics, programming, python, c]
 ---
 
