@@ -32,13 +32,9 @@ title:    Tags
 <br/>
 
 <div class="posts">
-<ul>
-  <li>
 {% for tag in tags %}
 <a class="tag-mark" href="#{{ tag | slugify }}">{{ tag }}</a>
 {% endfor %}
-</li>
-  </ul>
 
 {% for tag in tags %}
 <h2 class="tag-header" id="{{ tag | slugify }}">{{ tag }}</h2>
