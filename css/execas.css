@@ -16,7 +16,8 @@ body {
 }
 
 pre {
-     background-color: #f8f8f8;
+     background-color: #f8f8ff;
+     padding: 0px 5px 0px 0px
 }
 
 pre code {
@@ -24,7 +25,7 @@ pre code {
      overflow: auto;
      font-size:12px;
      border-style: none;
-     background-color: #f8f8f8;
+     background-color: #f8f8ff;
 }
 
 code {
