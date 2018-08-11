@@ -2,9 +2,6 @@
 layout:   page
 title:    Tags
 ---
-{% comment%}
-Here we generate all the tags.
-{% endcomment%}
 
 {% assign rawtags = "" %}
 {% for post in site.posts %}
@@ -36,9 +33,11 @@ Here we generate all the tags.
 
 <div class="posts">
 <p>
+<div class="top-tagmarks">
 {% for tag in tags %}
 <a href="#{{ tag | slugify }}" class="tag-mark"> {{ tag }} </a> &nbsp;&nbsp;
 {% endfor %}
+</div>
 
 {% for tag in tags %}
 <h2 class="tag-header" id="{{ tag | slugify }}">{{ tag }}</h2>
