@@ -15,11 +15,14 @@ body {
      margin: 0 auto; 
 }
 
+pre {
+     background-color: #f8f8f8;
+}
+
 pre code {
      white-space: pre;
      overflow: auto;
      font-size:12px;
-     background-color: #f8f8f8;
      border-style: none;
 }
 
