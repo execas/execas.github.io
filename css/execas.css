@@ -104,7 +104,6 @@ list of matching posts beneath tag name header
     color: #555555;
     font-weight: bold;
     margin-right: 1rem;
-    border: 1px solid #555555
     }
 
 .tag-mark:hover {
@@ -120,6 +119,7 @@ list of matching posts beneath tag name header
     background: #aaaaaa;
     color: #ffffff;
     text-decoration:none;
+    border: 1px solid #555555
 }
 
 .tag-posts .tag-mark:hover {
@@ -134,6 +134,7 @@ list of matching posts beneath tag name header
     border-radius: 3px;   
     background: #aaaaaa;
     color: #ffffff;
+    border: 1px solid #555555
 }
 
 .post-tag:hover {
