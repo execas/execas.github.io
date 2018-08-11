@@ -99,6 +99,12 @@ list of matching posts beneath tag name header
      color: #333333;
 }
 
+.top-tagmarks {
+     border: 1px solid #000;
+     max-width: 600px;
+     margin: 0 auto;
+}
+
 .tag-mark {
     font-size: 80%;
     padding: .2rem .5rem .2rem .5rem;
