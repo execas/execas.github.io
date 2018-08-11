@@ -104,10 +104,12 @@ list of matching posts beneath tag name header
     color: #555555;
     font-weight: bold;
     margin-right: 1rem;
+    border: 1px solid #555555
     }
 
 .tag-mark:hover {
     color: #d33682;
+    text-decoration:underline;
 }
 
 .tag-posts .tag-mark {
