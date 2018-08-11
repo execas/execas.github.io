@@ -1,14 +1,17 @@
-html {
+html, body {
+     height: 100%
+}
+
+body {
      font-family: 'PT Sans', sans-serif;
      font-size: 16px;
      background-color: #e5e5e5;
 }
 
-body {
+#wrapper {
      max-width: 720px;
      background-color: #ffffff;
-     margin: 0 auto;
-     padding:1rem;
+     margin: 0 autp=o; 
 }
 
 @media only screen and (min-width: 481px) {
