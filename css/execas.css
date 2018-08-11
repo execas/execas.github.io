@@ -22,9 +22,6 @@ img {
      margin-right: auto;
 }
 
-
-
-
 pre {
      background-color: #f8f8ff;
      padding-left: 5px;
@@ -32,13 +29,11 @@ pre {
      white-space: pre;
      overflow: auto;
 }
-
 pre code {
      font-size:12px;
      border-style: none;
      background-color: #f8f8ff;
 }
-
 code {
      background-color: #fefefe;
      font-size:12px;
@@ -105,9 +100,8 @@ list of matching posts beneath tag name header
 }
 
 .tag-mark {
-    font-size: 150%;
+    font-size: 110%;
     color: #333;
-    text-decoration: underline;
     font-weight: bold;
     }
 
