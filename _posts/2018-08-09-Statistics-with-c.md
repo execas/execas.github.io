@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Statistics with C
-tags: [programming, c, math, statistics]
+tags: [math, statistics, programming, python, c]
 ---
 
 Calculating measures of central tendency in Python with Numpy and Scipy and in C with GNU Scientific Library.
