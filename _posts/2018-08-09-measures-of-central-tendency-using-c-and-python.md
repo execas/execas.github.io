@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Statistics with C
+title: Measures of central tendency using C and Python
 tags: [math, statistics, programming, python, c]
 ---
 
