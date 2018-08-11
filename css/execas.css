@@ -15,10 +15,14 @@ body {
      margin: 0 auto; 
 }
 
-pre {
+pre code {
      white-space: pre;
      overflow: auto;
      font-size:12px;
+}
+
+code {
+     background-color: #eeeeee;
 }
 
 h1,h2,h3,h4,h5,h6 {
