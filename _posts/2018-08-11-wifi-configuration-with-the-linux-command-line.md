@@ -19,8 +19,9 @@ Check the state of the interface:
 
 ```bash
 # ip link show dev <wireless interface>
+```
 
-Bring the interface up:
+To bring the interface up, if necessary:
 
 ``` bash
 # ip link set dev <wireless interface> up
