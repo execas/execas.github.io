@@ -102,6 +102,7 @@ list of matching posts beneath tag name header
 .top-tagmarks {
      max-width: 600px;
      margin: 0 auto;
+     display:inline-block;
 }
 
 .tag-mark {
