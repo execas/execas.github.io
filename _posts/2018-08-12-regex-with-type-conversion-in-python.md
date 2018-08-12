@@ -7,9 +7,7 @@ tags: [programming,python]
 
 The below code illustrates how you can parse a string to multiple elements of data of specified type.
 
-## Intro
-
-As an example, this is a string I get when I query a broker about a stock:
+As an example, this is a string I get when I query a certain broker about a stock:
 
 ```
 '45 "New York Stock Exchange" 20170522 true FOO 289.9 299.9 289.9 296.5 499874 148377740 (20170523 20170524 20172525) (236.4 275.6 228.3 275.6)'
