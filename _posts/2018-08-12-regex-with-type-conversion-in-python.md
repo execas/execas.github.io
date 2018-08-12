@@ -39,7 +39,7 @@ msgDecode = {
       }
 ~~~
 
-I use \S+ a lot in most message decode instructions since it handles symbols (e.g. AAPL), ints (e.g -42) floats (e.g. 1.3) and missing data (?), and some elements in my example string can vary between these. It also really simplfies the expressions.
+I use `\S+` a lot in most message decode instructions since it handles symbols (e.g. AAPL), ints (e.g. -42) floats (e.g. 1.3) and missing data (?), and some elements in my example string can vary between these. It also really simplfies the expressions.
 
 Now the parsing of a message can be done using:
 
