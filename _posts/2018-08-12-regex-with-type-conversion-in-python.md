@@ -7,7 +7,7 @@ tags: [programming,python]
 
 The below code illustrates how you can parse a string to multiple elements of data of specified type.
 
-# Description
+## Intro
 
 As an example, this is a string I get when I query a broker about a stock:
 
@@ -164,7 +164,7 @@ msgDecode = {
 
 Keywords are named the same as labels, but have to be lowercase with an appended 's'.
 
-# `regext` source code
+## `regext` source code
 
 ```python
 import re
