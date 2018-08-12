@@ -38,8 +38,11 @@ print r
 ### C code
 
 ```c
-// gsl_mean.c
-// gcc -L/usr/local/lib -lgsl -lgslcblas -lm gsl_mean.c -o gsl_mean
+/*
+ * gsl_mean.c
+ * gcc -L/usr/local/lib -lgsl -lgslcblas -lm gsl_mean.c -o gsl_mean
+ */
+ 
 #include <stdio.h>
 #include <gsl/gsl_statistics_double.h>
 
@@ -47,7 +50,7 @@ int main(void)
 {
   double const a[] = {1, 1.4, 5.6, 1.1, 0.9};
 
-  //double gsl_stats_mean(double const data[], size_t stride, size_t n)
+  /* double gsl_stats_mean(double const data[], size_t stride, size_t n) */
   double r = gsl_stats_mean(a, 1, 5);
   printf("%f\n", r);
 }
@@ -84,8 +87,11 @@ np.median(a)
 ### C code
 
 ```c
-// gsl_median.c
-// gcc -L/usr/local/lib -lgsl -lgslcblas -lm gsl_median.c -o gsl_median
+/* 
+ * gsl_median.c
+ * gcc -L/usr/local/lib -lgsl -lgslcblas -lm gsl_median.c -o gsl_median 
+ */
+
 #include <stdio.h>
 #include <gsl/gsl_sort.h>
 #include <gsl/gsl_statistics_double.h>
@@ -94,9 +100,9 @@ int main(void)
 {
   double a[] = {2, 1, 3, 4, 5, 6};
 
-  //void gsl_sort(double * data, const size_t stride, size_t n)
-  gsl_sort(a, 1, 6); // we need to sort the dataset!
-  //double gsl_stats_median_from_sorted_data(double const sorted_data[], size_t stride, size_t n)
+  /* void gsl_sort(double * data, const size_t stride, size_t n) */
+  gsl_sort(a, 1, 6);
+  /* double gsl_stats_median_from_sorted_data(double const sorted_data[], size_t stride, size_t n) */
   double r = gsl_stats_median_from_sorted_data(a, 1, 6);
   printf("%f\n", r);
 }
@@ -125,11 +131,14 @@ stats.mode(a) # returns mode array and count array
 ### C code
 
 ```c
-// mode.c
-// gcc mode.c -o mode
+/*
+ * mode.c
+ * gcc mode.c -o mode
+ */
+
 #include <stdio.h>
 
-// return the smallest mode from a sorted dataset
+/* return the smallest mode from a sorted dataset */
 double mode_from_sorted_data(double const data[], size_t n)
 {
     double lead = 0, curr = data[0];
@@ -204,8 +213,11 @@ To understand the code below you need to be aware that
 By using logarithmic identities to transform the formula we reduce the chances of large and/or many numbers causing an overflow.
 
 ```c
-// geomean.c
-// gcc -L/usr/local/lib -lgsl -lgslcblas -lm geomean.c -o geomean
+/*
+ * geomean.c
+ * gcc -L/usr/local/lib -lgsl -lgslcblas -lm geomean.c -o geomean
+ */
+
 #include <stdio.h>
 #include <gsl/gsl_sf_log.h>
 #include <gsl/gsl_sf_exp.h>
@@ -231,7 +243,7 @@ int main(void)
 
 A Pythagorean mean along with arithmetic mean and geometric mean. The harmonic mean is always the smallest of the three.
 
-The harmonic mean is the reciprocal of the aritmetic mean of the reciprocals of the values in a dataset.
+The harmonic mean is the reciprocal of the arithmetic mean of the reciprocals of the values in a dataset.
 
 ![](https://wikimedia.org/api/rest_v1/media/math/render/svg/753130a05a1fab890e5785924b5bdbb5f97c8b6a)
 
@@ -261,8 +273,11 @@ print r
 ### C code
 
 ```c
-// harmean.c
-// gcc -L/usr/local/lib -lgsl -lgslcblas -lm harmean.c -o harmean
+/*
+ * harmean.c
+ * gcc -L/usr/local/lib -lgsl -lgslcblas -lm harmean.c -o harmean
+ */
+
 #include <stdio.h>
 #include <gsl/gsl_statistics_double.h>
 #include <gsl/gsl_sf_pow_int.h>
@@ -320,8 +335,11 @@ print r
 ### C code
 
 ```c
-// gsl_wmean.c
-// gcc -L/usr/local/lib -lgsl -lgslcblas -lm gsl_wmean.c -o gsl_wmean
+/*
+ * gsl_wmean.c 
+ * gcc -L/usr/local/lib -lgsl -lgslcblas -lm gsl_wmean.c -o gsl_wmean
+ */
+
 #include <stdio.h>
 #include <gsl/gsl_statistics_double.h>
 
@@ -330,7 +348,7 @@ int main(void)
     double const a[] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
     double const w[] = {0.1, 0.2, 0.4, 0.01, 0.09, 0.05, 0.03, 0.02, 0.1};
 
-    //double gsl_stats_wmean(const double w[], size_t wstride, const double data[], size_t stride, size_t n)
+    /* double gsl_stats_wmean(const double w[], size_t wstride, const double data[], size_t stride, size_t n) */
     double r = gsl_stats_wmean(w, 1, a, 1, 9);
     printf("%f\n", r);
 }
