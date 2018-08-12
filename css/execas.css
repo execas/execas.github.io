@@ -172,6 +172,11 @@ END: postinfo
      margin-top: 1.5rem;
 }
 
+.post h2 code {
+     font-size: 2rem;
+     
+}
+
 .post h3 {
      color: #333333;
      margin-top:1.5rem;
