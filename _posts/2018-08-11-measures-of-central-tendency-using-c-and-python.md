@@ -142,7 +142,8 @@ stats.mode(a) # returns mode array and count array
 double mode_from_sorted_data(double const data[], size_t n)
 {
     double lead = 0, curr = data[0];
-    int lc = 0, cc = 1; // lead count, current count
+    /* lead count, current count */
+    int lc = 0, cc = 1;
 
     for (int i = 1; i < n; i++) {
         if (data[i] == curr) {
