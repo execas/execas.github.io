@@ -2,7 +2,7 @@
 layout: post
 title: "The basics of tmux"
 date: 2018-08-10
-tags: [linux, tools, tmux]
+tags: [tmux, linux, tools]
 ---
 
 **tmux** is a terminal multiplexer. It makes using the terminal more user friendly, more flexible and more fun.
