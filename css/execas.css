@@ -149,7 +149,7 @@ postinfo: title, date, tags
      color: #999;
 }
 .post-tag {
-    padding: .1rem .3rem .1rem .3rem;
+    padding: .05 rem .3rem .05 rem .3rem;
     font-size: 80%;
     border-radius: 3px;   
     background: #aaaaaa;
