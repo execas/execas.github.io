@@ -82,7 +82,7 @@ To solve this, you need to set the SGID bit:
 
 ```
 
-Now all files are created with the same group owner as the shared dir, and new directories will inherit the SGID bit:
+Now all files and subdirectories are created with the same group owner as the shared dir, and new directories will inherit the SGID bit:
 
 ```bash
 # su henry
