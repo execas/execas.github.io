@@ -1,3 +1,5 @@
 markdown: kramdown
 tag_page: '/tags.html'
+home_page: '/'
+about_page: '/about.html'
 tagline: 'Example tagline'
