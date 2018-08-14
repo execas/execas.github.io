@@ -79,7 +79,6 @@ To solve this, you need to set the SGID bit:
 
 ```bash
 # chmod g+s /home/testshared
-
 ```
 
 Now all files and subdirectories are created with the same group owner as the shared dir, and new directories will inherit the SGID bit:
