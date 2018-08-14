@@ -130,8 +130,8 @@ list of matching posts beneath tag name header
 }
 
 .tag-posts .tag-mark:hover {
-    background-color: #dddddd;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 
@@ -156,14 +156,14 @@ postinfo: title, date, tags
     padding: .2rem .2rem .2rem .2rem;
     font-size: 80%;
     border-radius: 3px;   
-    background: #aaaaaa;
-    color: #ffffff;
+    background: #f8f8ff;
+    color: #000000;
     border: 1px solid #555555
 }
 
 .post-tag:hover {
-    background-color: #dddddd;
-    color: #ffffff;
+    background-color: #ffffff;
+    color: #000000;
     text-decoration: none;
 }
 /*
