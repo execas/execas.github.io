@@ -79,6 +79,7 @@ a:focus {
      display: inline;
      margin-top: 0px;
      margin-bottom:0px;
+     padding:0;
 }
 /* 
 list of matching posts beneath tag name header 
