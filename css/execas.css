@@ -23,10 +23,10 @@ img {
 }
 
 pre {
-     background-color: #363636;
+     background-color: #474747;
      padding-left: 5px;
      padding-bottom; 3px;
-     border-left: 5px solid #707070;
+     border-left: 5px solid #f8f8ff;
      white-space: pre;
      color:#f8f8ff;
      overflow: auto;
@@ -34,7 +34,7 @@ pre {
 pre code {
      font-size:12px;
      border-style: none;
-     background-color: #363636;
+     background-color: #474747;
 }
 code {
      background-color: #fefefe;
