@@ -93,7 +93,7 @@ list of matching posts beneath tag name header
 */
 .tag-header {
      color: #d33682;
-     font-size: 1rem:
+     font-size: 1rem;
      text-transform: capitalize;
      margin-bottom: 0.5rem;
 }
