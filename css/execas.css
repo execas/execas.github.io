@@ -197,8 +197,8 @@ END: postinfo
      
 .post h2 {
      color: #333333;
-     margin-top:1.5rem;
-     margin-bottom:0.6rem;
+     font-size: 2rem;
+     margin-top: 1.5rem;
 }
 
 .post h2 code {
@@ -208,8 +208,9 @@ END: postinfo
 
 .post h3 {
      color: #d33682;
-     font-size: 2rem;
-     margin-top: 1.5rem;
+     margin-top:1.5rem;
+     margin-bottom:0.6rem;
+
 }
 
 .page-title {
