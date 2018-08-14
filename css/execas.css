@@ -69,8 +69,7 @@ a:focus {
      margin:0 auto;
      max-width: 720px;
      padding: 10px 13px 10px 13px;
-     border: 2px solid #f8f8ff;
-     
+     border radius: 15px 50px 30px 5px;     
 }
 
 .header h1 {
