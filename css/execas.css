@@ -92,7 +92,7 @@ a:focus {
 list of matching posts beneath tag name header 
 */
 .tag-header {
-     color: #d33682;
+     color: #333333;
      font-size: 1.2rem;
      text-transform: capitalize;
      margin-bottom: 0.5rem;
