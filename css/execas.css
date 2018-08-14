@@ -69,6 +69,7 @@ a:focus {
      margin:0 auto;
      max-width: 720px;
      padding: 10px 15px 10px 15px;
+     border: 1px solid #f8f8ff;
      
 }
 
