@@ -73,6 +73,11 @@ a:focus {
      
 }
 
+.header h1 {
+     font-size: 3rem;
+     margin-right: 3rem;
+     color: #000;
+}
 /* 
 list of matching posts beneath tag name header 
 */
