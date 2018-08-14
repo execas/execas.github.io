@@ -64,11 +64,12 @@ a:focus {
 }
 
 .header {
-     height:100px;
-     background-color:#000;
+     height:30px;
+     background-color:#707070;
      color: #fff;
      margin:0 auto;
      max-width: 720px;
+     padding: 20px 15px 20px 15px;
      
 }
 
