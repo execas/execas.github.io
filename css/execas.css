@@ -123,8 +123,8 @@ list of matching posts beneath tag name header
     font-weight: normal;
     font-size: 60%;
     border-radius: 3px;
-    background: #aaaaaa;
-    color: #ffffff;
+    background: #f8f8ff;
+    color: #000000;
     text-decoration:none;
     border: 1px solid #555555
 }
