@@ -78,6 +78,7 @@ a:focus {
      margin-right: 3rem;
      color: #000;
      display: inline;
+     margin-top: 0;
 }
 /* 
 list of matching posts beneath tag name header 
