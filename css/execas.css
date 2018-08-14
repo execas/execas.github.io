@@ -117,6 +117,9 @@ list of matching posts beneath tag name header
     text-decoration:underline;
 }
 
+.tag-posts ul {
+     padding-left: 5rem;
+
 .tag-posts .tag-mark {
     padding: 1px 3px 1px;
     margin: 0;
