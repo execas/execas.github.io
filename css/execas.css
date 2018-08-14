@@ -64,7 +64,6 @@ a:focus {
 }
 
 .header {
-     height:30px;
      background-color:#f8f8ff;
      color: #fff;
      margin:0 auto;
@@ -78,7 +77,8 @@ a:focus {
      margin-right: 3rem;
      color: #000;
      display: inline;
-     margin-top: 0;
+     margin-top: 0px;
+     margin-bottom:0px;
 }
 /* 
 list of matching posts beneath tag name header 
