@@ -65,7 +65,7 @@ To set the directory so that the owner (root) and group owner (lawyers) can read
 # chmod 770 /home/lawshared
 ```
 
-One thing that is probably not wanted, is that all files created by users are created with the user as owner and group owner, and with standard permissions, so group members can't write to each other's files.
+One thing that is probably not wanted, is that all files created by users are created with the user as group owner and with standard permissions, so group members can't write to each other's files.
 
 ```bash
 # su henry
