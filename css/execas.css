@@ -117,14 +117,14 @@ list of matching posts beneath tag name header
 
 .tag-mark {
     font-size: 110%;
-    color: #555555;
-    font-weight: bold;
+    color: #707070;
     font-style: italic;
     margin-right: 1rem;
     }
 
 .tag-mark:hover {
     color: #d33682;
+    font-style: normal;
     text-decoration:underline;
 }
 
