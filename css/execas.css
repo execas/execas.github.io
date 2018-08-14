@@ -63,6 +63,12 @@ a:focus {
   text-decoration: underline;
 }
 
+.header {
+     height:100px;
+     background-color:#000;
+     color: #fff;
+}
+
 /* 
 list of matching posts beneath tag name header 
 */
