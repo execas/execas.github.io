@@ -189,7 +189,7 @@ postinfo: title, date, tags
     border-radius: 3px;   
     background: #f8f8ff;
     color: #000000;
-    border: 1px solid #555555
+    border: 1px solid #707070
 }
 
 .post-tag:hover {
