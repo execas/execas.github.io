@@ -81,6 +81,11 @@ a:focus {
      margin-bottom:0px;
      padding:0;
 }
+
+.header a {
+     color: #d33682;
+     size: 1.2rem;
+}
 /* 
 list of matching posts beneath tag name header 
 */
