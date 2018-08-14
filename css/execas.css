@@ -23,18 +23,18 @@ img {
 }
 
 pre {
-     background-color: #474747;
+     background-color: #f8f8ff;
      padding-left: 5px;
      padding-bottom; 3px;
-     border-left: 5px solid #f8f8ff;
+     border-left: 5px solid #707070;
      white-space: pre;
-     color:#f8f8ff;
+     color:#000000;
      overflow: auto;
 }
 pre code {
      font-size:12px;
      border-style: none;
-     background-color: #474747;
+     background-color: #f8f8ff;
 }
 code {
      background-color: #fefefe;
