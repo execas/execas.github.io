@@ -64,6 +64,10 @@ a:focus {
   text-decoration: underline;
 }
 
+p {
+     margin-top: 10px;
+}
+
 .header {
      background-color:#262626;
      color: #f8f8ff;
