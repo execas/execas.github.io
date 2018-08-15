@@ -7,7 +7,7 @@ tags: [linux, configuration, security]
 
 This article shows you how to share a directory between users that are members of the same group.
 
-## Create the directory
+In our example, we want the members of the group 'lawyers' to share the following directory:
 
 ```bash
 # mkdir /home/lawshared
