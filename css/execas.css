@@ -207,7 +207,7 @@ END: postinfo
 .post h2 {
      color: #d33682;
      font-size: 1.7rem;
-     margin-top: 1.5rem;
+     margin-top: 3rem;
 }
 
 .post h2 code {
@@ -217,7 +217,7 @@ END: postinfo
 
 .post h3 {
      color: #707070;
-     margin-top:1.5rem;
+     margin-top:3rem;
      margin-bottom:0rem;
 
 }
