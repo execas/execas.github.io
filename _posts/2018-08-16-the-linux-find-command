@@ -1,0 +1,125 @@
+---
+layout: post
+title: The Linux find command
+date: 2018-08-16
+tags: [find, linux, tools]
+---
+
+The `find` command is a very powerful command line tool to search for files in a directory hierarchy.
+
+## Basic usage
+
+Find file or directory named 'query' in the current directory:
+
+```bash
+$ find -name "query"
+./query
+$ find "query"
+./query
+```
+Same as above, but ignore case:
+
+```bash
+$ find -iname "query"
+./query
+./Query
+```
+Find a file or directory named 'cat' in `/usr/bin`.
+```bash
+$ find /usr/bin -name "cat"
+/usr/bin/cat
+```
+
+## Finding specific types
+
+Find specific types:
+
+```bash
+find  -type [fdlcb]
+```
+
+### Advanced examples
+
+Find all non-hidden directories in current dir:
+
+```bash
+find -type d -maxdepth 1 -not -name ".*"
+find -type d -maxdepth 1 ! -name ".*"
+```
+
+Find SUID set files in root dir:
+
+```bash
+find / -perm /u=s
+```
+
+Delete all empty txt files:
+
+```bash
+find -type f -empty -name "*.txt" -exec rm -f '{}' \;
+```
+
+Find all files not belonging to a user:
+
+```bash
+find -type f ! -user cas
+```
+
+### Difference between `-exec` variants
+
+With `-exec ls '{} \;' the `ls` command is executed for each file, so:
+
+```bash
+find -exec ls '{}' \;
+```
+
+will execute:
+
+```bash
+ls a.txt
+ls b.txt
+ls c.txt
+...
+```
+
+The `-exec ls '{}' \+` is more efficient as a lot of filenames are supplied as arguments to the command at once, preventing it being called once for each file:
+
+```
+ls a.txt b.txt c.txt ...
+```
+
+`-ok` is like the above, but does not support `\+`. User is asked before command execution for each match.
+
+```bash
+find -ok rm -f '{}' \;
+```
+
+The `-execdir` option has the same choice of postfix (`\;` or `\+`), and works the same as `-exec` execept that the command is executed from the subdirectory containing the matched file. There is also an `-okdir`.
+
+
+### Print
+
+`-print`, printing matches followed by a newline to the standard output, is the default action of `find`.
+When other actions are used, like for example `-exec`, matches are not printed, and `-print` must be explicitly specified.
+
+```bash
+find . -exec file '{}' \+ -print
+```
+
+
+`-print0` uses a null character instead of a newline.
+
+
+### Other important options
+
+- -size +2M
+- -size -2M
+- -perm 777
+- -perm /u=s
+- -perm 644 exactly
+- -perm -644 each is at least this
+- -perm /222  one of set to writeable (do not do 555, 777 and so on as this means r or w, and r or w or 5)
+-mtime
+-atime9
+
+
