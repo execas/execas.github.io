@@ -25,26 +25,33 @@ $ find -iname "query"
 ./Query
 ```
 Find a file or directory named 'cat' in `/usr/bin`.
+
 ```bash
 $ find /usr/bin -name "cat"
 /usr/bin/cat
 ```
 
-## Finding specific types
+### Finding specific types
 
-Find specific types:
+- (b)lock
+- (c)haracter
+- (d)ir
+- (f)ile
+- (l)ink, symbolic
+- (p)ipe
+- (s)ocket
 
 ```bash
-find  -type [fdlcb]
+find  -type [bcdflps]
 ```
 
-### Advanced examples
+## Advanced examples
 
 Find all non-hidden directories in current dir:
 
 ```bash
-find -type d -maxdepth 1 -not -name ".*"
-find -type d -maxdepth 1 ! -name ".*"
+$ find -type d -maxdepth 1 -not -name ".*"
+$ find -type d -maxdepth 1 ! -name ".*"
 ```
 
 Find SUID set files in root dir:
@@ -59,7 +66,7 @@ Delete all empty txt files:
 find -type f -empty -name "*.txt" -exec rm -f '{}' \;
 ```
 
-Find all files not belonging to a user:
+Find all files *not* belonging to a user:
 
 ```bash
 find -type f ! -user cas
@@ -110,15 +117,23 @@ find . -exec file '{}' \+ -print
 `-print0` uses a null character instead of a newline.
 
 
-### Other important options
+## Other important options
+
+### Size
 
 - -size +2M
 - -size -2M
+
+### Permissions
+
 - -perm 777
 - -perm /u=s
 - -perm 644 exactly
 - -perm -644 each is at least this
 - -perm /222  one of set to writeable (do not do 555, 777 and so on as this means r or w, and r or w or 5)
+
+### Access and modification
+
 -mtime
 -atime9
 
