@@ -72,7 +72,7 @@ Find all files *not* belonging to a user:
 find -type f ! -user cas
 ```
 
-### Difference between `-exec` variants
+### The execute options
 
 With `-exec ls '{}' \;` the `ls` command is executed for each file, so:
 
@@ -103,6 +103,12 @@ find -ok rm -f '{}' \;
 
 The `-execdir` option has the same choice of postfix (`\;` or `\+`), and works the same as `-exec` execept that the command is executed from the subdirectory containing the matched file. There is also an `-okdir`.
 
+An alternative is to use `xargs`, which is similar to -exec results as the:
+
+```bash
+$ find . -name "*.txt" | xargs cat
+```
+
 
 ### Print
 
@@ -112,7 +118,6 @@ When other actions are used, like for example `-exec`, matches are not printed, 
 ```bash
 find . -exec file '{}' \+ -print
 ```
-
 
 `-print0` uses a null character instead of a newline.
 
