@@ -74,7 +74,7 @@ find -type f ! -user cas
 
 ### Difference between `-exec` variants
 
-With `-exec ls '{} \;'` the `ls` command is executed for each file, so:
+With `-exec ls '{}' \;` the `ls` command is executed for each file, so:
 
 ```bash
 find -exec ls '{}' \;
@@ -136,5 +136,7 @@ find . -exec file '{}' \+ -print
 
 -mtime
 -atime9
+- newer
+-cmin
 
 
