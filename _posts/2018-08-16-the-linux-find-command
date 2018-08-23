@@ -45,6 +45,10 @@ $ find /usr/bin -name "cat"
 find  -type [bcdflps]
 ```
 
+### Limiting the search depth
+
+To limit the number of levels of subdirs searched, use `-maxdepth <n>`.
+
 ## Some examples
 
 Find all non-hidden directories in current dir:
@@ -140,6 +144,8 @@ find . -size -2G
 
 ### Permissions
 
+
+
 - -perm 777
 - -perm /u=s
 - -perm 644 exactly
@@ -148,9 +154,12 @@ find . -size -2G
 
 ### Access and modification
 
--mtime
--atime9
-- newer
+-mtime <n>, modified n*24 hours ago
+-atime <n>, accessed n*24 hours ago-
+-anewer <file>, accessed more recently than file was modified
+-cnewer <file>, status was changed more recently than file was modfied
+-newer <file>, modified more recently than file.
+
 -cmin
 
 
