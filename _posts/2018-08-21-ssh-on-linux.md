@@ -88,6 +88,7 @@ $ ssh-keygen -a 100 -t ed25519
 ```
 
 Default: The private key is `id_ed25519` and the public key is `id_ed25519.pub`, both located in ~/.ssh/.  Use `-f <name>` option to create and name keys for different purposes.
+
 Enter a passphrase to protect your private key, in case it ends up in the wrong hands.
 
 2) Copy SSH key to other machines:
@@ -98,7 +99,7 @@ Enter a passphrase to protect your private key, in case it ends up in the wrong 
 
 Use `-i <name>.pub` to copy a specific public key.
 
-3) (Optional) Disallow password logins
+3) Disallow password logins (Optional):
 
 Change `/etc/ssh/sshd_config`:
 
