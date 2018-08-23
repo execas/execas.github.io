@@ -9,7 +9,7 @@ The `find` command is a very powerful command line tool to search for files in a
 
 ## Basic usage
 
-Find file or directory named 'query' in the current directory:
+Find file or directory named 'query' in the current dir or subdirs:
 
 ```bash
 $ find -name "query"
@@ -24,7 +24,7 @@ $ find -iname "query"
 ./query
 ./Query
 ```
-Find a file or directory named 'cat' in `/usr/bin`.
+Find a file or directory named 'cat' in `/usr/bin` or subdirs.
 
 ```bash
 $ find /usr/bin -name "cat"
@@ -45,7 +45,7 @@ $ find /usr/bin -name "cat"
 find  -type [bcdflps]
 ```
 
-## Advanced examples
+## Some examples
 
 Find all non-hidden directories in current dir:
 
@@ -66,7 +66,7 @@ Delete all empty txt files:
 find -type f -empty -name "*.txt" -exec rm -f '{}' \;
 ```
 
-Find all files *not* belonging to a user:
+Find all files *not* belonging to a specific user:
 
 ```bash
 find -type f ! -user cas
@@ -95,19 +95,19 @@ The `-exec ls '{}' \+` is more efficient as a lot of filenames are supplied as a
 ls a.txt b.txt c.txt ...
 ```
 
-`-ok` is like the above, but does not support `\+`. User is asked before command execution for each match.
+An alternative is to use `xargs`, which is similar to `-exec ls '{}' \+`:
+
+```bash
+$ find . -name "*.txt" | xargs cat
+```
+
+`-ok` does not support `\+`. User is asked before command execution for each match.
 
 ```bash
 find -ok rm -f '{}' \;
 ```
 
 The `-execdir` option has the same choice of postfix (`\;` or `\+`), and works the same as `-exec` execept that the command is executed from the subdirectory containing the matched file. There is also an `-okdir`.
-
-An alternative is to use `xargs`, which is similar to -exec results as the:
-
-```bash
-$ find . -name "*.txt" | xargs cat
-```
 
 
 ### Print
@@ -126,8 +126,17 @@ find . -exec file '{}' \+ -print
 
 ### Size
 
-- -size +2M
-- -size -2M
+Find files above 2 mB:
+
+```
+find . -size +2M
+```
+
+Find files below 2 gB:
+
+```
+find . -size -2G
+```
 
 ### Permissions
 
