@@ -1,0 +1,19 @@
+---
+layout: post
+title: Access, modify and change in Linux
+date: 2018-08-23
+tags: [linux,security]
+---
+
+Files and dirs have three timestamps in Linux: Access, modify and change.
+These are often referred to as `atime`, `mtime` and `ctime`.
+
+All ofte these timestamps can be read with
+
+```
+$ stat <file>
+```
+
+
+## atime
+
