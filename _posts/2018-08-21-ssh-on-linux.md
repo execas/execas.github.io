@@ -16,7 +16,7 @@ Connect to a remote system as current user:
 user@example.net's password:
 ```
 
-Connect to a remote system as a specified system:
+Connect to a remote system as a specified user:
 
 ```bash
 [user@example.com:~]$ ssh henry@example.net
