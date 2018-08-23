@@ -154,8 +154,13 @@ find . -size -2G
 
 ### Access and modification
 
+Access - opened, for reading or writing
+Modify - content modified
+Change - metadata modified
+
 -mtime <n>, modified n*24 hours ago
--atime <n>, accessed n*24 hours ago-
+-atime <n>, accessed n*24 hours ago
+-ctime <n>, changed n*24 hours ago
 -anewer <file>, accessed more recently than file was modified
 -cnewer <file>, status was changed more recently than file was modfied
 -newer <file>, modified more recently than file.
