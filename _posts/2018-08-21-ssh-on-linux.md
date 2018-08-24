@@ -63,19 +63,19 @@ henry@example.net's password:
 
 ## SSH configuration
 
-The configuration files for ssh is `/etc/ssh/sshd_config` and `/etc/ssh/ssh_config`.
+The configuration files for SSH is `/etc/ssh/sshd_config` and `/etc/ssh/ssh_config`.
 
 ### Root login
 
-Uncomment the below in `sshd_config` to allow for root login over ssh:
+Uncomment the below in `sshd_config` to allow for root login over SSH:
 
 ```
 #PermitRootLogin yes
 ```
 
-Restart the ssh service.
+Restart the `sshd` service.
 
-A much better choice is to not allow root to login over ssh, and instead only allow regular users to gain extended priveleges through `sudo`.
+A much better choice is to not allow root to login over SSH, and instead only allow regular users to gain extended priveleges through `sudo`.
 
 ### Passwords
 
@@ -107,5 +107,5 @@ Change `/etc/ssh/sshd_config`:
 PasswordAuthentication no
 ```
 
-Restart the ssh service.
+Restart the `sshd` service.
 
