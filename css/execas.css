@@ -224,6 +224,10 @@ END: postinfo
      
 }
 
+.post strong {
+     color:#707070;
+}
+
 .post h3 {
      color: #707070;
      margin-top:2rem;
