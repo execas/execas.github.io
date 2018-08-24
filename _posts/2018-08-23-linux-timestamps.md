@@ -44,9 +44,9 @@ Opening the file for reading or writing will update `atime`.
 
 Example commands that will change `atime`:
 
-    - grep
-    - vim
-    - less
+- grep
+- vim
+- less
 
 ### ctime
 
@@ -64,9 +64,9 @@ Changing the file's metadata will update `ctime`.
 
 Example commands that will change `atime`:
 
-    - mv
-    - chown
-    - chattr
+- mv
+- chown
+- chattr
 
 ### mtime
 
