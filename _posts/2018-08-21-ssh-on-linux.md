@@ -87,7 +87,7 @@ Passwords are easy to guess and easy to steal. A better option is to use SSH key
 $ ssh-keygen -a 100 -t ed25519
 ```
 
-Default: The private key is `id_ed25519` and the public key is `id_ed25519.pub`, both located in ~/.ssh/.  Use `-f <name>` option to create and name keys for different purposes.
+Default: The private key is `id_ed25519` and the public key is `id_ed25519.pub`, both located in `~/.ssh/`.  Use `-f <name>` option to create and name keys for different purposes.
 
 Enter a passphrase to protect your private key, in case it ends up in the wrong hands.
 
