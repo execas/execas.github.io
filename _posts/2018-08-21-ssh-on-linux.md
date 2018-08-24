@@ -109,9 +109,3 @@ PasswordAuthentication no
 
 Restart the ssh service.
 
-
-
-
-> foo
-> foo
-
