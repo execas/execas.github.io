@@ -81,7 +81,7 @@ A much better choice is to not allow root to login over ssh, and instead only al
 
 Passwords are easy to guess and easy to steal. A better option is to use SSH keys for authentication.
 
-1) Create SSH key on your machine:
+**1) Create SSH key on your machine:**
 
 ```bash
 $ ssh-keygen -a 100 -t ed25519
@@ -91,7 +91,7 @@ Default: The private key is `id_ed25519` and the public key is `id_ed25519.pub`,
 
 Enter a passphrase to protect your private key, in case it ends up in the wrong hands.
 
-2) Copy SSH key to other machines:
+**2) Copy SSH key to other machines:**
 
 ```bash
 [user@example.com:~]$ $ ssh-copy-id user@example.org
@@ -99,7 +99,7 @@ Enter a passphrase to protect your private key, in case it ends up in the wrong 
 
 Use `-i <name>.pub` to copy a specific public key.
 
-3) Disallow password logins (optional):
+**3) Disallow password logins (optional):**
 
 Change `/etc/ssh/sshd_config`:
 
