@@ -216,7 +216,7 @@ END: postinfo
      color: #d33682;
      font-size: 1.7rem;
      margin-top: 2rem;
-     margin-bottom:2rem;
+     margin-bottom:1rem;
 }
 
 .post h2 code {
@@ -231,6 +231,6 @@ END: postinfo
 .post h3 {
      color: #707070;
      margin-top:2rem;
-     margin-bottom:2rem;
+     margin-bottom:1rem;
 
 }
