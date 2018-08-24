@@ -39,12 +39,13 @@ pre code {
      font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
      font-size:14px;
      border-style: none;
+     color:#000000;
      background-color: #f6f8fa;
 }
 code {
      background-color: #fefefe;
      color:#d33682;
-     font-size:12px;
+     font-size:14px;
      border-width: 1px;
      border-style: solid;
      border-color: #eeeeee
