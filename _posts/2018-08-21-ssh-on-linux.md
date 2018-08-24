@@ -99,7 +99,7 @@ Enter a passphrase to protect your private key, in case it ends up in the wrong 
 
 Use `-i <name>.pub` to copy a specific public key.
 
-3) Disallow password logins (Optional):
+3) Disallow password logins (optional):
 
 Change `/etc/ssh/sshd_config`:
 
@@ -112,5 +112,6 @@ Restart the ssh service.
 
 
 
-
+> foo
+> foo
 
