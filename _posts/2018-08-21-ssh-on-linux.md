@@ -57,7 +57,7 @@ phil@example.org's password:
 Use `-r` to copy directories with files and subdirectories:
 
 ```bash
-[user@example.com:~]$ scp r henry@example.net:myfolder .
+[user@example.com:~]$ scp -r henry@example.net:myfolder .
 henry@example.net's password:
 ```
 
