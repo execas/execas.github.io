@@ -134,6 +134,8 @@ Modify: 2018-01-06 18:30:09
 Change: 2018-08-23 22:28:49
 ```
 
+Notice how `mtime` is set manually, while `ctime` is updated to the current time.
+
 ### `ctime` only
 
 Change system time as root, then change the file, e.g. with `touch`.
