@@ -39,7 +39,7 @@ Modify: 2018-08-23 21:11:16
 Change: 2018-08-23 21:11:16
 ```
 
-Notice how the only the access time stamp has changed.
+Notice how only the access time stamp has changed.
 Opening the file for reading or writing will update `atime`.
 
 Example commands that will change `atime`:
