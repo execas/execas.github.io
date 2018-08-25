@@ -25,9 +25,9 @@ Note that for the newly created file, all timestamps are equal.
 
 ## Updating time stamps
 
-`touch` will update all timestamps to the current time.
+`touch` will update **all** timestamps to the current time.
 
-### atime
+### Updating `atime`
 
 ```bash
 $ cat foo
@@ -48,7 +48,7 @@ Example commands that will change `atime`:
 - vim
 - less
 
-### ctime
+### Updating `ctime`
 
 ```bash
 $ chmod 700 foo
@@ -68,7 +68,7 @@ Example commands that will change `atime`:
 - chown
 - chattr
 
-### mtime
+### Updating `mtime`
 
 ```bash
 $ echo "hello" > foo
