@@ -5,7 +5,7 @@ date: 2018-08-23
 tags: [linux,security]
 ---
 
-Files and dirs have three timestamps in Linux: Access, change and modify.
+Files and dirs have three timestamps in Linux: *Access*, *Change* and *Modify*.
 These are often referred to as `atime`, `ctime` and `mtime`.
 
 
@@ -39,10 +39,10 @@ Modify: 2018-08-23 21:11:16
 Change: 2018-08-23 21:11:16
 ```
 
-Notice how only the access time stamp has changed.
+Notice how only the *access* time stamp has been updated.
 Opening the file for reading or writing will update `atime`.
 
-Example commands that will change `atime`:
+Example commands that will update `atime`:
 
 - grep
 - vim
@@ -59,10 +59,10 @@ Modify: 2018-08-23 21:11:16
 Change: 2018-08-23 21:13:56
 ```
 
-Notice how only the change time stamp has changed.
+Notice how only the *change* time stamp has been updated.
 Changing the file's metadata will update `ctime`.
 
-Example commands that will change `atime`:
+Example commands that will update `atime`:
 
 - mv
 - chown
@@ -79,7 +79,7 @@ Modify: 2018-08-23 21:15:16
 Change: 2018-08-23 21:15:16
 ```
 
-Notice how both the modify and the change time stamps have been updated.
+Notice how both the *modify* and the *change* time stamps have been updated.
 Modifying the file's contents will update `mtime` and `ctime`.
 
 ## Manually setting time stamps
