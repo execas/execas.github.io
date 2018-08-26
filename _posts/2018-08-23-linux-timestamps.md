@@ -49,6 +49,7 @@ Example commands that will update `atime`:
 - less
 
 > If the filesystem is mounted with `defaults`, `relatime` is used.
+>
 > With `relatime`, `atime` will update on access if its value is earlier than `mtime` and `ctime`, and also if the previous `atime` update was more than 24 hours ago.
 
 ### Updating `ctime`
