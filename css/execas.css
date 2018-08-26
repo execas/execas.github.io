@@ -49,11 +49,11 @@ blockquote {
 }
 
 blockquote code {
-     font-size: 12px;
+     font-size: 10px;
 }
 
 blockquote p {
-     font-size: 10px;
+     font-size: 12px;
 }
 
 pre code {
