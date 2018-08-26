@@ -36,6 +36,20 @@ pre {
      color:#000000;
      overflow: auto;
 }
+
+
+blockquote {
+     background-color: #f6f8fa;
+     margin-left:5px;
+     padding-left: 5px;
+     padding-bottom: 12px;
+     padding-top: 12px;
+     border-left: 5px solid #;
+     white-space: pre;
+     color:#d33682;
+     overflow: auto;
+}
+
 pre code {
      font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New;
      font-size:14px;
