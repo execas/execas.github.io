@@ -48,6 +48,10 @@ blockquote {
      color:#000000;
 }
 
+blockquote code {
+     font-size: 12px;
+}
+
 blockquote p {
      font-size: 12px;
 }
