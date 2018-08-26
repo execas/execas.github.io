@@ -48,6 +48,9 @@ Example commands that will update `atime`:
 - vim
 - less
 
+> If the filesystem is mounted with `defaults`, `relatime` is used.
+> With `relatime`, `atime` will update on access if its value is earlier than `mtime` and `ctime`, and also if the previous `atime` update was more than 24 hours ago.
+
 ### Updating `ctime`
 
 ```bash
@@ -81,6 +84,89 @@ Change: 2018-08-23 21:15:16
 
 Notice how both the *modify* and the *change* time stamps have been updated.
 Modifying the file's contents will update `mtime` and `ctime`.
+
+## Directory timestamps
+
+### Creating a directory
+
+```
+$ mkdir dir
+$ stat dir
+...
+Access: 2018-08-23 23:02:40
+Modify: 2018-08-23 23:02:40
+Change: 2018-08-23 23:02:40
+```
+
+### Creating a file in a directory
+
+```
+$ touch dir/foo
+$ stat dir
+...
+Access: 2018-08-23 23:02:40
+Modify: 2018-08-23 23:04:48
+Change: 2018-08-23 23:04:48
+```
+
+Notice that both `mtime` and `ctime` has changed.
+
+### Directory `atime`
+
+Create dir:
+
+```bash
+$ mkdir dir
+$ stat dir
+Access: 2018-08-23 23:05:00
+Modify: 2018-08-23 23:05:00
+Change: 2018-08-23 23:05:00
+```
+
+List dir:
+
+```bash
+$ ls
+$ stat dir
+Access: 2018-08-23 23:06:55
+Modify: 2018-08-23 23:05:00
+Change: 2018-08-23 23:05:00
+```
+
+`atime` is updated. List dir again:
+
+```bash
+$ ls
+$ stat dir
+Access: 2018-08-23 23:06:55
+Modify: 2018-08-23 23:05:00
+Change: 2018-08-23 23:05:00
+```
+
+`atime` is the same. Create a file:
+
+```bash
+$ touch dir/foo
+$ stat dir
+Access: 2018-08-23 23:06:55
+Modify: 2018-08-23 23:07:10
+Change: 2018-08-23 23:07:10
+```
+
+`ctime` and `mtime` is updated. List dir again:
+
+
+```bash
+$ ls dir
+$ stat dir
+Access: 2018-08-23 23:09:33
+Modify: 2018-08-23 23:07:10
+Change: 2018-08-23 23:07:10
+```
+
+`atime` is updated.
+
+
 
 ## Manually setting time stamps
 
