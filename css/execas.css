@@ -223,8 +223,7 @@ postinfo: title, date, tags
 }
 
 .post-date {
-     font-weight:bold;
-     color: #707070;
+        color: #000000;
 }
 .post-tag {
     padding: .2rem .2rem .2rem .2rem;
