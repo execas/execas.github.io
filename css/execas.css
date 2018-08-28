@@ -108,6 +108,7 @@ p {
 }
 
 .header {
+     margin-top:0;
      background-color:#ffffff;
      color: #dddddd;
      margin:0 auto;
