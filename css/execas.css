@@ -181,6 +181,7 @@ list of matching posts beneath tag name header
 }
 
 .tag-mark {
+    font-family: 'Inconsolata', monospace;
     font-size: 110%;
     color: #707070;
     font-style: italic;
