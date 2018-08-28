@@ -94,7 +94,7 @@ Enter a passphrase to protect your private key, in case it ends up in the wrong 
 **2) Copy SSH key to other machines:**
 
 ```bash
-[user@example.com:~]$ $ ssh-copy-id user@example.org
+[user@example.com:~]$ ssh-copy-id user@example.org
 ```
 
 Use `-i <name>.pub` to copy a specific public key.
