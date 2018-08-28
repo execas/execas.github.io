@@ -247,6 +247,8 @@ END: postinfo
      font-size: 1.9rem;
      margin-top: 2rem;
      margin-bottom:1rem;
+     width: 90%;
+     border-bottom: 1px solid #ccc;
 }
 
 .post h2 code {
