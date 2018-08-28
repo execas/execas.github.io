@@ -38,7 +38,7 @@ pre {
      white-space: pre;
      color:#000000;
      overflow: auto;
-     border-radius: 1px 5px 5px 1px;     
+     border-radius: 5px 5px 5px 5px;     
 
 }
 
@@ -51,6 +51,8 @@ blockquote {
      padding-top: 2px;
      border: 1px dotted #ccc;
      color:#000000;
+     border-radius: 5px 5px 5px 5px;     
+
 }
 
 blockquote code {
