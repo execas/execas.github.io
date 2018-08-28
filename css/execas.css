@@ -35,7 +35,7 @@ pre {
      padding-top: 12px;
      border: 1px solid #ccc;
      border-left: 4px solid #707070;
-     white-space: pre;
+     white-space: normal;
      color:#000000;
      overflow: auto;
      border-radius: 0px 5px 5px 0px;     
@@ -54,7 +54,7 @@ blockquote {
 }
 
 blockquote code {
-     font-size: 10px;
+     font-size: 11px;
 }
 
 blockquote p {
@@ -64,6 +64,7 @@ blockquote p {
 pre code {
      font-family: 'Inconsolata', monospace;
      border-style: none;
+     whitespace: pre;
      color:#000000;
      background-color: #f6f8fa;
 }
