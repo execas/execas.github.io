@@ -226,10 +226,10 @@ postinfo: title, date, tags
         color: #000000;
 }
 .post-tag {
-    padding: .2rem .2rem .2rem .2rem;
+    padding: .2rem .1rem .1rem .2rem;
     font-size: 80%;
     border-radius: 3px;   
-    background: #f8f8ff;
+    background: #f5f5f5;
     color: #000000;
     border: 1px solid #707070
 }
