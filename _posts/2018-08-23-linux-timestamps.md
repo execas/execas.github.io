@@ -42,15 +42,16 @@ Change: 2018-08-23 21:11:16
 Notice how only the *access* time stamp has been updated.
 Opening the file for reading or writing will update `atime`.
 
+
+> If the filesystem is mounted with `defaults`, `relatime` is used.
+>
+> With `relatime`, `atime` will update on access if its value is less than or equal to `mtime` and `ctime`, and also if the previous `atime` update was more than 24 hours ago.
+
 Example commands that will update `atime`:
 
 - grep
 - vim
 - less
-
-> If the filesystem is mounted with `defaults`, `relatime` is used.
->
-> With `relatime`, `atime` will update on access if its value is less than or equal to `mtime` and `ctime`, and also if the previous `atime` update was more than 24 hours ago.
 
 ### Updating `ctime`
 
