@@ -247,8 +247,9 @@ END: postinfo
      font-size: 1.9rem;
      margin-top: 2rem;
      margin-bottom:1rem;
+     padding-bottom: 10px;
      width: 90%;
-     border-bottom: 1px solid #ccc;
+     border-bottom: 1px solid #f5f5f5;
 }
 
 .post h2 code {
