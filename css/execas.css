@@ -227,7 +227,7 @@ postinfo: title, date, tags
         color: #000000;
 }
 .post-tag {
-    padding: .1rem .2rem .2rem .1rem;
+    padding: .1rem .2rem .1rem .2rem;
     font-size: 80%;
     border-radius: 3px;   
     background: #f5f5f5;
