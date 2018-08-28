@@ -226,7 +226,7 @@ postinfo: title, date, tags
 .post-date {
         color: #000000;
          margin-right: 12px;
-     font-size: 16px;
+     font-size: 12px;
 }
 .post-tag {
     padding: .1rem .2rem .1rem .2rem;
