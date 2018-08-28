@@ -35,7 +35,7 @@ pre {
      padding-top: 12px;
      border: 1px solid #ccc;
      border-left: 4px solid #707070;
-     white-space: normal;
+     white-space: pre;
      color:#000000;
      overflow: auto;
      border-radius: 0px 5px 5px 0px;     
@@ -70,7 +70,7 @@ pre code {
 }
 code {
      background-color: #fefefe;
-     whitespace:pre;
+     whitespace:normal;
      color:#d33682;
      font-size:14px;
      border-width: 1px;
