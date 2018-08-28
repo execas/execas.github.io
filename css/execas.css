@@ -62,7 +62,7 @@ blockquote p {
 }
 
 pre code {
-     font-family: "Source Code Pro",Menlo,Monaco,Consolas,"Courier New",monospace font-size:14px;
+     font-family: 'Inconsolata', monospace;
      border-style: none;
      color:#000000;
      background-color: #f6f8fa;
