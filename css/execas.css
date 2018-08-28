@@ -257,6 +257,7 @@ END: postinfo
 
 .post h2 code {
      font-size: 2rem;
+     font-weight:normal;
      
 }
 
@@ -274,5 +275,6 @@ END: postinfo
 
 .post h3 code {
      font-size: 1.2rem;
+     font-weight:normal;
      
 }
