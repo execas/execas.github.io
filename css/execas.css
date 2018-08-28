@@ -74,6 +74,7 @@ code {
      font-size:14px;
      border-width: 1px;
      border-style: solid;
+     border-radius:5px;
      border-color: #eeeeee
 }
 
