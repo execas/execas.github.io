@@ -109,7 +109,7 @@ p {
 
 .header {
      background-color:#ffffff;
-     color: #707070;
+     color: #dddddd;
      margin:0 auto;
      max-width: 720px;
      padding: 10px 13px 0px 0px;
@@ -121,7 +121,7 @@ p {
 .header h1 {
      font-size: 3rem;
      margin-right: 3rem;
-     color: #cc6600;
+     color: #000000;
      display: inline;
      margin-top: 0px;
      margin-bottom:0px;
