@@ -70,6 +70,7 @@ pre code {
 }
 code {
      background-color: #fefefe;
+     whitespace:pre;
      color:#d33682;
      font-size:14px;
      border-width: 1px;
