@@ -154,7 +154,7 @@ Modify: 2018-08-23 23:07:10
 Change: 2018-08-23 23:07:10
 ```
 
-`ctime` and `mtime` is updated. List dir again:
+`ctime` and `mtime` are updated. List dir again:
 
 
 ```bash
