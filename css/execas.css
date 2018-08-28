@@ -67,6 +67,9 @@ pre code {
      whitespace: pre;
      color:#000000;
      background-color: #f6f8fa;
+     border-width: 0px;
+     border-radius:0px;
+     padding:0;
 }
 code {
      background-color: #fefefe;
