@@ -160,6 +160,7 @@ list of matching posts beneath tag name header
 }
 .tag-posts li small {
     font-size: 60%;
+    margin-right: 3px;
     color: #999;
 }
 
