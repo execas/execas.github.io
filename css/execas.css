@@ -111,8 +111,8 @@ p {
      color: #f8f8ff;
      margin:0 auto;
      max-width: 720px;
-     padding: 10px 13px 10px 0px;
-     border: 2px solid #ffffff;
+     padding: 10px 13px 0px 0px;
+     /*border: 2px solid #ffffff;*/
      border-bottom: 1px solid #000000;
      /*border-radius: 0px 30px 0px 0px;     */
 }
