@@ -84,7 +84,7 @@ The console can be installed on multiple machines, Windows or Linux.
 $ /opt/f-secure/fspmc/fspmc
 ```
 
-The default username is `admin`
+The default username is `admin`.
 
 ### Admin guide
 
