@@ -11,7 +11,7 @@ tags: [linux, security]
 
 Download RPM's for **Policy Manager Server** and **Policy Manager Console** here:
 
-https://www.f-secure.com/en/web/business_global/downloads/policy-manager-for-linux
+<https://www.f-secure.com/en/web/business_global/downloads/policy-manager-for-linux>
 
 >**Note:** The software requires and includes the Java™ Runtime Environment (JRE). 
 
@@ -88,7 +88,7 @@ The default username is `admin`
 
 ### Admin guide
 
-https://help.f-secure.com/product.html#business/policy-manager/13.10/en
+<https://help.f-secure.com/product.html#business/policy-manager/13.10/en>
 
 
 
