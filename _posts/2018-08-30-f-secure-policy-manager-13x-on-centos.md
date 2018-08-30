@@ -88,7 +88,7 @@ The default username is `admin`.
 
 ### Admin guide
 
-<https://help.f-secure.com/product.html#business/policy-manager/13.10/en>
+<https://help.f-secure.com/product.html#business/policy-manager/13.10/en/concept_5C26F4BF4D3149F5A17056AAE157EB68-13.10-en>
 
 
 
