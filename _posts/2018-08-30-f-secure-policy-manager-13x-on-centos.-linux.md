@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "F-Secure Policy Manager 13.x on CentOS"
+title: "F-Secure Policy Manager 13.x on CentOS Linux"
 date: 2018-08-30
 tags: [linux, security]
 ---
