@@ -13,7 +13,7 @@ Download RPM's for **Policy Manager Server** and **Policy Manager Console** here
 
 <https://www.f-secure.com/en/web/business_global/downloads/policy-manager-for-linux>
 
->**Note:** The software requires and includes the Java™ Runtime Environment (JRE). 
+>**Note:** The software requires and includes Java™ Runtime Environment (JRE). 
 
 
 ### F-Secure Policy Manager Server
