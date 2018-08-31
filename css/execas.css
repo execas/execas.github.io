@@ -291,16 +291,16 @@ END: postinfo
      
 }
 
-.post a {
+.post p a {
      font-size: 12px;
      color: #444444;
      text-decoration:underline;
 }
 
-.post a:visited {
+.post p a:visited {
      color: #444444;
 }
 
-.post a:hover {
+.post p a:hover {
      text-decoration:none;
 }
