@@ -288,3 +288,12 @@ END: postinfo
      font-weight:normal;
      
 }
+
+.post a {
+     font-size: 12px;
+     color: #444444;
+}
+
+.post a:visited {
+     color: #444444;
+}
