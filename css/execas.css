@@ -298,5 +298,8 @@ END: postinfo
 
 .post a:visited {
      color: #444444;
+}
+
+.post a:hover {
      text-decoration:none;
 }
