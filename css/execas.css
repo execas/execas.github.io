@@ -293,8 +293,10 @@ END: postinfo
 .post a {
      font-size: 12px;
      color: #444444;
+     text-decoration:underline;
 }
 
 .post a:visited {
      color: #444444;
+     text-decoration:none;
 }
