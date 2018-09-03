@@ -7,7 +7,7 @@ tags: [linux,security]
 
 ## Booting into emergency mode
 
-**Emergency mode** gives you root priveleges without a root password. We enter this mode to reset the root password.
+**Emergency mode** gives you root privileges without a root password. We enter this mode to reset the root password.
 
 ### Reboot
 
