@@ -39,7 +39,7 @@ Press `Ctrl-x` to boot into emegency mode.
 # passwd
 ```
 
-## SELinux relabel
+### SELinux relabel
 
 ```bash
 # touch /.autorelabel
@@ -48,3 +48,4 @@ Press `Ctrl-x` to boot into emegency mode.
 ## Reboot
 
 Press `Ctrl-d` to leave the `chroot jail`. Type `reboot` and press enter.
+The new password for `root` can now be used.
