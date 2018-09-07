@@ -24,7 +24,7 @@ $ find -iname "query"
 ./query
 ./Query
 ```
-Find a file or directory named 'cat' in `/usr/bin` or subdirs.
+Find a file or directory named 'cat' in `/usr/bin` or subdirs:
 
 ```bash
 $ find /usr/bin -name "cat"
@@ -107,7 +107,7 @@ An alternative is to use `xargs`, which is similar to `-exec ls '{}' \+`:
 $ find . -name "*.txt" | xargs cat
 ```
 
-`-ok` does not support `\+`. User is asked before command execution for each match.
+`-ok` does not support `\+`. User is asked before command execution for each match:
 
 ```bash
 $ find -ok rm -f '{}' \;
@@ -126,18 +126,3 @@ $ find . -exec file '{}' \+ -print
 ```
 
 `-print0` uses a null character instead of a newline.
-
-
-### Size
-
-Find files above 2 mB:
-
-```
-$ find . -size +2M
-```
-
-Find files below 2 gB:
-
-```
-$ find . -size -2G
-```
