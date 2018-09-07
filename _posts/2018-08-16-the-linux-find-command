@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Linux find command
-date: 2018-08-16
+date: 2018-09-7
 tags: [find, linux, tools]
 ---
 
@@ -47,7 +47,7 @@ find  -type [bcdflps]
 
 ### Limiting the search depth
 
-To limit the number of levels of subdirs searched, use `-maxdepth <n>`.
+To limit the levels of subdirs searched, use `-maxdepth <n>`.
 
 ## Some examples
 
@@ -61,19 +61,19 @@ $ find -type d -maxdepth 1 ! -name ".*"
 Find SUID set files in root dir:
 
 ```bash
-find / -perm /u=s
+$ find / -perm /u=s
 ```
 
 Delete all empty txt files:
 
 ```bash
-find -type f -empty -name "*.txt" -exec rm -f '{}' \;
+$ find -type f -empty -name "*.txt" -exec rm -f '{}' \;
 ```
 
-Find all files *not* belonging to a specific user:
+Find all files **not** belonging to a specific user:
 
 ```bash
-find -type f ! -user cas
+$ find -type f ! -user cas
 ```
 
 ### The execute options
@@ -81,7 +81,7 @@ find -type f ! -user cas
 With `-exec ls '{}' \;` the `ls` command is executed for each file, so:
 
 ```bash
-find -exec ls '{}' \;
+$ find -exec ls '{}' \;
 ```
 
 will execute:
@@ -96,7 +96,7 @@ ls c.txt
 The `-exec ls '{}' \+` is more efficient as a lot of filenames are supplied as arguments to the command at once, preventing it being called once for each file:
 
 ```
-ls a.txt b.txt c.txt ...
+$ ls a.txt b.txt c.txt ...
 ```
 
 An alternative is to use `xargs`, which is similar to `-exec ls '{}' \+`:
@@ -108,7 +108,7 @@ $ find . -name "*.txt" | xargs cat
 `-ok` does not support `\+`. User is asked before command execution for each match.
 
 ```bash
-find -ok rm -f '{}' \;
+$ find -ok rm -f '{}' \;
 ```
 
 The `-execdir` option has the same choice of postfix (`\;` or `\+`), and works the same as `-exec` execept that the command is executed from the subdirectory containing the matched file. There is also an `-okdir`.
@@ -120,7 +120,7 @@ The `-execdir` option has the same choice of postfix (`\;` or `\+`), and works t
 When other actions are used, like for example `-exec`, matches are not printed, and `-print` must be explicitly specified.
 
 ```bash
-find . -exec file '{}' \+ -print
+$ find . -exec file '{}' \+ -print
 ```
 
 `-print0` uses a null character instead of a newline.
@@ -133,24 +133,64 @@ find . -exec file '{}' \+ -print
 Find files above 2 mB:
 
 ```
-find . -size +2M
+$ find . -size +2M
 ```
 
 Find files below 2 gB:
 
 ```
-find . -size -2G
+$ find . -size -2G
 ```
 
 ### Permissions
 
+```bash
+$ mkdir test; cd test
+$ touch 222 644 700 755 777
+$ chmod 222 222
+$ chmod 644 644
+$ chmod 700 700
+$ chmod 755 755
+$ chmod 777 777
+```
 
+Find files with permission exactly 777:
 
-- -perm 777
-- -perm /u=s
-- -perm 644 exactly
-- -perm -644 each is at least this
-- -perm /222  one of set to writeable (do not do 555, 777 and so on as this means r or w, and r or w or 5)
+```bash
+# find -perm 777
+./777
+```
+
+Find files where a specified somebody has a certain permission (possibly in addition to any other permissions):
+
+```bash
+$ find -perm /u=x
+./755
+./777
+./700
+$ find -perm /g=w
+./777
+./222
+```
+
+Find files with permissions **at least** 644 (*u* at least `read` and `write`, *g* and *o* at least `write`):
+
+```bash
+# find -perm -644
+./644
+./755
+./777
+```
+
+Find files where **any** of *u*, *g* or *o* are set to readable :
+
+```bash
+$ find -perm /444
+./644
+./755
+./777
+./700
+```
 
 ### Access and modification
 
