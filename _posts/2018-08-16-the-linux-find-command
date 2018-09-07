@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The Linux find command
-date: 2018-09-7
+date: 2018-09-07
 tags: [find, linux, tools]
 ---
 
@@ -176,7 +176,7 @@ $ find -perm /g=w
 Find files with permissions **at least** 644 (*u* at least `read` and `write`, *g* and *o* at least `write`):
 
 ```bash
-# find -perm -644
+$ find -perm -644
 ./644
 ./755
 ./777
@@ -198,11 +198,11 @@ Access - opened, for reading or writing
 Modify - content modified
 Change - metadata modified
 
--mtime <n>, modified n*24 hours ago
+-mtime <n>, modified in the last (<n>+1)*24 hours
 -atime <n>, accessed n*24 hours ago
--ctime <n>, changed n*24 hours ago
--anewer <file>, accessed more recently than file was modified
--cnewer <file>, status was changed more recently than file was modfied
+-ctime <n>, changed n*24 hours agoman
+-anewer <file>, accessed more recently than <file> was modified
+-cnewer <file>, status was changed more recently than <file> was modfied
 -newer <file>, modified more recently than file.
 
 -cmin
