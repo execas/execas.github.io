@@ -76,6 +76,8 @@ Find all files **not** belonging to a specific user:
 $ find -type f ! -user cas
 ```
 
+## Other important options
+
 ### The execute options
 
 With `-exec ls '{}' \;` the `ls` command is executed for each file, so:
@@ -126,8 +128,6 @@ $ find . -exec file '{}' \+ -print
 `-print0` uses a null character instead of a newline.
 
 
-## Other important options
-
 ### Size
 
 Find files above 2 mB:
@@ -141,70 +141,3 @@ Find files below 2 gB:
 ```
 $ find . -size -2G
 ```
-
-### Permissions
-
-```bash
-$ mkdir test; cd test
-$ touch 222 644 700 755 777
-$ chmod 222 222
-$ chmod 644 644
-$ chmod 700 700
-$ chmod 755 755
-$ chmod 777 777
-```
-
-Find files with permission exactly 777:
-
-```bash
-# find -perm 777
-./777
-```
-
-Find files where a specified somebody has a certain permission (possibly in addition to any other permissions):
-
-```bash
-$ find -perm /u=x
-./755
-./777
-./700
-$ find -perm /g=w
-./777
-./222
-```
-
-Find files with permissions **at least** 644 (*u* at least `read` and `write`, *g* and *o* at least `write`):
-
-```bash
-$ find -perm -644
-./644
-./755
-./777
-```
-
-Find files where **any** of *u*, *g* or *o* are set to readable :
-
-```bash
-$ find -perm /444
-./644
-./755
-./777
-./700
-```
-
-### Access and modification
-
-Access - opened, for reading or writing
-Modify - content modified
-Change - metadata modified
-
--mtime <n>, modified in the last (<n>+1)*24 hours
--atime <n>, accessed n*24 hours ago
--ctime <n>, changed n*24 hours agoman
--anewer <file>, accessed more recently than <file> was modified
--cnewer <file>, status was changed more recently than <file> was modfied
--newer <file>, modified more recently than file.
-
--cmin
-
-
