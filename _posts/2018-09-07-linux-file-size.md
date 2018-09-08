@@ -35,8 +35,10 @@ $ du -h
 Display the size of a specfied directory and subdirs:
 
 ```bash
-$ du /usr/bin
-115304   /usr/bin
+$ du /boot
+0      /boot/grub2
+4      /boot/grub
+249755 /boot/
 ```
 
 Display the human-readable size of the working directory and subdirs, with a total at the end:
@@ -48,7 +50,7 @@ $ du -hc
 1.1G total
 ```
 
-Display the total size of the working directory with subdirs:
+Display the total size of the working directory **with** subdirs:
 
 ```bash
 $ du -hs
