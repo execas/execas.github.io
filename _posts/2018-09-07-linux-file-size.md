@@ -64,12 +64,12 @@ The Linux `find` command's `-size` option an be used with the following units:
 
 |    |                                                           |
 |----|-----------------------------------------------------------|
-|b | 512-byte blocks (this is the default if no suffix is used)|
-|c | bytes
-|w | two-byte words
-|k | Kilobytes (units of 1024 bytes)
-|M | Megabytes (units of 1048576 bytes)
-|G | Gigabytes (units of 1073741824 bytes)
+|**b** | 512-byte blocks (this is the default if no suffix is used)
+|**c** | bytes
+|**w** | two-byte words
+|**k** | Kilobytes (units of 1024 bytes)
+|**M** | Megabytes (units of 1048576 bytes)
+|**G** | Gigabytes (units of 1073741824 bytes)
 
 Use `+`/`-` to select files above/below a specfied number of units.
 
