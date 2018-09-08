@@ -306,5 +306,13 @@ END: postinfo
 }
 
 .post table {
-     border: 1px solid #ccc
+     border: 1px solid #ccc;
+}
+
+.post td {
+     border: 1px solid #707070;
+}
+
+.post tr {
+     border: 1px solid #ccc;
 }
