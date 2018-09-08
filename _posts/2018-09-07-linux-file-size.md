@@ -8,7 +8,7 @@ tags: [linux, find]
 ## The size of things
 
 
-### `ls`
+### Size with `ls`
 
 List files, display total size and size of each file in human-readable format (`-h`):
 
@@ -22,7 +22,7 @@ drwxrwxr-x. 1 user user    6 Sep   6  19:54 sd
 -rw-rw-r--. 1 user user  50K Sep   6  19:49 xs
 ```
 
-### `du`
+### Size with `du`
 
 Display the size of the working directory and subdirs, human-readable format:
 
