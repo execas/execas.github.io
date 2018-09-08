@@ -60,7 +60,7 @@ $ du -hs
 
 ## Finding files based on size
 
-The Linux `find` command's `-size` option an be used with the following units:
+The Linux `find` command's `-size` option can be used with the following units:
 
 |    |                                                           |
 |----|-----------------------------------------------------------|
