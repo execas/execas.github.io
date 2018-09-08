@@ -307,6 +307,7 @@ END: postinfo
 
 .post table {
      border: 1px solid #ccc;
+     font-family: 'Inconsolata';
 }
 
 .post td {
