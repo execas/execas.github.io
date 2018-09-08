@@ -304,3 +304,7 @@ END: postinfo
 .post p a:hover {
      text-decoration:none;
 }
+
+.post table {
+     border: 1px solid #ccc
+}
