@@ -317,3 +317,7 @@ END: postinfo
 .post tr {
      border: 1px solid #ccc;
 }
+
+div:empty {
+   display: none;
+}
