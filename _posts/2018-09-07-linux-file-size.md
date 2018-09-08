@@ -71,7 +71,7 @@ The Linux `find` command's `-size` option an be used with the following units:
 |M | Megabytes (units of 1048576 bytes)
 |G | Gigabytes (units of 1073741824 bytes)
 
-
+Use `+`/`-` to select files above/below a specfied number of units.
 
 
 Find files above 2 mB:
