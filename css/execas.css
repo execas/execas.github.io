@@ -68,7 +68,8 @@ blockquote p {
 }
 
 pre code {
-     font-family: 'Inconsolata', monospace;
+     font-family: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
+     /*font-family: 'Inconsolata', monospace;*/
      border-style: none;
      whitespace: pre;
      color:#000000;
