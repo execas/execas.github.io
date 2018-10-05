@@ -60,7 +60,7 @@ blockquote {
 }
 
 blockquote code {
-     font-size: 12px;
+     padding:0px 1px;
 }
 
 blockquote p {
