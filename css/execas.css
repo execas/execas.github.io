@@ -234,23 +234,20 @@ postinfo: title, date, tags
 }
 
 .post-date {
-        color: #000000;
-         margin-right: 12px;
+     color: #000000;
+     margin-right: 12px;
      margin-left: 12px;
      font-size: 12px;
 }
 .post-tag {
     padding: .1rem .2rem .1rem .2rem;
     font-size: 80%;
-    border-radius: 3px;   
-    background: #fcfcfc;
-    color: #000000;
+    color: #707070;
     /*border: 1px solid #ccc;*/
     text-decoration: none;
 }
 
 .post-tag:hover {
-    background-color: #ffffff;
     color: #000000;
     text-decoration: none;
 }
