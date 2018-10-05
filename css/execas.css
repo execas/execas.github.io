@@ -60,7 +60,7 @@ blockquote {
 }
 
 blockquote code {
-     font-size: 11px;
+     font-size: 10px;
 }
 
 blockquote p {
@@ -73,6 +73,7 @@ pre code {
      border-style: none;
      whitespace: pre;
      color:#000000;
+     font-size:14px;
      background-color: #f6f8fa;
      border-width: 0px;
      border-radius:0px;
