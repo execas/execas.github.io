@@ -83,12 +83,12 @@ code {
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
      color:#000000;
-     font-size:14px;
+     font-size:12px;
      border-width: 1px;
      border-style: solid;
      border-radius:5px;
      border-color: #eeeeee;
-     padding:1px 3px;
+     padding:1px 2px;
 }
 
 h1,h2,h3,h4,h5,h6 {
