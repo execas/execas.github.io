@@ -45,7 +45,7 @@ Opening the file for reading or writing will update `atime`.
 
 > If the filesystem is mounted with `defaults`, `relatime` is used.
 >
-> With `relatime`, `atime` will update on access if its value is less than or equal to `mtime` and `ctime`, and also if the previous `atime` update was more than 24 hours ago.
+> With `relatime`, `atime` will update on access if the file has been modified or changed after it was last accessed, or if the previous `atime` update was more than 24 hours ago.
 
 Example commands that will update `atime`:
 
