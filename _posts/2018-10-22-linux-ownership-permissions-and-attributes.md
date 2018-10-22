@@ -45,7 +45,6 @@ Changing ownership and group ownership:
 Permissions decide who can read, write and execute a file or directory.
 
 ```bash
-```bash
 [user:~]$ touch foo
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:56 foo
