@@ -195,7 +195,7 @@ Special file attributes extend the
 Add special file attributes with `+`:
 
 ```bash
-chattr +i /etc/fstab
+# chattr +i /etc/fstab
 ```
 
 Remove special file attributes with `-`:
