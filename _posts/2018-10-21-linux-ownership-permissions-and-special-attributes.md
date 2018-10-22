@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux ownership, permissions and special attributes
-date: 2018-10-22
+date: 2018-10-21
 tags: [linux,security]
 ---
 
