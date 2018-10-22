@@ -118,8 +118,8 @@ As seen above, when `chmod` is supplied with three digits, these represent the p
 The value of each digit can be 0-7, and the meaning of the value is easily decoded once you understand and remember the following:
 
 
-|value | permission
-|------|-----------
+|value | permission |
+|------|------------|
 |4 | read |
 |2 | write |
 |1 | execute |
@@ -127,8 +127,8 @@ The value of each digit can be 0-7, and the meaning of the value is easily decod
 
 Now, the remaining possible values are just combinations of the above:
 
-|value | permission
-|------|-----------
+|value | permission |
+|------|------------|
 |7 | rwx (4+2+1) |
 |6 | rw (4+2) |
 |5 | rx (4+1) |
@@ -137,8 +137,8 @@ Now, the remaining possible values are just combinations of the above:
 
 When `chmod` is supplied with four digits, the first digit represent *sticky*, *SGID* or *SUID* (or a combination of these), while the rest of the digits still represent owner, group and others.
 
-|value | permission
-|------|-----------
+|value | permission |
+|------|------------|
 |4 | suid |
 |2 | sgid |
 |1 | sticky bit |
