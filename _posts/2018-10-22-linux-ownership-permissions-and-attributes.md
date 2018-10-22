@@ -90,7 +90,7 @@ Multiple permissions can be specifed in one line:
 
 Use `+` to add, `-` to remove and `=` to set explicitly.
 
-** File mode bits **
+**File mode bits**
 
 | bit | files | directories |
 |-----|-------|-------------|
