@@ -149,7 +149,7 @@ When `chmod` is supplied with four digits, the first digit represent *sticky*, *
 
 The user file-creation mask (`umask`) is set in `/etc/bashrc` or `/etc/profile`, but users can override default umask in `~/.bashrc` or `~/.bash_profile`.
 
-The current mode can be seen using:
+The current mask can be seen using:
 
 ```bash
 $ umask
@@ -187,8 +187,6 @@ $ ls -l foo
 ```
 
 ## Special file attributes
-
-Special file attributes extend the
 
 ### Changing special file attributes
 
