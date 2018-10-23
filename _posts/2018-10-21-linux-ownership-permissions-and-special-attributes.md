@@ -15,7 +15,9 @@ A file or folder has an *owner* and a *group owner*:
 -rw-rw-r--. 1 user user Sep 5 18:50 foo
 ```
 
-### chown and chgrp
+In the example above, the "user" (left) is the owner and "user" (right) is the group owner.
+
+### Changing ownership
 
 Ownership can be changed by using the `chown` command:
 
@@ -23,15 +25,15 @@ Ownership can be changed by using the `chown` command:
 [user:~]$ chown henry foo
 ```
 
-Changing group ownership:
+Group ownership can be changed using the `chgrp` command:
 
 ```bash
 [henry:~]$ chgrp lawyers foo
 ```
 
-Or use `chown .<group> <file>`.
+Or by using `chown .<group> <file>`.
 
-Changing ownership and group ownership:
+To change both ownership and group ownership, use:
 
 ```bash
 [henry:~]$ chown user.lawyers foo
@@ -54,10 +56,10 @@ The permissions (first) column has the following format:
 
 |    |                             |
 |----|-----------------------------|
-|-/d | file/directory              |
-|--- | permissions for owner       |
-|--- | permissions for group owner |
-|--- | permissions for other users |
+|`-`/`d` | file/directory              |
+|`---` | permissions for owner       |
+|`---` | permissions for group owner |
+|`---` | permissions for other users |
 
 In our example, the file can be read and written by owner and group owner, but only read by others.
 
