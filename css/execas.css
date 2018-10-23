@@ -336,8 +336,9 @@ ul li:before {
      border: 1px solid #ccc;
 }
 
-.post tr {
+.post th {
      border: 1px solid #ccc;
+     background-color: #eee;
 }     
 
 div:empty {
