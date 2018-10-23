@@ -101,7 +101,7 @@ Use `+` to add, `-` to remove and `=` to set explicitly.
 | r   | read  | list files in directory|
 | w   | write | create, delete and modify files in the directory|
 | x   | execute| go into the directory, access files and subdirs|
-| X   | keep `x` if it is already set | set `x`(in combination with the `-R` option, subdirectories can be given execute permissions witout simultaneously setting execute permissions on files)|
+| X   | keep `x` if it is already set | set `x`(when bit is used in combination with the `-R` option, subdirectories can be given execute permissions without simultaneously setting execute permissions on files)|
 | s   | set user or group ID on execution| only `g+s` (SGID) has effect |
 | t   | "sticky bit", ignored by kernel in modern systems | only root, file owner or directory owner can delete and rename files in the directory |
 
