@@ -82,11 +82,13 @@ Multiple permissions can be specifed in one line:
 
 **User flags**
 
-- `u` : (user) owner
-- `g` : group owner
-- `o` : others
-- `a` : all the above
-- `<blank>` : same as `a`, but respect `umask`
+|flag | meaning |
+|:---:|---------|
+| `u` | (user) owner|
+| `g` | group owner|
+| `o` | others|
+| `a` | all the above|
+| `<blank>` | same as `a`, but respect `umask`|
 
 **Operators**
 
@@ -94,7 +96,7 @@ Use `+` to add, `-` to remove and `=` to set explicitly.
 
 **File mode bits**
 
-| bit | files | directories |
+| bit | effect on files | effect on directories |
 |:---:|-------|-------------|
 | r   | read  | list files in directory|
 | w   | write | create, delete and modify files in the directory|
