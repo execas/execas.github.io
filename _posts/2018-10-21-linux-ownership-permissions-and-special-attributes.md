@@ -88,7 +88,7 @@ Multiple permissions can be specifed in one line:
 | g | group owner|
 | o | others|
 | a | all the above|
-| <blank> | same as `a`, but respect `umask`|
+| < blank > | same as `a`, but respect `umask`|
 
 **Operators**
 
