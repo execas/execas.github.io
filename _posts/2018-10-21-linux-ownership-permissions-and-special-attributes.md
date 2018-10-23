@@ -54,7 +54,7 @@ Permissions decide who can read, write and execute a file or directory.
 
 The permissions (first) column has the following format:
 
-|-/d|- - -|- - -|- - -| 
+|- / d|- - -|- - -|- - -| 
 |:-----:|:---:|:---:|:---:|
 |file/dir| permissions for owner| permissions for group owner |permissions for other users |
 
