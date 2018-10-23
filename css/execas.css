@@ -259,7 +259,7 @@ END: postinfo
 }
 
 /* from https://codepen.io/andresdhn/pen/meNwoy */
-ul li:before {
+.post ul li:before {
   content: '\2014';
   position: absolute;
   margin-left: -15px;
