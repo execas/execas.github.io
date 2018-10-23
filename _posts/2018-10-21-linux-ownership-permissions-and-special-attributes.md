@@ -54,12 +54,9 @@ Permissions decide who can read, write and execute a file or directory.
 
 The permissions (first) column has the following format:
 
-|     |                             |
-|:--:|-----------------------------|
-|`-`/`d` | file/directory              |
-|`---` | permissions for owner       |
-|`---` | permissions for group owner |
-|`---` | permissions for other users |
+|`-`/`d`|`---`|`---`|`---`| 
+|:-----:|:---:|:---:|:---:|
+|file/dir|| permissions for owner| permissions for group owner |permissions for other users |
 
 In our example, the file can be read and written by owner and group owner, but only read by others.
 
@@ -171,8 +168,8 @@ Before the value of `umask` is applied, the following is the default:
 - 777 is the default permission for dirs
 - 666 is the default permission for files
 
-User accounts with UID 200 and *below* have a default `umask` of 002 (o-w, so files will be 664 and dirs 775).
-User accounts with UID *below* 200 have a default `umask` of 022 (go-w, so files will be 644 and dirs 755).
+User accounts with UID 200 and above have a default `umask` of 002 (`o-w`, so files will be 664 and dirs 775).
+User accounts with UID below 200 have a default `umask` of 022 (`go-w`, so files will be 644 and dirs 755).
 
 ```bash
 $ umask
