@@ -64,6 +64,7 @@ blockquote code {
 
 blockquote p {
      font-size: 14px;
+     line-height: 1.3em;
 }
 
 pre code {
