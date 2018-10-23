@@ -320,7 +320,6 @@ END: postinfo
 .post table {
      border-collapse: collapse;
      border: 1px solid #ccc;
-     font-family: 'Inconsolata';
      width: 100%;
 }
 
