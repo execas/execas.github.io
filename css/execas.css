@@ -47,12 +47,11 @@ pre {
 
 blockquote {
      background-color: #ffffff;
-     width: 100%;
+     width: 90%;
      margin-left:0px;
      padding-left: 5px;
      padding-right: 10px;
-     border: 1px dotted black;
-     border-left:4px solid #eee;
+     border-left:4px solid #f6f8fa;
      color:#000000;
 
 }
