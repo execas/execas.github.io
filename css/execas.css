@@ -326,13 +326,13 @@ ul li:before {
 
 .post td {
      padding: 4px;
+     padding-left: 10px;
+     padding-right: 10px;
      border: 1px solid #ccc;
 }
 
 .post tr {
      border: 1px solid #ccc;
-     padding-left: 5px;
-     padding-right: 5px;
 }
 
 div:empty {
