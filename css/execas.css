@@ -255,6 +255,16 @@ postinfo: title, date, tags
 END: postinfo
 */
 
+.post ul {
+     list-style-type:none;
+}
+
+/* from https://codepen.io/andresdhn/pen/meNwoy */
+ul li:before {
+  content: '\2014';
+  position: absolute;
+  margin-left: -15px;
+}
      
 .post h2 {
      color: #d33682;
@@ -311,6 +321,7 @@ END: postinfo
 
 .post td {
      padding: 4px;
+     border: 1px solid #ccc;
 }
 
 .post tr {
