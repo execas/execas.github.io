@@ -139,7 +139,7 @@ Now, the remaining possible values are just combinations of the above:
 |3 | wx (2+1) |
 
 
-When `chmod` is supplied with four digits, the first digit represent *sticky*, *SGID* or *SUID* (or a combination of these), while the rest of the digits still represent owner, group and others.
+When `chmod` is supplied with four digits, the first digit represent the below (or a combination of these), while the rest of the digits still represent owner, group and others.
 
 |value | permission |
 |:----:|------------|
