@@ -98,12 +98,12 @@ Use `+` to add, `-` to remove and `=` to set explicitly.
 
 | bit | effect on files | effect on directories |
 |:---:|-------|-------------|
-| r   | read  | list files in directory|
-| w   | write | create, delete and modify files in the directory|
-| x   | execute| go into the directory, access files and subdirs|
-| X   | keep `x` if it is already set | set `x`(when bit is used in combination with the `-R` option, subdirectories can be given execute permissions without simultaneously setting execute permissions on files)|
-| s   | set user or group ID on execution| only `g+s` (SGID) has effect |
-| t   | "sticky bit", ignored by kernel in modern systems | only root, file owner or directory owner can delete and rename files in the directory |
+| `r`   | read  | list files in directory|
+| `w`   | write | create, delete and modify files in the directory|
+| `x`   | execute| go into the directory, access files and subdirs|
+| `X`   | keep `x` if it is already set | set `x`(when bit is used in combination with the `-R` option, subdirectories can be given execute permissions without simultaneously setting execute permissions on files)|
+| `s`  | set user or group ID on execution| only `g+s` (SGID) has effect |
+| `t`   | "sticky bit", ignored by kernel in modern systems | only root, file owner or directory owner can delete and rename files in the directory |
 
 
 > **Important:** Use the `-R` option to operate on files and directories recursively, making sure permissions are changed for all files and folders on all levels below the parent directory.
