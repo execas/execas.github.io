@@ -10,7 +10,6 @@ body {
      /*background-color: #f2f2f2;*/
      background-color: #ffffff;
      color: #222222;
-     line-height: 1.7em;
 }
 
 #wrapper {
@@ -301,6 +300,10 @@ ul li:before {
      
 }
 
+.post p {
+     line-height: 1.7em;
+}
+
 .post p a {
      font-size: 12px;
      color: #444444;
@@ -318,6 +321,7 @@ ul li:before {
 .post table {
      border: 1px solid #ccc;
      font-family: 'Inconsolata';
+     width: 100%;
 }
 
 .post td {
