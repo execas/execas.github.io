@@ -58,7 +58,7 @@ The permissions (first) column has the following format:
 |file/dir| permissions for owner| permissions for group owner |permissions for other users |
 
 The three dashes represent read (r), write (w) and execute (x) permissions, from left to right.
-In our example, the file (-) "foo" can be read, written and executed (rwx) by the owner, read and written (rw-) by the group owner, but only read (r--) by others.
+In our example, the file (-) "foo" can be read, written and executed (rwx) by the owner, read and written (rw-) by the group owner, but only read (r- -) by others.
 
 `chmod` is used to set permissions. It supports a symbolic mode, and a numeric mode. The choice between these is simply a matter of preference.
 
