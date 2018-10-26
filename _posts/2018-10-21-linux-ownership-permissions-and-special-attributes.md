@@ -194,12 +194,12 @@ $ umask
 $ mkdir dir
 
 $ ls -ld dir
-drwxrwxr-x. ... # 777 with umask 002 is 775
+drwxrwxr-x.  ...            ① 777 with umask 002 is 775
 
 $ touch foo
 
 $ ls -l foo
--rw-rw-r--. ... # 666 with umask 002 is 664
+-rw-rw-r--.  ...            ② 666 with umask 002 is 664
 
 $ rm -rf dir foo
 
@@ -208,8 +208,10 @@ $ umask 444
 $ touch foo
 
 $ ls -l foo
---w--w--w-. ... # 666 with umask 444 is 222
+--w--w--w-.  ...            ③ 666 with umask 444 is 222
 ```
+
+
 
 ## Special file attributes
 
