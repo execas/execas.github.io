@@ -76,6 +76,14 @@ Notice how the owner now has *execute permission* for the file.
 
 Multiple permissions can be specifed in one line:
 
+```bash
+[user:~]$ ls -l foo
+-rw-rw-r--. 1 user user Sep 5 18:59 foo
+[user:~]$ chmod u+x,g-w,o-r foo
+<b>[user:~]$</b> ls -l foo
+-rwxr-----. 1 user user Sep 5 18:59 foo
+```
+
 
 **User flags**
 
