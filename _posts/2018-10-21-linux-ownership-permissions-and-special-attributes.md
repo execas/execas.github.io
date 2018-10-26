@@ -11,6 +11,7 @@ A file or folder has an *owner* and a *group owner*:
 
 ```bash
 [user:~]$ touch foo
+
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:50 foo
 ```
@@ -48,6 +49,7 @@ Permissions decide who can read, write and execute a file or directory.
 
 ```bash
 [user:~]$ touch foo
+
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:56 foo
 ```
@@ -60,14 +62,17 @@ The permissions (first) column has the following format:
 
 In our example, the file can be read and written by owner and group owner, but only read by others.
 
-### chmod (symbolic mode)
+`chmod` is used to set permissions. It supports a symbolic mode, and a numeric mode. The choice between these is simply a matter of preference.
 
-`chmod` is used to set set permissions.
+
+### chmod (symbolic mode)
 
 ```bash
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:59 foo
+
 [user:~]$ chmod u+x foo
+
 [user:~]$ ls -l foo
 -rwxrw-r--. 1 user user Sep 5 18:59 foo
 ```
@@ -79,8 +84,10 @@ Multiple permissions can be specifed in one line:
 ```bash
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:59 foo
+
 [user:~]$ chmod u+x,g-w,o-r foo
-<b>[user:~]$</b> ls -l foo
+
+[user:~]$ ls -l foo
 -rwxr-----. 1 user user Sep 5 18:59 foo
 ```
 
@@ -118,7 +125,9 @@ Use `+` to add, `-` to remove and `=` to set explicitly.
 ```bash
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:59 foo
+
 [user:~]$ chmod 700 foo
+
 [user:~]$ ls -l foo
 -rwx------. 1 user user Sep 5 18:59 foo
 ```
@@ -163,6 +172,7 @@ The current mask can be seen using:
 ```bash
 $ umask
 002
+
 $ umask -S
 u=rwx,g=rwx,o=rx
 ```
@@ -182,15 +192,23 @@ User accounts with UID below 200 have a default `umask` of 022 (`go-w`, so files
 ```bash
 $ umask
 002
+
 $ mkdir dir
+
 $ ls -ld dir
 drwxrwxr-x. ... # 777 with umask 002 is 775
+
 $ touch foo
+
 $ ls -l foo
 -rw-rw-r--. ... # 666 with umask 002 is 664
+
 $ rm -rf dir foo
+
 $ umask 444
+
 $ touch foo
+
 $ ls -l foo
 --w--w--w-. ... # 666 with umask 444 is 222
 ```
