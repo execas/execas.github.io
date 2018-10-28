@@ -50,7 +50,7 @@ $ chmod 777 777
 Find files with permission *exactly* 777:
 
 ```bash
-# find -perm 777
+$ find -perm 777
 ./777
 ```
 
