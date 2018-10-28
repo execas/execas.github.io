@@ -68,7 +68,7 @@ $ find -perm /g=w
 ./777
 ```
 
-Find files with permissions *at least* 644 (owner has at least read and write, group owner and others have at least write):
+Find files with permissions *at least* 644 (owner has at least read and write AND group owner and others have at least write):
 
 ```bash
 $ find -perm -644
