@@ -160,6 +160,9 @@ When `chmod` is supplied with four digits, the first digit represent the below (
 |1 | sticky bit |
 |0 | none |
 
+### SUID, SGID and the sticky bit
+
+
 
 ### umask
 
