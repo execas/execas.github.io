@@ -86,13 +86,19 @@ $ find -perm /444
 ./777
 ```
 
-## Examples
+### Other options
 
-Find executable files, but take into account ACL's and other permission artefacts which `-perm` ignores:
+Find executable, writable and readable files, but take into account ACL's and other permission artefacts which `-perm` ignores:
 
 ```bash
 $ find -executable -type f
+$ find -readable -type f
+$ find -writable -type f
 ```
+
+
+### Find setuid, setgid and sticky bit
+
 
 Find setuid files, list with permissions:
 
@@ -100,8 +106,6 @@ Find setuid files, list with permissions:
 $ find /usr/bin -perm /u=s | xargs ls -l
 -rwsr-xr-x. 1 root root      52952 Apr 11  2018 /usr/bin/at
 -rwsr-xr-x. 1 root root      64240 Nov  5  2016 /usr/bin/chage
--rws--x--x. 1 root root      24048 Aug 16 20:47 /usr/bin/chfn
--rws--x--x. 1 root root      23960 Aug 16 20:47 /usr/bin/chsh
 ...
 ```
 
@@ -112,9 +116,7 @@ $ find /usr/bin -perm /g=s -type f | xargs ls -l
 -rwxr-sr-x. 1 root cgred    15624 Apr 11  2018 /usr/bin/cgclassify
 -rwxr-sr-x. 1 root cgred    15592 Apr 11  2018 /usr/bin/cgexec
 -rwx--s--x. 1 root slocate  40520 Apr 11  2018 /usr/bin/locate
----x--s--x. 1 root nobody  382240 Apr 11  2018 /usr/bin/ssh-agent
--r-xr-sr-x. 1 root tty      15344 Jun 10  2014 /usr/bin/wall
--rwxr-sr-x. 1 root tty      19624 Aug 16 20:47 /usr/bin/write
+...
 ```
 
 Find setgid directories:
@@ -124,6 +126,9 @@ Find setgid directories:
 /run/log/journal
 ```
 
+Find directories with sticky bit:
 
-
-
+```bash
+find / -perm /o=t
+...
+```
