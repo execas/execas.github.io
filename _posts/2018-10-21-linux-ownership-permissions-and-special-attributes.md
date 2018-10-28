@@ -11,7 +11,6 @@ A file or folder has an *owner* and a *group owner*:
 
 ```bash
 [user:~]$ touch foo
-
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:50 foo
 ```
@@ -68,9 +67,7 @@ In our example, the file (-) "foo" can be read, written and executed (rwx) by th
 ```bash
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:59 foo
-
 [user:~]$ chmod u+x foo
-
 [user:~]$ ls -l foo
 -rwxrw-r--. 1 user user Sep 5 18:59 foo
 ```
@@ -82,9 +79,7 @@ Multiple permissions can be specifed in one line:
 ```bash
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:59 foo
-
 [user:~]$ chmod u+x,g-w,o-r foo
-
 [user:~]$ ls -l foo
 -rwxr-----. 1 user user Sep 5 18:59 foo
 ```
@@ -112,7 +107,7 @@ Use `+` to add, `-` to remove and `=` to set explicitly.
 | w   | write | create, delete and modify files in the directory|
 | x   | execute| go into the directory, access files and subdirs|
 | X   | keep `x` if it is already set | set `x`(when bit is used in combination with the `-R` option, subdirectories can be given execute permissions without simultaneously setting execute permissions on files)|
-| s  | set user or group ID on execution| only `g+s` (SGID) has effect |
+| s  | set user or group ID on execution (setuid and setgid)| only `g+s` (setgid) has effect |
 | t   | "sticky bit", ignored by kernel in modern systems | only root, file owner or directory owner can delete and rename files in the directory |
 
 
@@ -123,9 +118,7 @@ Use `+` to add, `-` to remove and `=` to set explicitly.
 ```bash
 [user:~]$ ls -l foo
 -rw-rw-r--. 1 user user Sep 5 18:59 foo
-
 [user:~]$ chmod 700 foo
-
 [user:~]$ ls -l foo
 -rwx------. 1 user user Sep 5 18:59 foo
 ```
@@ -155,14 +148,64 @@ When `chmod` is supplied with four digits, the first digit represent the below (
 
 |value | permission |
 |:----:|------------|
-|4 | suid |
-|2 | sgid |
+|4 | setuid |
+|2 | setgid |
 |1 | sticky bit |
 |0 | none |
 
-### SUID, SGID and the sticky bit
+### setuid
+
+The setuid bit makes an executable run with the privileges of the file's owner. This is nescessary for a lot of programs and utilities, for example `sudo` and `passwd`. The setuid bit has no effect on dirs.
+
+Create a file, add setgid bit:
+
+```bash
+$ touch foo
+$ ls -l foo
+-rw-rw-r--.  ...
+$ chmod u+s foo
+$ ls -l foo
+-rwSrw-r--.  ...
+```
+The user permissions are now "rwS". The uppercase "S" represents setuid with no execute permission. An uppercase "S" should be seen as a reminder to either add execute permissions, or remove setuid, as setuid alone serves not practical purpose.
+
+```
+$ chmod u+x foo
+$ ls -l foo
+-rwsrw-r--.  ...
+```
+
+The "s", now lowercase, represents setuid with execute permissions. 
+
+### setgid
+
+On files, the setgid bit is pretty similar to setuid. When a user executes a setgid file, it is run with the privileges of the group owner. `locate` is an example of a `setgid` file.
+
+```bash
+$ ls -l /usr/bin/locate
+-rwx--s--x. 1 root slocate 40520 Apr 11 2018 /usr/bin/locate
+```
+The lowercase "s" in the group permissions represents setgid with execute permissions. 
+
+The setgid bit is applied using `chmod g+s <file/dir>`.
+
+When the setgid bit is applied to a directory, all files and subdirectories are created with the same group owner as the dir, and new directories will inherit the setgid bit. This is very useful for [setting up shared directories](https://execas.github.io/2018/08/12/setting-up-a-shared-directory-on-linux.html).
 
 
+### sticky bit
+
+The sticky bit has no effect on files.
+
+Applied to a directory, it makes sure that only root, the file owner or directory owner can delete and rename files in the directory.
+
+An example sticky directory is `/tmp`:
+
+```bash
+$ ls -ld /tmp
+drwxrwxtwt 11 root root  ...
+```
+
+The lowercase "t" in the other permissions, represents sticky bit and execute permissions. Uppercase "T" is sticky bit only.
 
 ### umask
 
