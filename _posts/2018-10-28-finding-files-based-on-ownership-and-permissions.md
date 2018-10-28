@@ -28,6 +28,8 @@ $ find /usr -not -group root
 ...
 ```
 
+To find files based on group ID, is `find -gid <n>`.
+
 ## Finding files based on permissions
 
 
