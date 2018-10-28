@@ -211,11 +211,11 @@ $ ls -l foo
 --w--w--w-.  ...            ③
 ```
 
-① Default folder permission 777 with umask 002 is 775
+**①** Default folder permission 777 with umask 002 is 775
 
-② Default file permission 666 with umask 002 is 664
+**②** Default file permission 666 with umask 002 is 664
 
-③ Default file permission 666 with umask 444 is 222
+**③** Default file permission 666 with umask 444 is 222
 
 
 ## Special file attributes
