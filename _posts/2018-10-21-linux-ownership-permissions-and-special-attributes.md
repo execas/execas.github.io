@@ -212,7 +212,9 @@ $ ls -l foo
 ```
 
 ① Default folder permission 777 with umask 002 is 775
+
 ② Default file permission 666 with umask 002 is 664
+
 ③ Default file permission 666 with umask 444 is 222
 
 
