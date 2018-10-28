@@ -194,12 +194,12 @@ $ umask
 $ mkdir dir
 
 $ ls -ld dir
-drwxrwxr-x.  ...            ① 777 with umask 002 is 775
+drwxrwxr-x.  ...            ①
 
 $ touch foo
 
 $ ls -l foo
--rw-rw-r--.  ...            ② 666 with umask 002 is 664
+-rw-rw-r--.  ...            ②
 
 $ rm -rf dir foo
 
@@ -208,9 +208,12 @@ $ umask 444
 $ touch foo
 
 $ ls -l foo
---w--w--w-.  ...            ③ 666 with umask 444 is 222
+--w--w--w-.  ...            ③
 ```
 
+① Default folder permission 777 with umask 002 is 775
+② Default file permission 666 with umask 002 is 664
+③ Default file permission 666 with umask 444 is 222
 
 
 ## Special file attributes
