@@ -179,7 +179,7 @@ The "s", now lowercase, represents setuid with execute permissions.
 
 ### setgid
 
-On files, the setgid bit is pretty similar to setuid. When a user executes a setgid file, it is run with the privileges of the group owner. `locate` is an example of a `setgid` file.
+On files, the setgid bit is pretty similar to setuid. When a user executes a setgid file, it is run with the privileges of the group owner. `locate` is an example of a setgid file.
 
 ```bash
 $ ls -l /usr/bin/locate
@@ -254,7 +254,7 @@ $ umask 444                ○ set current umask to 444
 $ touch foo                ○ create a file
 
 $ ls -l foo              
---w--w--w-.  ...           ○ permissions are  222 (666 - 444)
+--w--w--w-.  ...           ○ permissions are 222 (666 - 444)
 ```
 
 
