@@ -43,7 +43,7 @@ $ chmod 755 755
 $ chmod 777 777
 ```
 
-### `find -perm` syntax
+### Permissions (`-perm`) syntax
 
 Find files with permission *exactly* 777:
 
