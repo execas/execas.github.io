@@ -188,40 +188,28 @@ User accounts with UID 200 and above have a default `umask` of 002 (`o-w`, so fi
 User accounts with UID below 200 have a default `umask` of 022 (`go-w`, so files will be 644 and dirs 755).
 
 ```bash
-$ umask
+$ umask                    🔴 check current umask
 002
 
-$ mkdir dir
+$ mkdir dir                🔴 create a dir
 
-$ ls -ld dir
-drwxrwxr-x.  ...            ①
+$ ls -ld dir               
+drwxrwxr-x.  ...           🔴 permissions are 775 (default folder permissions and umask 002)
 
-$ touch foo
-
-$ ls -l foo
--rw-rw-r--.  ...            ②
-
-$ rm -rf dir foo
-
-$ umask 444
-
-$ touch foo
+$ touch foo                🔴 create a file
 
 $ ls -l foo
---w--w--w-.  ...            ③
+-rw-rw-r--.  ...           🔴 permissions are 644 (default file permissions and umask 002)
+
+$ rm -rf dir foo           🔴 remove dir and file
+
+$ umask 444                🔴 set current umask to 444
+
+$ touch foo                🔴 create a file
+
+$ ls -l foo              
+--w--w--w-.  ...           🔴 permissions are  222 (default file permissions and umask 444)
 ```
-
-①
-
-Default folder permission 777 and umask 002 gives 775
-
-② 
-
-Default file permission 666 and umask 002 gives 664
-
-③
-
-Default file permission 666 and umask 444 gives 222
 
 
 ## Special file attributes
