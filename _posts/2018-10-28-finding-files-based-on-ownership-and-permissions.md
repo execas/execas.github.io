@@ -37,7 +37,7 @@ To find files based on group ID, is `find -gid <n>`.
 
 ```bash
 $ mkdir test; cd test             ○ Create test directory, go into it
-$ touch 222 644 700 755 777       ○ Create dirs
+$ touch 222 644 700 755 777       ○ Create files
 $ chmod 222 222                   ○ Set permissions
 $ chmod 644 644
 $ chmod 700 700
