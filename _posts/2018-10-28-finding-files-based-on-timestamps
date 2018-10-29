@@ -67,45 +67,20 @@ The options `mmin <n>` and `cmin <n> are similar to `amin <n>`.
 
 This option let's you find files that have been accessed, modified or changed more recently than a specified file was *modified*.
 
-Create files with various timestamps:
+|option          | finds
+|----------------|------------------------------------------------|
+|`-newer <file>` | files *modified* after <file> was modified|
+|`-cnewer <file>` |files *changed* after <file> was modified|
+|`-anewer <file>` | files *accessed* after <file> was modified|
+
+### `-newerXY`
+
+This options let's you find files by comparing specified timestamps with those of a reference. The reference can be a file or a string describing an absolute time.
 
 ```bash
-$ mkdir test; cd test
-$ touch -d "30 min ago" am30ma     ○ accessed and modified 30 minutes ago
-$ touch -d "2 days ago" am2da      ○ accessed and modified 2 days ago
-$ touch -a -d "2 days ago" a2da    ○ accessed 2 days ago
-$ touch -m -d "1 day ago" m1da     ○ modified 1 day ago (accessed on creation)
+$ touch -a -t '201609042100' foo
+$ touch -a -t '201709042100' fee
 ```
-
-Find files *modified* after "am2da" was modified:
-
-```bash
-$ find -newer am2da
-.
-./a2da
-./m1da
-./am30ma
-```
-
-Find files *accessed* after "am30ma" was modified:
-
-```bash
-$find -anewer am30ma
-.
-./m1da
-```
-
-Find files *changed* after 
-
-
-
-
-
-
-
-The options `-newer <file>` (for `mtime`) and `cnewer <file> are similar to `-anewer`. Keep in mind that we are always looking for a file that was  more recently than "<file>" was *modified*.
-
-
 
 
 
