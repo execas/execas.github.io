@@ -28,7 +28,7 @@ $ find /usr -not -group root
 ...
 ```
 
-To find files based on group ID, is `find -gid <n>`.
+To find files based on group ID, use `find -gid <n>`.
 
 ## Finding files based on permissions
 
