@@ -10,7 +10,7 @@ tags: [find, security, linux, tools]
 ### Access (`atime`)
 
 The *access* timestamp is updated when a file is opened for reading or writing.
-On a file system mounted with `relatime` (or `defaults`, which is very common), `atime` will update on access if the file has been modified or changed after it was last accessed, or if the previous `atime` update was more than 24 hours ago.
+On a file system mounted with `relatime` (part of `defaults`, which is very common), `atime` will update on access if the file has been modified or changed after it was last accessed, or if the previous `atime` update was more than 24 hours ago.
 
 Create files with various access times for testing purposes:
 
