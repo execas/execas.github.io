@@ -67,9 +67,9 @@ This option let's you find files that have been accessed, modified or changed mo
 
 |option          | finds
 |----------------|------------------------------------------------|
-|`-newer <file>` | files *modified* after <file> was modified|
-|`-cnewer <file>` |files *changed* after <file> was modified|
-|`-anewer <file>` | files *accessed* after <file> was modified|
+|`-newer <file>` | files *modified* after `<file>` was modified|
+|`-cnewer <file>` |files *changed* after `<file>` was modified|
+|`-anewer <file>` | files *accessed* after `<file>` was modified|
 
 ### `-newerXY`
 
