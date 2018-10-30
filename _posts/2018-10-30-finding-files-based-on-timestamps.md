@@ -12,7 +12,7 @@ tags: [find, security, linux, tools]
 The *access* timestamp is updated when a file is opened for reading or writing.
 On a file system mounted with `relatime` (or `defaults`, which is very common), `atime` will update on access if the file has been modified or changed after it was last accessed, or if the previous `atime` update was more than 24 hours ago.
 
-Create files with various access times:
+Create files with various access times for testing purposes:
 
 ```bash
 $ mkdir test; cd test
@@ -52,8 +52,8 @@ $ find -amin -100
 
 ### Modify (`mtime`) and Change (`ctime`)
 
-The *modify* timestamp is updated when a files content is modified.
-The *change* timestamp is updated when a files metadata is changed.
+The *modify* timestamp is updated when a file's content is modified.
+The *change* timestamp is updated when a file's metadata is changed.
 
 The options `-mtime <n>` and `-ctime <n>` work in the same way as `-atime <n>`, but find files based on modification time and change time, respectively.
 
