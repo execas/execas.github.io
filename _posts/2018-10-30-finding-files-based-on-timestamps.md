@@ -77,8 +77,8 @@ This options let's you find files by comparing specified timestamps with those o
 
 The command has the syntax `find -newerXY <reference>`. `X` and `Y` are placeholders:
 
- - `X` is `a`/`m`/`c`, if you want `find` to look at atime/mtime/ctime as it searches through files.
- - `Y` is `a`/`m`/`c`, depending on what to use from the file reference, or `-t` if you specify an abosulute time.
+ - `X` is a/m/c, if you want `find` to look at atime/mtime/ctime as it searches through files.
+ - `Y` is a/m/c, depending on which timestamp to use from the file reference, or `-t` if you specify an abosulute time.
 
 
 Find files modified, changed or accessed after specifed date:
