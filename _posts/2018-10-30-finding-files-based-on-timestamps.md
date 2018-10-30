@@ -35,7 +35,7 @@ $ find -atime -2
 ./30ma
 ```
 
-Calling the argument to `find -atime` *days* is not really correct, as the `find -atime <n>` command figures out how long ago the file was accessed in *periods* of 24 hours, and ignores any fractional part.
+Calling the argument to `find -atime` *days* is not really correct, as the command figures out how long ago the file was accessed in *periods* of 24 hours, and ignores any fractional part.
 The file "2da" has an `atime` of exactly 2 periods of 24 hours:
 
 ```bash
