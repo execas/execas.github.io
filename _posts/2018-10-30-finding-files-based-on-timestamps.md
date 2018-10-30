@@ -57,8 +57,7 @@ The *change* timestamp is updated when a file's metadata is changed.
 
 The options `-mtime <n>` and `-ctime <n>` work in the same way as `-atime <n>`, but find files based on modification time and change time, respectively.
 
-The options `=mmin <n>` and `-cmin <n>` are similar to `amin <n>`.
-
+The options `-mmin <n>` and `-cmin <n>` are similar to `-amin <n>`.
 
 ## The `-newer` options
 
@@ -76,7 +75,7 @@ This option let's you find files that have been accessed, modified or changed mo
 
 This options let's you find files by comparing specified timestamps with those of a reference. The reference can be a file or a string describing an absolute time.
 
-The command has the syntax `find -newerXY <reference>. `X` and `Y` are placeholders:
+The command has the syntax `find -newerXY <reference>`. `X` and `Y` are placeholders:
 
  - `X` is `a`/`m`/`c`, if you want `find` to look at atime/mtime/ctime as it searches through files.
  - `Y` is `a`/`m`/`c`, depending on what to use from the file reference, or `-t` if you specify an abosulute time.
