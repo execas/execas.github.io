@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Finding files based on timestamps
-date: 2018-10-29
+date: 2018-10-30
 tags: [find, security, linux, tools]
 ---
 
@@ -21,23 +21,22 @@ $ touch -a -d "10 days ago" 10da
 $ touch -a -d "30 min ago" 30ma
 ```
 
-Find files accessed more than 2*24 hours ago:
+Find files accessed more than 2 days ago:
 
 ```bash
 $ find -atime +2
 ./10da
 ```
 
-Find files accessed less than 2*24 hours ago:
+Find files accessed less than 2 days ago:
 
 ```bash
 $ find -atime -2
 ./30ma
 ```
 
-The `find -atime <n>` command finds out how long ago the file was accessed in *periods* of 24 hours, and ignores any fractional part.
-
-The file "2da" has an `atime` of exactly 2 periods of 24 hours.
+Calling the argument to `find -atime` *days* is not really correct, as the `find -atime <n>` command figures out how long ago the file was accessed in *periods* of 24 hours, and ignores any fractional part.
+The file "2da" has an `atime` of exactly 2 periods of 24 hours:
 
 ```bash
 find -atime 2
@@ -56,9 +55,9 @@ $ find -amin -100
 The *modify* timestamp is updated when a files content is modified.
 The *change* timestamp is updated when a files metadata is changed.
 
-The options `-mtime <n>` and `-ctime <n>` work in the same way as `-atime` <n>`, but find files based on modification time and change time, respectively.
+The options `-mtime <n>` and `-ctime <n>` work in the same way as `-atime <n>`, but find files based on modification time and change time, respectively.
 
-The options `mmin <n>` and `cmin <n> are similar to `amin <n>`.
+The options `=mmin <n>` and `-cmin <n>` are similar to `amin <n>`.
 
 
 ## The `-newer` options
@@ -77,11 +76,24 @@ This option let's you find files that have been accessed, modified or changed mo
 
 This options let's you find files by comparing specified timestamps with those of a reference. The reference can be a file or a string describing an absolute time.
 
+The command has the syntax `find -newerXY <reference>. `X` and `Y` are placeholders:
+
+ - `X` is `a`/`m`/`c`, if you want `find` to look at atime/mtime/ctime as it searches through files.
+ - `Y` is `a`/`m`/`c`, depending on what to use from the file reference, or `-t` if you specify an abosulute time.
+
+
+Find files modified, changed or accessed after specifed date:
+
 ```bash
-$ touch -a -t '201609042100' foo
-$ touch -a -t '201709042100' fee
+$ find -newermt 2016-09-04       ○ X is m(time), Y is (t)ime, ref is time-string
+$ find -newerct yesterday        ○ X is c(time), Y is (t)ime, ref is time-string
+$ find -newerat "last friday"    ○ X is a(time), Y is (t)ime, ref is time-string
 ```
 
+Find files modified, changed or accessed after a file reference was changed:
 
-
-
+```bash
+$ find -newermc foo              ○ X is m(time), Y is c(time), ref is file
+$ find -newercc foo              ○ X is c(time), Y is c(time), ref is file
+$ find -newerac foo              ○ X is a(time), Y is c(time), ref is file
+```
