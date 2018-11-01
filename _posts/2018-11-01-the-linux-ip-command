@@ -1,0 +1,60 @@
+---
+layout: post
+title: Finding files based on timestamps
+date: 2018-10-30
+tags: [linux, configuration, networking]
+---
+
+
+
+> Note: The `arp` command is obsolote. Use `ip neigh` instead.
+
+
+## `ip link`
+
+> Note: The `ifconfig` command is obsolete. Use `ip link` instead.
+
+### `ip link show`
+
+Show all interfaces:
+
+```bash
+$ ip link show     ○ `show` is not needed, it's the default action of `ip link`
+```
+
+Show all running interfaces:
+
+```bash
+$ ip link show up
+```
+
+Show a specific interface:
+
+```bash
+$ ip link show dev <device>     ○ `dev` is not required
+```
+
+Show a vlan or bridge devices:
+
+```bash
+$ ip link show type vlan
+$ ip link show type bridge
+```
+
+
+### `ip link set`
+
+> Be aware: the changes made with this command is not permanent. 
+
+Set device state up or down:
+
+```bash
+$ sudo ip link set dev <device> up       ○ `dev` is not required
+$ sudo ip link set dev <device> down
+```
+
+## `ip addr`
+
+> Note: The `ifconfig` command is obsolete. Use `ip addr` instead.
+
+### `ip addr show
