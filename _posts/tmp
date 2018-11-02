@@ -17,11 +17,32 @@ Cloud anti-spam services will typically not require any hardware or software, bu
 > Many cloud anti-spam services also offer end-user digest emails where users can release (safe) blocked emails addressed to them, freeing up a lot of time for administrators.
 
 An **anti-spam gateway** does much of the same as the service of the cloud anti-spam provider. In fact, a lot of providers base their service on well-known open source or proprietary email gateways.
-The gateway comes as software, a virtual appliance or as a hardware appliance.
+The gateway comes as software, a virtual appliance or as a hardware appliance. Using a both a cloud anti-spam service and an onsite anti-spam gateway is not very common.
 
-**Anti-spam software** for email servers is typically installed onto the email server. The agent can monitor inbound transport of email inbound, outbound and internal and the storage.
+**Anti-spam software** for email servers is typically installed onto the email server. The installed agent can often monitor inbound, outbound and internal transport, as well as perform real-time and scheduled scanning of the storage.
+
+**Anti-spam tools** for clients may be part of the email client, or installed as a third party software. This is the last line of defense (apart from the user's awareness, which should never be trusted).
+
+Combining some of these countermeasures - *layered security* - will of course result in a more effective protection.
+
+
+### Malware
+
+Most of the *anti-spam* countermeasures mentioned above, will also scan for malware.
+
+A **cloud anti-spam service** can scan email attachments and URL's to find harmful files or sites that spread malware.
+
+> Some cloud anti-spam services also perform URL rewrites: when the user opens a URL in an email, the contents are first scanned in a cloud sandbox, and then the user is granted or denied access.
+> If URLs are only checked as the email comes in, the content can be harmless and the changed to something at a later time.
+
+An **anti-spam gateway** can perform malware scanning on the emails passing trough it, typically just attachments.
+
+**Anti-spam software** for email servers can often scan both transport and storage for malware.
+
+**Anti-spam tools** for clients is typically a full-fledged anti-malware solution, where anti-spam is just one small part of the package. As the last line of defense, these solutions should contain advanced detection capabilities such as behavioral analysis (to detect new malware), and have a central management for visibility, and configuration.
 
 
 
-base
-Combining some of these countermeasures will of course result in an increased effect.
+
+
+
