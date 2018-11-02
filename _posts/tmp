@@ -1,7 +1,19 @@
 
 
 
-## Avoiding spam and malware
+## Avoiding spam, malware and phishing
+
+Spam, malware and phishing is something all system administrators (and end users) have become familiar with.
+
+Email is a powerful advertising tool and an excellent attack vector. It's estimated that around 90% of all email messages sent, are unwanted. 
+
+The *Verizon Data Breach Investigations Report (2018)* states that:
+
+  - more than 90% of breaches start with phishing, almost exclusively done through email.
+  - the frequency of malware vectors are 92.4% email, 6.3% web and 1.3% other.
+
+
+Is it effective to protect your email adresses, by for example not publishing contact lists online? Yes, but this is far from enough to  
 
 
 ### Spam
@@ -28,18 +40,27 @@ Combining some of these countermeasures - *layered security* - will of course re
 
 ### Malware
 
+Malware is malicious software like trojans, worms and viruses (and cryptoviruses).
+
 Most of the *anti-spam* countermeasures mentioned above, will also scan for malware.
 
-A **cloud anti-spam service** can scan email attachments and URL's to find harmful files or sites that spread malware.
+A **cloud anti-spam service** can often scan email attachments and URL's to find harmful files or sites that spread malware.
 
 > Some cloud anti-spam services also perform URL rewrites: when the user opens a URL in an email, the contents are first scanned in a cloud sandbox, and then the user is granted or denied access.
 > If URLs are only checked as the email comes in, the content can be harmless and the changed to something at a later time.
 
-An **anti-spam gateway** can perform malware scanning on the emails passing trough it, typically just attachments.
+An **anti-spam gateway** can often perform malware scanning on the emails passing trough it, typically just attachments.
 
-**Anti-spam software** for email servers can often scan both transport and storage for malware.
+**Anti-spam software** for email servers can often scan both email transport and email storage for malware.
 
-**Anti-spam tools** for clients is typically a full-fledged anti-malware solution, where anti-spam is just one small part of the package. As the last line of defense, these solutions should contain advanced detection capabilities such as behavioral analysis (to detect new malware), and have a central management for visibility, and configuration.
+**Anti-spam tools** for clients is often part of a full-fledged anti-malware solution. As the last line of defense, these solutions should contain advanced detection capabilities such as behavioral analysis (to detect new malware), and have a central management for visibility, reporting and configuration.
+
+Again, combining some of these countermeasures - *layered security* - will of course result in a more effective protection.
+
+
+### Phishing
+
+
 
 
 
