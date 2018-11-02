@@ -51,8 +51,8 @@ Most of the *anti-spam* countermeasures mentioned above, will also scan for malw
 
 A **cloud anti-spam service** can often scan email attachments and URL's to find harmful files or sites that spread malware.
 
-> Some cloud anti-spam services also perform URL rewrites: when the user opens a URL in an email, the contents are first scanned in a cloud sandbox, and then the user is granted or denied access.
-> If URLs are only checked as the email comes in, the content can be harmless and the changed to something at a later time.
+> Some cloud anti-spam services also perform URL rewrites: when the user opens a URL in an email, the contents are first analyzed in a cloud sandbox, and then the user is granted or denied access - all in a fraction of a second.
+> If URLs are only checked as the email comes in, the content can be harmless and the changed to something harmful at a later time.
 
 An **anti-spam gateway** can often perform malware scanning on the emails passing trough it, but typically just attachments.
 
