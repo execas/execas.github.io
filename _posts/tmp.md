@@ -12,11 +12,16 @@ The *Verizon Data Breach Investigations Report (2018)* states that:
   - more than 90% of breaches start with phishing, almost exclusively done through email.
   - the frequency of malware vectors are 92.4% email, 6.3% web and 1.3% other.
 
+Can you prevent criminals and spammers from obtaining your email addresses? Probably not, but publishing contact information (contact lists etc.) online will definitly make sure that the addresses are harvested in no time. 
 
-Is it effective to protect your email adresses, by for example not publishing contact lists online? Yes, but this is far from enough to  
+To properly deal with email spam, phishing and malware, we need multiple countermeasures.
+
+### User awareness
+
+There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. In this article, however, the user is seen as a permanent vulnerability that we need to built layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen.
 
 
-### Spam
+### Dealing with Spam
 
 Spam is garbage mail like unsolicited advertising and scam emails.
 
@@ -38,7 +43,7 @@ The gateway comes as software, a virtual appliance or as a hardware appliance. U
 Combining some of these countermeasures - *layered security* - will of course result in a more effective protection.
 
 
-### Malware
+### Dealing with malware
 
 Malware is malicious software like trojans, worms and viruses (and cryptoviruses).
 
@@ -58,7 +63,7 @@ An **anti-spam gateway** can often perform malware scanning on the emails passin
 Again, combining some of these countermeasures - *layered security* - will of course result in a more effective protection.
 
 
-### Phishing
+### Dealing with phishing
 
 
 
