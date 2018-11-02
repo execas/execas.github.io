@@ -8,16 +8,18 @@
 
 Spam is garbage mail like unsolicited advertising and scam emails.
 
-Spam can be dealt with by using a cloud anti-spam provider, running an anti-spam gateway, using anti-spam software on the email servers or using anti-spam tools on the clients.
+Spam can be dealt with by using a cloud anti-spam service, running an anti-spam gateway, using anti-spam software on the email servers or using anti-spam tools on the clients.
 
-A cloud anti-spam provider will scan incoming (and often outgoing) emails and remove or quarantine spam. 
+A **cloud anti-spam service** will scan incoming (and often outgoing) emails and remove or quarantine spam. 
 A portal is often available for the customer, where they can get an overview, release false positives, tune the detection, whitelist and blacklist, and schedule reports.
 Cloud anti-spam services will typically not require any hardware or software, but requires a change in the DNS MX record and probably some light firewall configuration.
 
 > Many cloud anti-spam services also offer end-user digest emails where users can release (safe) blocked emails addressed to them, freeing up a lot of time for administrators.
 
-An anti-spam gateway does much of the same as the service of the cloud anti-spam provider. In fact, a lot of providers base their service on well-known open source or proprietary email gateways.
-The gateway comes as software, pre-configured virtual machines or as a box.
+An **anti-spam gateway** does much of the same as the service of the cloud anti-spam provider. In fact, a lot of providers base their service on well-known open source or proprietary email gateways.
+The gateway comes as software, a virtual appliance or as a hardware appliance.
+
+**Anti-spam software** for email servers is typically installed onto the email server. The agent can monitor inbound transport of email inbound, outbound and internal and the storage.
 
 
 
