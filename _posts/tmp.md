@@ -14,16 +14,16 @@ The *Verizon Data Breach Investigations Report (2018)* states that:
 
 Can you prevent criminals and spammers from obtaining your email addresses? Probably not, but publishing contact information (contact lists etc.) online will definitly make sure that the addresses are harvested in no time. 
 
-To properly deal with email spam, phishing and malware, we need multiple countermeasures.
+To properly deal with email spam, phishing and malware, you need multiple countermeasures.
 
 ### User awareness
 
-There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. In this article, however, the user is seen as a permanent vulnerability that we need to built layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen.
+There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. In this article, however, the user is seen as a permanent vulnerability that you need to build layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen. But keep in mind that user awareness is never a bad thing!
 
 
 ### Dealing with Spam
 
-Spam is garbage mail like unsolicited advertising and scam emails.
+Spam is garbage mail, like unsolicited advertising and scam emails.
 
 Spam can be dealt with by using a cloud anti-spam service, running an anti-spam gateway, using anti-spam software on the email servers or using anti-spam tools on the clients.
 
@@ -54,16 +54,24 @@ A **cloud anti-spam service** can often scan email attachments and URL's to find
 > Some cloud anti-spam services also perform URL rewrites: when the user opens a URL in an email, the contents are first scanned in a cloud sandbox, and then the user is granted or denied access.
 > If URLs are only checked as the email comes in, the content can be harmless and the changed to something at a later time.
 
-An **anti-spam gateway** can often perform malware scanning on the emails passing trough it, typically just attachments.
+An **anti-spam gateway** can often perform malware scanning on the emails passing trough it, but typically just attachments.
 
 **Anti-spam software** for email servers can often scan both email transport and email storage for malware.
 
-**Anti-spam tools** for clients is often part of a full-fledged anti-malware solution. As the last line of defense, these solutions should contain advanced detection capabilities such as behavioral analysis (to detect new malware), and have a central management for visibility, reporting and configuration.
+**Anti-spam tools** for clients is often part of a full-fledged anti-malware solution. As the last line of defense, these solutions should contain advanced detection capabilities such as behavioral analysis (to detect zero-day malware), and have a central management for visibility, reporting and configuration. Since the client is often mobile, and therefore at times not behind a lot of layers of security, a quality anti-malware solution should be chosen.
 
 Again, combining some of these countermeasures - *layered security* - will of course result in a more effective protection.
 
 
 ### Dealing with phishing
+
+Phishing is the use of social engineering techniques to trick users into for example giving away information or downloading malware.
+
+The presence of malicious code or URLs, the results of a lexical analysis of the contents, the reputation of the sender domain and more can help solutions remove a lot of phishing emails. Some *anti-spam* solutions have more advanced *black box* methods to block phishing email. Though, if you look at real-world results, it seems that most solutions still let the more sophisticated spear-phishing attacks (sent to a few hand-picked recipients, with spoofed domain/sender, native language and no malicious code or URLs) pass through. How can you deal with these? If the solutions in places block all obvious phishing emails, emails containing malware and malcious URLs, and even check the contents of the URLs when the user clicks on them, then the majority of the phishing email you will have coming are probably of a *CEO-fraud* character.
+
+
+
+
 
 
 
