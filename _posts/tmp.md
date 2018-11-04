@@ -18,7 +18,7 @@ To properly deal with email spam, phishing and malware, you need multiple counte
 
 ### User awareness
 
-There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. In this article, however, the user is seen as a permanent vulnerability that you need to build layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen. But keep in mind that user awareness is never a bad thing!
+There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. But aware users is *not* a substitute for any of the countermeasures discussed below. It is better to look at the user as a permanent vulnerability that you need to build layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen. But keep in mind that user awareness is never a bad thing!
 
 
 ### Dealing with Spam
@@ -38,7 +38,7 @@ The gateway comes as software, a virtual appliance or as a hardware appliance. U
 
 **Anti-spam software** for email servers is typically installed onto the email server. The installed agent can often monitor inbound, outbound and internal transport, as well as perform real-time and scheduled scanning of the storage.
 
-**Anti-spam tools** for clients may be part of the email client, or installed as a third party software. This is the last line of defense (apart from the user's awareness, which should never be trusted).
+**Anti-spam tools** for clients may be part of the email client, or installed as a third party software. This is the last line of defense (apart from the user's awareness, which should never be completly trusted).
 
 Combining some of these countermeasures - *layered security* - will of course result in a more effective protection.
 
@@ -67,8 +67,16 @@ Again, combining some of these countermeasures - *layered security* - will of co
 
 Phishing is the use of social engineering techniques to trick users into for example giving away information or downloading malware.
 
-The presence of malicious code or URLs, the results of a lexical analysis of the contents, the reputation of the sender domain and more can help solutions remove a lot of phishing emails. Some *anti-spam* solutions have more advanced *black box* methods to block phishing email. Though, if you look at real-world results, it seems that most solutions still let the more sophisticated spear-phishing attacks (sent to a few hand-picked recipients, with spoofed domain/sender, native language and no malicious code or URLs) pass through. How can you deal with these? If the solutions in places block all obvious phishing emails, emails containing malware and malcious URLs, and even check the contents of the URLs when the user clicks on them, then the majority of the phishing email you will have coming are probably of a *CEO-fraud* character.
+The presence of malicious code or URLs, the results of a lexical analysis of the contents, the reputation of the sender domain and more can help solutions remove a lot of phishing emails. Some *anti-spam* solutions have more advanced *black box* methods to block phishing email. Though, if you look at real-world results, it seems that most solutions still let the more sophisticated spear-phishing attacks (sent to a few hand-picked recipients, with spoofed domain/sender, native language and no malicious code or URLs) pass through. How can you deal with these? If the solutions in places block all obvious phishing emails, emails containing malware and malcious URLs, and even check the contents of the URLs when the users click on them, then the majority of the phishing email you will have coming are probably of a *CEO-fraud* character.
 
+A *CEO-fraud*, also known as "Business email compromise" (BEC), is a targeted attack. Most often, a phishing email is sent by an attacker pretending to be the CEO or other C-level executive to recipient(s) that are hand-picked based on the goal of the attacker (e.g. to employees in the accounts payable department if they are asking for a money transfer, or to the HR department if they are asking for personal data). These attacks have become more and more sophisticated, with the attacker apparently spending a lot of time selecting the proper targets, spoofing information, writing a phishing email with proper jargon and so on. 
+
+There are a few ways to avoid BEC:
+
+  - aware users are less likely to be tricked
+  - proper control procedures can prevent inproper actions being taken
+  - "out of office" auto-replies may be disabled or limited to prevent attackers exploiting this knowledge
+  
 
 
 
