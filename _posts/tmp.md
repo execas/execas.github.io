@@ -1,7 +1,7 @@
 
 
 
-## Avoiding spam, malware and phishing
+## Spam, malware and phishing
 
 Spam, malware and phishing is something all system administrators (and end users) have become familiar with.
 
@@ -18,12 +18,14 @@ To properly deal with email spam, phishing and malware, you need multiple counte
 
 ### User awareness
 
-There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. But aware users is *not* a substitute for any of the countermeasures discussed below. It is better to look at the user as a permanent vulnerability that you need to build layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen. But keep in mind that user awareness is never a bad thing!
+There are certainly benefits to having users that are aware of the dangers of the internet and email, and who are critical when deciding which atttachments to open and which URLs to visit. User awareness training has become very popular among a lot of companies. But aware users is *not* a substitute for any of the countermeasures discussed below. It is better to look at the user as a permanent vulnerability that you need to build layers of security on top of. Why? Because no matter how much time is spent on user awareness, the risk of some of them being tricked is to great to accept. One user making one mistake can be enough for a major breach to happen. 
+
+But keep in mind that user awareness is never a bad thing!
 
 
 ### Dealing with Spam
 
-Spam is garbage mail, like unsolicited advertising and scam emails.
+Spam, also known as unsolicited bulk email (UBE), is garbage mail, like unsolicited advertising and scam emails.
 
 Spam can be dealt with by using a cloud anti-spam service, running an anti-spam gateway, using anti-spam software on the email servers or using anti-spam tools on the clients.
 
@@ -77,14 +79,10 @@ There are a few ways to avoid BEC:
   - proper control procedures can prevent inproper actions being taken
   - "out of office" auto-replies may be disabled or limited to prevent attackers exploiting this knowledge
   
+## Email spoofing
 
+Through the Simple Mail Transfer Protocol (SMTP), anyone can send an email claiming to be anyone (forging the sender address). This makes it easy for criminals to hide their identity and send spam and phishing emails that look to be from someone trustworthy. Forging the sender address is called email spoofing.
 
-
-
-
-
-
-
-
+### Sender Policy Framework (SPF)
 
 
