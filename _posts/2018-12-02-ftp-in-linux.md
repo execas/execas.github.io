@@ -44,7 +44,7 @@ All files and folders copied to `/var/ftp/pub` get the following type context la
 
 To make ftp clients able to write to a directory, change the type context to `public_content_rw_t`. Anonymous writes need the boolean `allow_ftpd_anon_write`.
 
-> If `semanange` is not found, try installing `policycoreutils-python`.
+> If `semanage` is not found, try installing `policycoreutils-python`.
 
 
 ### Grant access from remote systems
