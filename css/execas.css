@@ -54,16 +54,17 @@ blockquote {
      padding-right: 10px;
      border-left:4px solid #d33682;
      color:#000000;
+     font-size: 14px;
+
 
 }
 
 blockquote code {
      padding:0px 1px;
-     font-size:14px;
+     font-size:12px;
 }
 
 blockquote p {
-     font-size: 14px;
      line-height: 1.3em;
 }
 
@@ -87,7 +88,7 @@ code {
      font-size:12px;
      border-width: 1px;
      border-style: solid;
-     border-radius:5px;
+     /*border-radius:5px;*/
      /*border-color: #eeeeee;*/
      padding:1px 2px;
 }
