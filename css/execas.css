@@ -48,7 +48,7 @@ pre {
 
 
 pre code {
-     font-family: "Source Code Pro", monospace;
+     font-family: monospace, "Source Code Pro";
      /*font-family: 'Inconsolata', monospace;*/
      border-style: none;
      whitespace: pre;
