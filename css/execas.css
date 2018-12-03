@@ -73,9 +73,12 @@ pre code {
      /*font-family: 'Inconsolata', monospace;*/
      border-style: none;
      whitespace: pre;
-     color:#000000;
      font-size:13px;
+/*     color:#000000;
      background-color: #f6f8fa;
+     */
+     color:#ffffff;
+     background-color:#000000;
      border-width: 0px;
      border-radius:0px;
      padding:0;
