@@ -5,8 +5,6 @@ date: 2018-12-02
 tags: [linux,networking, security]
 ---
 
-## FTP
-
 FTP (file transfer protocol) is a protocol used to transfer files between a client and a server.
 
 ### Install and activate a server
