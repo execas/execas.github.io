@@ -21,7 +21,7 @@ The configuration file is `/etc/httpd/conf/httpd.conf`.
 
 ### SELinux
 
-The directories `/var/www/cgi-bin` and `/var/www/html` are created during installation with the following SELinux contexts:
+The directories `/var/www/cgi-bin` and `/var/www/html` are created during the installation with the following SELinux contexts:
 
 ```bash
 ~]# ls -Z /var/www
