@@ -29,7 +29,8 @@ img {
 
 pre {
      /*background-color: #f5f5f5;*/
-     background-color: #f6f8fa;
+     /*background-color: #f6f8fa;*/
+     background-color:#000000;
      margin-left:0px;
      margin-right:5px;
      padding-left: 10px;
