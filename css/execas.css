@@ -89,11 +89,12 @@ blockquote {
 
 
 }
-
+/*
 blockquote code {
      padding:0px 1px;
      font-size:12px;
 }
+*/
 
 blockquote p {
      line-height: 1.3em;
