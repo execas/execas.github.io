@@ -20,7 +20,7 @@ The configuration file is `/etc/vsftpd/vsftpd.conf`.
 
 ### SELinux
 
-The data directory `/var/ftp/pub` is created during installation with the following SELinux context:
+The data directory `/var/ftp/pub` is created during the installation with the following SELinux context:
 
 ```
 ~]# ls -Z /var/ftp
