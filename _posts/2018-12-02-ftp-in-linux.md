@@ -12,9 +12,9 @@ FTP (file transfer protocol) is a protocol used to transfer files between a clie
 ### Install and activate a server
 
 ```bash
-# yum install vsftpd
-# systemctl start vsftpd
-# systemctl enable vsftpd
+~]# yum install vsftpd
+~]# systemctl start vsftpd
+~]# systemctl enable vsftpd
 ```
 
 The configuration file is `/etc/vsftpd/vsftpd.conf`.
@@ -25,7 +25,7 @@ The configuration file is `/etc/vsftpd/vsftpd.conf`.
 The data directory `/var/ftp/pub` is created during installation with the following SELinux context:
 
 ```
-# ls -Z /var/ftp
+~]# ls -Z /var/ftp
 drwxr-xr-x. root root system_u:object_r:public_content_t:s0 pub
 ```
 
@@ -34,7 +34,7 @@ The `public_content_t` label makes the files and foldes copied to `/var/ftp/pub`
 All files and folders copied to `/var/ftp/pub` get the following type context labels:
 
 ```
-# semanage fcontext -l | grep /var/ftp
+~]# semanage fcontext -l | grep /var/ftp
 /var/ftp(/.*)?                                     all files          system_u:object_r:public_content_t:s0 
 /var/ftp/bin(/.*)?                                 all files          system_u:object_r:bin_t:s0 
 /var/ftp/etc(/.*)?                                 all files          system_u:object_r:etc_t:s0 
@@ -50,8 +50,8 @@ To make ftp clients able to write to a directory, change the type context to `pu
 ### Grant access from remote systems
 
 ```bash
-# firewall-cmd --permanent --add-service=ftp
-# firewall-cmd --reload
+~]# firewall-cmd --permanent --add-service=ftp
+~]# firewall-cmd --reload
 ```
 
 ### Clients
