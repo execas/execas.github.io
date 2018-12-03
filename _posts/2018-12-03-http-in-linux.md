@@ -31,7 +31,7 @@ drwxr-xr-x. root root system_u:object_r:httpd_sys_content_t:s0 html
 
 Html-files can be copied to the `/var/www/html` directory to be served by the httpd daemon.
 
-Files labeled with `httpd_sys_script_exec_t` can be executed by `httpd`, and files labeled with `httpd_sys_content` can be read by `httpd` and the scripts it executes (permissions and attributes must also be correctly set).
+Files labeled with `httpd_sys_script_exec_t` can be executed by `httpd`, and files labeled with `httpd_sys_content_t` can be read by `httpd` and the scripts it executes (permissions and attributes must also be correctly set).
 
 Use `semanage fcontext -l | grep /var/www` see all file contexts.
 
