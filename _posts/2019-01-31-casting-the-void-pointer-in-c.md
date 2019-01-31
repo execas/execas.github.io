@@ -9,6 +9,8 @@ This article shows the flexibility of memory on the heap and the `void` pointer.
 
 In the examples below, 100 bytes of data is allocated on the heap using `malloc` with the returned pointer is stored in `void *data`.
 
+### Example 1
+
 The first example shows how we can use dereferencing to write and read an unsigned 4 byte int value to memory:
 
 ```c
@@ -37,6 +39,8 @@ int main()
  ```
 
 The first byte (byte 0) of the heap memory is pointed to by `*void data`. We use `*(uint32_t *)` to cast and dereference the pointer. Casting makes sure we read/write the correct amount of bytes, and dereferencing let's us access the value stored at the pointer.
+
+### Example 2
 
 Casting is very powerful. In the next example we do the same as in the first, but we only read back a single byte when printing:
 
@@ -73,7 +77,9 @@ The output is 5, why?
 3. the first byte is 00000101
 4. 00000101 is 5 in decimal
 
-Let's confirm this by printing the second byte (00001101), which should be 13 in decimal:
+### Example 3
+
+Let's confirm the above by printing the second byte (00001101), which should be 13 in decimal:
 
 ```c
 /*
@@ -101,6 +107,8 @@ $ ./e3
 ```
 
 The only difference in the code above is found in the `printf` function, where we access the value at the second byte by using casting with a `+1` offset. An alternative, and maybe preferable, syntax would be using `((uint8_t *)data)[1]`.
+
+### Example 4
 
 Lets try setting 4 bytes, then reading them as a `uint32_t`:
 
@@ -134,6 +142,8 @@ $ ./e4
 
 In Little-endian, the bytes we set are represented as eight 0 bits followed by twenty-four 1 bits.
 24 bits can represent unsigned numbers 0-16777215, and since all of them are set, we of course get the maximum value.
+
+### Example 5
 
 In the example below, we set several bytes with decimal values, then print them as a string:
 
