@@ -7,7 +7,7 @@ tags: [c, programming]
 
 This article shows the flexibility of memory on the heap and the `void` pointer.
 
-In the examples below, 100 bytes of data is allocated on the heap using `malloc` and the returned pointer is stored in `void *data`.
+In the examples below, 100 bytes of data is allocated on the heap using `malloc` with the returned pointer is stored in `void *data`.
 
 The first example shows how we can use dereferencing to write and read an unsigned 4 byte int value to memory:
 
@@ -100,9 +100,9 @@ $ ./e3
 13
 ```
 
-The only difference in the code above is found in the `printf` function, where we access the value at the second byte by using casting with a `+1` offset. An alternative, and maybe preferable syntax, would be using `((uint8_t *)data)[1]`.
+The only difference in the code above is found in the `printf` function, where we access the value at the second byte by using casting with a `+1` offset. An alternative, and maybe preferable, syntax would be using `((uint8_t *)data)[1]`.
 
-Lets try setting 4 bytes, the reading them as a `uint32_t`:
+Lets try setting 4 bytes, then reading them as a `uint32_t`:
 
 ```c
 /*
@@ -132,10 +132,10 @@ $ ./e4
 16777215
 ```
 
-In Little-endian, the set bytes are represented as eight 0 bits followed by twenty-four 1 bits.
+In Little-endian, the bytes we set are represented as eight 0 bits followed by twenty-four 1 bits.
 24 bits can represent unsigned numbers 0-16777215, and since all of them are set, we of course get the maximum value.
 
-In the example below, we set individual bytes, then print them as a string:
+In the example below, we set several bytes with decimal values, then print them as a string:
 
 
 ```c
@@ -168,4 +168,4 @@ $ ./e5
 Hello
 ```
 
-The output is a result of setting the bytes to the decimal value of the wanted ASCII characters (with the last byte set to 0 to mark the end of the string), and using `"%s` format specifer in `printf()`. Note that the void poiter is casted `(uint8_t *)`, since the format specifier expects a `char *`, not an `int` (which we would get if we dereferenced the pointer).
+The output is a result of setting the bytes to the decimal value of the wanted ASCII characters (with the last byte set to 0 to mark the end of the string), and using the `"%s` format specifer in `printf()`. Note that the void pointer is cast `(uint8_t *)`, since the format specifier expects a `char *`, not an `int` (which we would get if we dereferenced the pointer).
