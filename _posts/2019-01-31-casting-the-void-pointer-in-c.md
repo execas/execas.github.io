@@ -11,7 +11,7 @@ In the examples below, 100 bytes of data is allocated on the heap using `malloc`
 
 ### Example 1
 
-The first example shows how we can use dereferencing to write and read an unsigned 4 byte int value to memory:
+The first example shows how we can use casting and dereferencing to write/read an unsigned 4 byte int value to/from memory through the void pointer:
 
 ```c
 /*
@@ -110,7 +110,7 @@ The only difference in the code above is found in the `printf` function, where w
 
 ### Example 4
 
-Lets try setting 4 bytes, then reading them as a `uint32_t`:
+Let's try setting 4 bytes, then reading them as a `uint32_t`:
 
 ```c
 /*
