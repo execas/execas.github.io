@@ -64,7 +64,7 @@ pre code {
 }
 code {
      background-color: #f6f8fa;
-     font-family: "Source Code Pro", monospace;
+     font-family: monospace,"Source Code Pro";
      whitespace:normal;
      color:#000000;
      font-size:13px;
