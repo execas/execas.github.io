@@ -8,7 +8,7 @@ body {
      font-weight: 400;
      color: #252525;
      font-size: 16px;
-     background-color:#393939;
+     background-color:#ffffff;
      /*background-color: #1d1e22;*/
      /*background-color: #f2f2f2;*/
      /*background-color: #ffffff;*/
@@ -19,7 +19,7 @@ body {
      max-width: 718px;
      background-color: #ffffff;
      margin: 0 auto; 
-     /*border: 1px solid #707070;*/
+     border: 1px solid #707070;
 }
 
 img {
