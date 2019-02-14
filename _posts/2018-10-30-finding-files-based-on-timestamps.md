@@ -5,7 +5,7 @@ date: 2018-10-30
 tags: [find, security, linux, tools]
 ---
 
-## Finding files based on timestamps
+## Timestamp file search
 
 ### Access (`atime`)
 
