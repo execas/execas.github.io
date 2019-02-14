@@ -30,9 +30,9 @@ img {
 
 pre {
      /*background-color: #f5f5f5;*/
-     /*background-color: #f6f8fa;*/
+     background-color: #f6f8fa;
      /*background-color:#232c31;*/
-     background-color:#000000;
+     /*background-color:#000000;*/
      margin-left:0px;
      margin-right:5px;
      padding-left: 10px;
@@ -54,13 +54,13 @@ pre code {
      border-style: none;
      whitespace: pre;
      font-size:13px;
-/*     color:#000000;
+     color:#000000;
      background-color: #f6f8fa;
-     */
+     
      /*color:#f0f0f0;
      background-color:#232c31;*/
-     color:#ffffff;
-     background-color:#000000;
+     /*color:#ffffff;
+     background-color:#000000;*/
      border-width: 0px;
      border-radius:0px;
      padding:0;
