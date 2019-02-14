@@ -18,7 +18,7 @@ body {
 #wrapper {
      padding: 30px 15px 70px 15px;
      max-width: 718px;
-     background-color: #f5f1ed;
+     background-color: #ffffff;
      margin: 0 auto; 
      /*border: 1px solid #707070;*/
 }
@@ -70,7 +70,7 @@ pre code {
 }
 code {
      /*background-color: #f6f8fa;*/
-     background-color:#ffffff;
+     background-color:#707070;
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
      color:#000000;
