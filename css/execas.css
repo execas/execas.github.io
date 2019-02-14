@@ -49,7 +49,6 @@ pre {
 
 }
 
-
 pre code {
      font-family: "Source Code Pro", monospace;
      /*font-family: 'Inconsolata', monospace;*/
@@ -140,7 +139,7 @@ p {
 .header h1 {
      font-size: 3rem;
      margin-right: 3rem;
-     color: #000000;
+     color: #ffffff;
      display: inline;
      margin-top: 0px;
      margin-bottom:0px;
@@ -300,7 +299,7 @@ END: postinfo
 }
 
 .post h3 {
-     color: #000000;
+     color: #ffffff;
      font-size: 1.5rem;
      margin-top:2rem;
      margin-bottom:1rem;
