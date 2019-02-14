@@ -128,8 +128,8 @@ p {
 .header {
      font-family: 'Inconsolata', monospace;
      margin-top:0;
-     background-color:#fefef9;
-     color: #dddddd;
+     background-color:#393939;
+     color: #ffffff;
      margin:0 auto;
      max-width: 720px;
      padding: 10px 14px 10px 14px;
@@ -176,6 +176,7 @@ list of matching posts beneath tag name header
     margin-top: 0;
     display:inline;
     font-weight: normal;
+    color: #ffffff;
 }
 .tag-posts li small {
     font-size: 60%;
