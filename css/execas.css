@@ -176,7 +176,6 @@ list of matching posts beneath tag name header
     margin-top: 0;
     display:inline;
     font-weight: normal;
-    color: #ffffff;
 }
 .tag-posts li small {
     font-size: 60%;
@@ -189,7 +188,7 @@ list of matching posts beneath tag name header
      margin-top: 0rem;
 }
 .tag-posts h3 a {
-     color: #333333;
+     color: #ffffff;
 }
 
 .top-tagmarks {
