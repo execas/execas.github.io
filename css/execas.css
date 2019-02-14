@@ -7,9 +7,9 @@ body {
      font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
      font-weight: 400;
      /*color: #252525;*/
-     color:#ffffff;
+     color:#000000;
      font-size: 16px;
-     background-color:#393939;
+     background-color:#ece2do;
      /*background-color: #1d1e22;*/
      /*background-color: #f2f2f2;*/
      /*background-color: #ffffff;*/
@@ -18,7 +18,7 @@ body {
 #wrapper {
      padding: 30px 15px 70px 15px;
      max-width: 718px;
-     background-color: #393939;
+     background-color: #ece2do;
      margin: 0 auto; 
      /*border: 1px solid #707070;*/
 }
@@ -33,7 +33,8 @@ img {
 pre {
      /*background-color: #f5f5f5;*/
      /*background-color: #f6f8fa;*/
-     background-color:#232c31;
+     /*background-color:#232c31;*/
+     background-color:#BFB5AF;
      /*background-color:#000000;*/
      margin-left:0px;
      margin-right:5px;
@@ -58,8 +59,9 @@ pre code {
      /*color:#000000;
      background-color: #f6f8fa;*/
      
-     color:#f0f0f0;
-     background-color:#232c31;
+     color:#000000;
+     /*background-color:#232c31;*/
+     background-color:#bfb5af;
      /*color:#ffffff;
      background-color:#444444;*/
      border-width: 0px;
@@ -68,10 +70,10 @@ pre code {
 }
 code {
      /*background-color: #f6f8fa;*/
-     background-color:#505050;
+     background-color:#d5b9b2;
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
-     color:#ffffff;
+     color:#000000;
      font-size:14px;
      /*border-width: 1px;
      border-style: solid;
@@ -280,7 +282,8 @@ END: postinfo
 }
      
 .post h2 {
-     color: #d33682;
+     /*color: #d33682;/*
+     color: #582c4d;
      font-size: 2rem;
      margin-top: 2rem;
      margin-bottom:1rem;
@@ -300,7 +303,7 @@ END: postinfo
 }
 
 .post h3 {
-     color: #ffffff;
+     color: #A26769;
      font-size: 1.5rem;
      margin-top:2rem;
      margin-bottom:1rem;
