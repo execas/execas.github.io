@@ -67,7 +67,8 @@ pre code {
      padding:0;
 }
 code {
-     background-color: #f6f8fa;
+     /*background-color: #f6f8fa;*/
+     background-color:#707070;
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
      color:#000000;
