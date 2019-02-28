@@ -81,7 +81,7 @@ long double: 3.3621e-4932
 
 ### Printing
 
-In the example above we used `%g` for float, `%lg` for double and `%Lg` for the long double.These display the floating-point type in either decimal notation or scientific notation, depending on the size of the value.
+In the example above we used `%g` for float, `%lg` for double and `%Lg` for the long double. These display the floating-point type in either decimal notation or scientific notation, depending on the size of the value.
 
 For decimal notation:
 
@@ -98,11 +98,11 @@ For scientific notation:
 
 > Note: `%[efg]` and `%l[efg]` mean the same thing to the `printf`-function, the `l` is ignored. A float argument is promoted to a double in `printf`, and `%[efg]` can correctly display a double value. But make a habit out of using `%l[efg]` for double anyway, since it doesn't hurt, makes the code more explicit, and is more in line with the specifiers `scanf` requires.
 
-> *Warning:* In C89,`%l[efg]` may cause undefined behavior.
+> **Warning:** In C89, `%l[efg]` may cause undefined behavior.
 
 ### Precision
 
-When a real number is stored in a floating-point data type, precision may be lost. More bits results gives the possibility for greater precision, and this can be illustrated by comparing a `float` and a `double` both set to 1.1:
+When a real number is stored in a floating-point data type, precision may be lost. More bits gives the possibility for greater precision, and this can be illustrated by comparing a `float` and a `double` both set to 1.1:
 
 ```c
 /*
@@ -160,9 +160,9 @@ In the examples above, the floating constant (also called *floating literal*) as
 
 An unsuffixed floating constant has the default type double. The "f" suffix gives it type float, the "L" suffix gives it type long double.
 
-> Note: we can use "F" and "l" instead, but "f" and "L" is easier to read and more in tune with the `printf` format specifier syntax.
+> Note: we can use "F" and "l" instead, but "f" and "L" are easier to read and more in tune with the `printf` format specifier syntax.
 
-We should make a habit out of suffixing values assigned to a float with "f", and values assigned to a long double with "L", or risk conversion errors:
+We should make a habit out of suffixing values assigned to a float with "f" and values assigned to a long double with "L", or risk conversion errors:
 
 ```c
 /*
@@ -194,9 +194,9 @@ Notice that *l* is equal to *d*, since the unsuffixed floating constant was firs
 
 ### Casting
 
-Casting (type casting) let's us convert a variable temporarily. This can be useful or necessary when doing for example assignments, calculations or printing of data.
+Casting (type casting) allows us convert a variable temporarily. This can be useful or necessary when doing for example assignments, calculations or printing of data.
 
-If we for cast a float to a 32 bit integer, we are left with the integer part:
+If we for cast a `float` to a 32 bit integer, we are left with the integer part:
 
 ```c
 /*
@@ -510,7 +510,7 @@ What happened here?
 
 It's the integer literal 1's fault. The default integer literal is 32 bits, and we shift bits by more than this for the first half of the for-loop.
 
-> *Warning:* Shifting bits with values greater than or equal to the width of the data type operated on causes undefined behavior.
+> **Warning:** Shifting bits with values greater than or equal to the width of the data type operated on causes undefined behavior.
 
 "Undefined" does not necessarily mean "unexplainable". In some cases - such as ours - it may be both obvious and logical (but certainly not acceptable or safe for use in production code anyhow).
 
@@ -549,7 +549,7 @@ int main()
 32           1 |  0           1
 ```
 
-But you should never rely on this! When we shift by values greater than the width of the data type in the example below, we get 0 as a result:
+But we should never rely on this! When we shift by values greater than the width of the data type in the example below, we get 0 as a result:
 
 ```c
 /*
@@ -578,7 +578,7 @@ int main()
 
 Back to the binary conversion. How can we correct it?
 
-We make sure the 1 we shift is cast to a 64-bit integer, suffixed by an "l" or accessed through a 64-bit integer variable to prevent it from being the default 32-bit integer.
+We make sure the 1 we shift is cast to a 64-bit integer, suffixed by an "L" or accessed through a 64-bit integer variable to prevent it from being the default 32-bit integer.
 
 ```c
 /*
@@ -593,7 +593,7 @@ int main()
 {
     int64_t v = -4586625597563396424;
     for (int i = 63; i >= 0; i--)
-        printf("%" PRId8, (v & (1l << i)) != 0);
+        printf("%" PRId8, (v & (1L << i)) != 0);
 }
 ```
 
@@ -734,7 +734,7 @@ The `long double` is only required by the C language to be at least as precise a
 
 > Note: The `long double` may be in the IEEE 754 quadruple-precision format (128 bits), but only with a few systems and compilers, since hardware support for quadruple-precision is not very common.
 
-> Note: `gcc` has a quadruple-precicion type called `\_\_float128`.
+> Note: `gcc` has a quadruple-precicion type called `__float128`.
 
 Let's store a value in a `long double`, then examine each of the 12 or 16 bytes:
 
@@ -809,7 +809,7 @@ The output is in Little-endian order, so let's reverse the byte order
 
 The floating-point calculation is:
 
-(-1)^*sign-bit* * *integer bit*.*mantissa* * 2^(*exponent* - *bias*)
+(-1)^*sign-bit* * *integer-bit*.*mantissa* * 2^(*exponent* - *bias*)
 
 The calculation is identical to the one used for floats and doubles, and so is the explanation below on how to convert from binary to `long double`, except for the number of bits and what they represent, and the fact that there is no "hidden bit" (explained soon).
 
@@ -931,10 +931,8 @@ Mantissa: 1.56453125
 Result: (-1)^1 * 1.56453125 * 2^6 = -100.1299999999999999975019981946
 ```
 
-We can use the pow(pkikk
-
 ### `float`, `double` or `long double`?
 
-Choose a data type based on your needs. What precision is actually needed? Greater precison comes at the cost of more storage space and slower operations.
+We choose a data type based on our needs. What precision is actually needed? Greater precison comes at the cost of more storage space and slower operations.
 
 > Note: `double` is the default floating-point type in a lot of programming languages, and is often thought of as the go-to type for floating-point.
