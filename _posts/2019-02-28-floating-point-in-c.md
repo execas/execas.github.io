@@ -308,7 +308,7 @@ $ ./f2
 
 ### How a float is represented
 
-The output is 01000010 11001000 01000010 10001111.
+The above output has the following format:
 
 - The first bit is for the sign. 0 means positive.
 - The next eight bits is for the exponent: 10000101.
@@ -604,11 +604,11 @@ int main()
 
 ### How a double is represented
 
-The output is 1100000001011001000010000101000111101011100001010001111010111000.
+The above output has the following format:
 
 - The first bit is for the sign. 1 means negative.
-- The next eleven bits is for the exponent. 10000000101.
-- The last fifty-two bits is for the mantissa. 1001000010000101000111101011100001010001111010111000.
+- The next eleven bits is for the exponent.
+- The last fifty-two bits is for the mantissa.
 
 The calculation to convert from binary to `double` is:
 
@@ -634,7 +634,10 @@ Converting the eleven bits to decimal:
 ### Calculating the mantissa
 
 Before calculating the mantissa, there is an omitted "1." we need to add back (as seen in the floating-point calculation above):
+
+```
 1.1001000010000101000111101011100001010001111010111000
+```
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
 
@@ -803,9 +806,9 @@ The output is in Little-endian order, so let's reverse the byte order
 ```
 
 - The first bit is for the sign. 0 means positive.
-- The next fifteen bits is for the exponent: 100000000000101.
-- The next bit is the integer part: 1.
-- The last sixty-three bits is for the mantissa: 100100001000010100011110101110000101000111101011100001010001111.
+- The next fifteen bits is for the exponent.
+- The next bit is the integer part.
+- The last sixty-three bits is for the mantissa.
 
 The floating-point calculation is:
 
@@ -828,9 +831,11 @@ Converting the fifteen bits to decimal:
 
 ### Calculating the mantissa
 
-For floats and doubles, there is an omitted "1" that we have to add back before continuing our calculation, but for long doubles there is no "hidden bit". This bit is in the data, between the exponent and fraction bits.
+For floats and doubles, there is an omitted "1" that we have to add back before continuing our calculation, but for long doubles there is no "hidden bit". This bit is in the data, between the exponent and fraction bits:
 
+```
 1.100100001000010100011110101110000101000111101011100001010001111.
+```
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
 
