@@ -311,8 +311,8 @@ $ ./f2
 The above output has the following format:
 
 - The first bit is for the sign. 0 means positive.
-- The next eight bits is for the exponent: 10000101.
-- The last twenty-three bits is for the mantissa: 10010000100001010001111.
+- The next eight bits is for the exponent.
+- The last twenty-three bits is for the mantissa.
 
 The floating-point calculation is:
 
@@ -338,7 +338,10 @@ Converting the eight bits to decimal:
 ### Calculating the mantissa
 
 Before calculating the mantissa, there is an omitted "1." we need to add back (as seen in the floating-point calculation above):
+
+```
 1.10010000100001010001111
+```
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
 
@@ -834,7 +837,7 @@ Converting the fifteen bits to decimal:
 For floats and doubles, there is an omitted "1" that we have to add back before continuing our calculation, but for long doubles there is no "hidden bit". This bit is in the data, between the exponent and fraction bits:
 
 ```
-1.100100001000010100011110101110000101000111101011100001010001111.
+1.100100001000010100011110101110000101000111101011100001010001111
 ```
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
