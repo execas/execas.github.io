@@ -2,4 +2,5 @@ markdown: kramdown
 tag_page: '/tags.html'
 home_page: '/index.html'
 about_page: '/about.html'
-tagline: 'Example tagline'
+tagline: ''
+highlighter: rouge
