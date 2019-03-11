@@ -280,9 +280,9 @@ END: postinfo
 }
      
 .post h2 {
-     color: #a5f9f1;
+     color: #000000;
      /*color: #d33682;*/
-     font-size: 2rem;
+     font-size: 2.5rem;
      margin-top: 2rem;
      margin-bottom:1rem;
      padding-bottom: 10px;
