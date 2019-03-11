@@ -265,7 +265,6 @@ Let's store a value in a `float`, then examine it as a 32-bit signed integer:
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <inttypes.h>
 
 int main()
@@ -459,7 +458,6 @@ Let's store a value in a `double`, then examine it as a 64-bit signed integer:
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <inttypes.h>
 
 int main()
@@ -752,7 +750,6 @@ Let's store a value in a `long double`, then examine each of the 12 or 16 bytes:
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <inttypes.h>
 
 int main()
@@ -781,7 +778,6 @@ Let's examine these bytes, excluding the last 6, in binary:
  */
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <inttypes.h>
 
 int main()
