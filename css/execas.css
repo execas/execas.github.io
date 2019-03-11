@@ -283,7 +283,7 @@ END: postinfo
 .post h2 {
      color: #000000;
      /*color: #d33682;*/
-     font-size: 2.2rem;
+     font-size: 1.5rem;
      margin-top: 2rem;
      margin-bottom:1rem;
      padding-bottom: 10px;
@@ -302,8 +302,8 @@ END: postinfo
 }
 
 .post h3 {
-     color: #333333;
-     font-size: 1.5rem;
+     color: #3D9CAF;
+     font-size: 1.2rem;
      margin-top:2rem;
      margin-bottom:1rem;
 
