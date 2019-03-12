@@ -238,7 +238,7 @@ postinfo: title, date, tags
 }
 
 .post-date {
-     color: #9d9d9d;
+     color: #d3869b;
      margin-right: 12px;
      margin-left: 12px;
      font-size: 12px;
@@ -246,7 +246,7 @@ postinfo: title, date, tags
 .post-tag {
     padding: .1rem .2rem .1rem .2rem;
     font-size: 80%;
-    color: #707070;
+    color: #fabd2f;
     /*border: 1px solid #ccc;*/
     text-decoration: none;
 }
