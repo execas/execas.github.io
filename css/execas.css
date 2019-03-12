@@ -229,7 +229,8 @@ postinfo: title, date, tags
 */
 .post-info {
      margin-bottom:3rem;
-     background-color:#1d2021;
+     background-color:#504945;
+     padding:10px;
 }
        
 .post-title {
