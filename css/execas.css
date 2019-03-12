@@ -229,6 +229,7 @@ postinfo: title, date, tags
 */
 .post-info {
      margin-bottom:3rem;
+     background-color:#1d2021;
 }
        
 .post-title {
