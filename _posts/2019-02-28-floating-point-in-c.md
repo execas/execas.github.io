@@ -32,13 +32,13 @@ sizeof(double):       64 bits
 sizeof(long double): 128 bits
 ```
 
-> Note: Compiling the above code on a 32-bit system, or using `gcc -m32 ...` may give a `long double` size of 96 bits.
+> Note: Compiling the above code on a 32-bit system, or using `gcc -m32 ...` may give a long double size of 96 bits.
 
 The maximum and minimum values a floating-point data type can store, is determined by the memory it uses for storage (as well as its representation, which will be covered later).
 
 ### Maximum and minimum values
 
-`float.h` (see `$ man float.h`), part of the C Standard Library, can be used to examine some of the properties of these types, for example maximum and minimum values:
+`float.h`, part of the C Standard Library, can be used to examine some of the properties of these types, for example maximum and minimum values:
 
 ```c
 /*
@@ -85,24 +85,24 @@ In the example above we used `%g` for float, `%lg` for double and `%Lg` for the 
 
 For decimal notation:
 
-- `%f` for `float`
-- `%lf` for `double`
-- `%Lf` for `long double`
+- `%f` for float
+- `%lf` for double
+- `%Lf` for long double
 
 For scientific notation:
 
-- `%e for `float`
-- `%le` for `double`
-- `%Le` for `long double`
+- `%e` for float
+- `%le` for double
+- `%Le` for long double
 
 
-> Note: `%[efg]` and `%l[efg]` mean the same thing to the `printf`-function, the `l` is ignored. A float argument is promoted to a double in `printf`, and `%[efg]` can correctly display a double value. But make a habit out of using `%l[efg]` for double anyway, since it doesn't hurt, makes the code more explicit, and is more in line with the specifiers `scanf` requires.
+> Note: `%[efg]` and `%l[efg]` mean the same thing to the printf-function, the "l" is ignored. A float argument is promoted to a double in printf, and `%[efg]` can correctly display a double value. But make a habit out of using `%l[efg]` for double anyway, since it doesn't hurt, makes the code more explicit, and is more in line with the specifiers `scanf` requires.
 
 > **Warning:** In C89, `%l[efg]` may cause undefined behavior.
 
 ### Precision
 
-When a real number is stored in a floating-point data type, precision may be lost. More bits gives the possibility for greater precision, and this can be illustrated by comparing a `float` and a `double` both set to 1.1:
+When a real number is stored in a floating-point data type, precision may be lost. More bits gives the possibility for greater precision, and this can be illustrated by comparing a float and a double both set to 1.1:
 
 ```c
 /*
@@ -125,7 +125,7 @@ int main()
 f != d
 ```
 
-The comparison fails since the `double` does a better job at representing 1.1:
+The comparison fails since the double does a better job at representing 1.1:
 
 ```c
 /*
@@ -160,7 +160,7 @@ In the examples above, the floating constant (also called *floating literal*) as
 
 An unsuffixed floating constant has the default type double. The "f" suffix gives it type float, the "L" suffix gives it type long double.
 
-> Note: we can use "F" and "l" instead, but "f" and "L" are easier to read and more in tune with the `printf` format specifier syntax.
+> Note: we can use "F" and "l" instead, but "f" and "L" are easier to read and more in tune with the printf format specifier syntax.
 
 We should make a habit out of suffixing values assigned to a float with "f" and values assigned to a long double with "L", or risk conversion errors:
 
@@ -196,7 +196,7 @@ Notice that *l* is equal to *d*, since the unsuffixed floating constant was firs
 
 Casting (type casting) allows us convert a variable temporarily. This can be useful or necessary when doing for example assignments, calculations or printing of data.
 
-If we for cast a `float` to a 32 bit integer, we are left with the integer part:
+If we for cast a float to a 32 bit integer, we are left with the integer part:
 
 ```c
 /*
@@ -254,7 +254,7 @@ long double from fl:    123.456787109375
 
 ## Single-precision floating-point
 
-The `float` data type is in the IEEE754 single-precision binary floating-point format (32 bits) on most systems.
+The float data type is in the IEEE754 single-precision binary floating-point format (32 bits) on most systems.
 
 Let's store a value in a `float`, then examine it as a 32-bit signed integer:
 
@@ -447,7 +447,7 @@ a = 100.12999725
 
 ## Double-presicion floating-point
 
-The `double` data type is in the IEEE754 double-precision binary floating-point format (64 bits) on most systems.
+The double data type is in the IEEE754 double-precision binary floating-point format (64 bits) on most systems.
 
 Let's store a value in a `double`, then examine it as a 64-bit signed integer:
 
@@ -611,11 +611,11 @@ The above output has the following format:
 - The next eleven bits is for the exponent.
 - The last fifty-two bits is for the mantissa.
 
-The calculation to convert from binary to `double` is:
+The calculation to convert from binary to double is:
 
 (-1)^*sign-bit* * 1.*mantissa* * 2^(*exponent* - *bias*)
 
-The calculation is identical to the one used for floats, and so is the explanation below on how to convert from binary to `double`, except for the number of bits and what they represent.
+The calculation is identical to the one used for floats, and so is the explanation below on how to convert from binary to double, except for the number of bits and what they represent.
 
 ### Calculating the exponent
 
@@ -734,11 +734,11 @@ Even more precision is offered by the long double data type.
 
 ## The long double
 
-The `long double` is only required by the C language to be at least as precise as the `double`. With `gcc` on x86 architecture `long double` is the 80-bit extended precision type. The storage is typically 96 or 128 bits, due to padding which maintains data structure alignment. This means that a lot of storage space is essentially wasted.
+The long double is only required by the C language to be at least as precise as the double. With gcc on x86 architecture `long double` is the 80-bit extended precision type. The storage is typically 96 or 128 bits, due to padding which maintains data structure alignment. This means that a lot of storage space is essentially wasted.
 
 > Note: The `long double` may be in the IEEE 754 quadruple-precision format (128 bits), but only with a few systems and compilers, since hardware support for quadruple-precision is not very common.
 
-> Note: `gcc` has a quadruple-precicion type called `__float128`.
+> Note: gcc has a quadruple-precicion type called `__float128`.
 
 Let's store a value in a `long double`, then examine each of the 12 or 16 bytes:
 
@@ -767,7 +767,7 @@ int main()
 143 194 245 40 92 143 66 200 5 64 0 0 0 0 0 0
 ```
 
-The size of the `long double` is 16 bytes (128 bits) on this system. The `long double` can store 80 bits, which means 48 bits (6 bytes) are padded. As we can see from the output above, this must be the last 6 bytes (which are actually the first 6 bytes since the above output is Little-endian).
+The size of the long double is 16 bytes (128 bits) on this system. The long double can store 80 bits, which means 48 bits (6 bytes) are padded. As we can see from the output above, this must be the last 6 bytes (which are actually the first 6 bytes since the above output is Little-endian).
 
 Let's examine these bytes, excluding the last 6, in binary:
 
@@ -813,7 +813,7 @@ The floating-point calculation is:
 
 (-1)^*sign-bit* * *integer-bit*.*mantissa* * 2^(*exponent* - *bias*)
 
-The calculation is identical to the one used for floats and doubles, and so is the explanation below on how to convert from binary to `long double`, except for the number of bits and what they represent, and the fact that there is no "hidden bit" (explained soon).
+The calculation is identical to the one used for floats and doubles, and so is the explanation below on how to convert from binary to long double, except for the number of bits and what they represent, and the fact that there is no "hidden bit" (explained soon).
 
 ### Calculating the exponent
 
@@ -935,7 +935,7 @@ Mantissa: 1.56453125
 Result: (-1)^1 * 1.56453125 * 2^6 = -100.1299999999999999975019981946
 ```
 
-### `float`, `double` or `long double`?
+### float, double or long double?
 
 We choose a data type based on our needs. What precision is actually needed? Greater precison comes at the cost of more storage space and slower operations.
 
