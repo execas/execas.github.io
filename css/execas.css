@@ -36,7 +36,6 @@ pre {
      /*background-color: #f6f8fa;*/
      /*background-color:#232c31;*/
      background-color:#32303f;
-     /*background-color:#000000;*/
      margin-left:0px;
      margin-right:5px;
      padding-left: 10px;
@@ -57,9 +56,6 @@ pre code {
      border-style: none;
      whitespace: pre;
      font-size:13px;
-     /*background-color: #f8f8ff;*/
-     /*background-color:#232c31;*/
-     /*background-color:#252323;*/
      background-color:#32303f;
      color:#ffffff;
      border-width: 0px;
