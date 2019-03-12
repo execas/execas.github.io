@@ -63,7 +63,8 @@ pre code {
 }
 
 code {
-     background-color: #f6f8fa;
+     background-color: #d5c4a1;
+     /*background-color: #f6f8fa;*/
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
      color:#000000;
