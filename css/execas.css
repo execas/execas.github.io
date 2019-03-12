@@ -7,7 +7,6 @@ body {
      font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Sans", sans-serif;
      /*font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;*/
      font-weight: 400;
-     /*color: #252525;*/
      color: #000000;
      font-size: 15px;
      /*background-color: #f5f1ed;*/
@@ -35,7 +34,7 @@ pre {
      /*background-color: #f5f5f5;*/
      /*background-color: #f6f8fa;*/
      /*background-color:#232c31;*/
-     background-color:#32303f;
+     background-color:#32302f;
      margin-left:0px;
      margin-right:5px;
      padding-left: 10px;
@@ -56,24 +55,20 @@ pre code {
      border-style: none;
      whitespace: pre;
      font-size:13px;
-     background-color:#32303f;
+     background-color:#32302f;
      color:#ffffff;
      border-width: 0px;
      border-radius:0px;
      padding:0;
 }
+
 code {
      background-color: #f6f8fa;
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
      color:#000000;
      font-size:12px;
-     /*border-width: 1px;
-     border-style: solid;
-     border-radius:5px;
-     border-color: #eeeeee;*/
      padding:1px 2px;
- /*    border: 1px solid #ccc;*/
 }
 
 blockquote {
