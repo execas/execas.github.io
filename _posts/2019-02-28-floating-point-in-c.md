@@ -898,7 +898,8 @@ int main()
 }
 ```
 
-```
+<div class="term">
+~]$ ./l3
 Exponent: 6
 
 Mantissa built with:
@@ -935,7 +936,7 @@ Mantissa built with:
 Mantissa: 1.56453125
 
 Result: (-1)^1 * 1.56453125 * 2^6 = -100.1299999999999999975019981946
-```
+</div>
 
 ### float, double or long double?
 
