@@ -159,7 +159,7 @@ p {
 list of matching posts beneath tag name header 
 */
 .tag-header {
-     color: #333333;
+     color: #282828;
      font-size: 1.2rem;
      text-transform: capitalize;
      margin-bottom: 0.5rem;
@@ -259,12 +259,12 @@ postinfo: title, date, tags
     padding: .1rem .2rem .1rem .2rem;
     font-size: 80%;
     color: #3c3836;
-    /*border: 1px solid #ccc;*/
+    border: 1px solid #f6f8fa;
     text-decoration: none;
 }
 
 .post-tag:hover {
-    color: #000000;
+    color: #282828;
     text-decoration: none;
 }
 /*
@@ -290,7 +290,7 @@ END: postinfo
      margin-bottom:1rem;
      padding-bottom: 10px;
      width: 90%;
-     border-bottom: 1px solid #f5f5f5;
+     border-bottom: 1px solid #f6f8fa;
 }
 
 .post h2 code {
