@@ -64,7 +64,7 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./a2
 Max value
 --------------------------
@@ -77,7 +77,7 @@ Min value
 float:       1.17549e-38
 double:      2.22507e-308
 long double: 3.3621e-4932
-```
+</div>
 
 ### Printing
 
