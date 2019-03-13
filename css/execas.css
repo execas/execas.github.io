@@ -20,7 +20,7 @@ body {
      max-width: 718px;
      background-color: #ffffff;
      margin: 0 auto; 
-     border: 1px solid #928374;
+     border: 1px solid #f6f8fa;
 }
 
 img {
@@ -72,7 +72,6 @@ pre code {
      border-style: none;
      whitespace: pre;
      font-size:13px;
-     /*background-color:#32302f;*/
      background-color:#ffffff;
      color:#282828;
      border-width: 0px;
