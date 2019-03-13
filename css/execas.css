@@ -259,7 +259,7 @@ END: postinfo
 */
 
 .post ul {
-     list-style-type:none;
+     list-style-type:square;
 }
 
 /* from https://codepen.io/andresdhn/pen/meNwoy */
