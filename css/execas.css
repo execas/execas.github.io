@@ -9,9 +9,6 @@ body {
      font-weight: 400;
      color: #000000;
      font-size: 16px;
-     /*background-color: #f5f1ed;*/
-     /*background-color: #504945;*/
-     /*background-color: #f2f2f2;*/
      background-color: #ffffff;
 }
 
@@ -136,11 +133,11 @@ p {
      font-family: 'Inconsolata', monospace;
      margin-top:0;
      background-color:#282828;
-     color: #fbf1c7;
+     color: #f6f8fa;
      margin:0 auto;
      max-width: 720px;
      padding: 10px 24px 10px 24px;
-     border:1px solid #707070;
+     border:1px solid #f6f8fa;
 }
 
 .header h1 {
