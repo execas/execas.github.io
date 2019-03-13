@@ -42,6 +42,13 @@ img {
      white-space: pre;
      color:#ffffff;
      overflow: auto;
+     font-family: "Source Code Pro", monospace;
+     border-style: none;
+     whitespace: pre;
+     font-size:13px;
+     background-color:#fbf1c7;
+     color:#3c3836;
+     padding:0;
 }
 
 pre {
