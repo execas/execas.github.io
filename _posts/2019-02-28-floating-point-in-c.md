@@ -570,7 +570,7 @@ int main()
 }
 ```
 
-<div class="term>
+<div class="term">
 ~]$ ./d4
 0
 0
@@ -599,7 +599,7 @@ int main()
 }
 ```
 
-<div class="term>
+<div class="term">
 ~]$ ./d5
 1100000001011001000010000101000111101011100001010001111010111000
 </div>
