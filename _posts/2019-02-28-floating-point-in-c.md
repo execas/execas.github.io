@@ -120,10 +120,10 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./a3
 f != d
-```
+</div>
 
 The comparison fails since the double does a better job at representing 1.1:
 
@@ -144,11 +144,11 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./a4
 f = 1.10000002384185791016
 d = 1.10000000000000008882
-```
+</div>
 
 The two numbers above are clearly not equal. They are also clearly not exactly 1.1.
 
@@ -183,12 +183,12 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./a5
 d:  1.1000000000000000888178420
 l:  1.1000000000000000888178420
 ls: 1.1000000000000000000216840
-```
+</div>
 
 Notice that *l* is equal to *d*, since the unsuffixed floating constant was first converted to a double, while *ls*, a true long double, is the better representation of 1.1.
 
@@ -216,11 +216,11 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./a6
 100
 100
-```
+</div>
 
 > Sidenote: If we excluded the casting to `int32_t` above, we would get undefined behavior since the format specifier would not match the data type of the passed variable. Always make sure that the conversion character matches the data type of the argument.
 
@@ -274,10 +274,10 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./f1
 1120420495
-```
+</div>
 
 Now, let's have a look at this data in binary:
 
@@ -399,7 +399,7 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~] ./f3
 Exponent: 6
 
@@ -417,7 +417,7 @@ Mantissa built with:
 Mantissa: 1.56453121
 
 Result: (-1)^0 * 1.56453121 * 2^6 = 100.12999725
-```
+</div>
 
 ### Precision
 
@@ -439,10 +439,11 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./f4
 a = 100.12999725
-```
+</div>
+
 > Note: Repeated calculations using floating-point numbers can cause errors to accumulate.
 
 ## Double-presicion floating-point
@@ -467,10 +468,10 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./d1
 -4586625597563396424
-```
+</div>
 
 ### Binary (and some undefined behavior)
 
@@ -493,10 +494,10 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./d2
 1110101110000101000111101011100011101011100001010001111010111000
-```
+</div>
 
 Something went wrong, even though it may not be obvious to us at first glance, or even without first trying to convert it to a double. 
 
@@ -697,7 +698,7 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./d6
 Exponent: 6
 
@@ -729,7 +730,8 @@ Mantissa built with:
 Mantissa: 1.56453125
 
 Result: (-1)^1 * 1.56453125 * 2^6 = -100.129999999999995
-```
+</div>
+
 Even more precision is offered by the long double data type.
 
 ## The long double
@@ -762,10 +764,10 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./l1
 143 194 245 40 92 143 66 200 5 64 0 0 0 0 0 0
-```
+</div>
 
 The size of the long double is 16 bytes (128 bits) on this system. The long double can store 80 bits, which means 48 bits (6 bytes) are padded. As we can see from the output above, this must be the last 6 bytes (which are actually the first 6 bytes since the above output is Little-endian).
 
