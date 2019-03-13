@@ -40,8 +40,8 @@ pre {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 12px;
-     border:1px solid #a89984;
-     border-left:4px solid #a89984;
+     border:1px solid #928374;
+     border-left:4px solid #928374;
      white-space: pre;
      color:#000000;
      overflow: auto;
@@ -130,7 +130,7 @@ p {
 .header h1 {
      font-size: 4rem;
      margin-right: 3rem;
-     color: #458588;
+     color: #fe8019;
      display: inline;
      margin-top: 0px;
      margin-bottom:0px;
