@@ -245,12 +245,12 @@ int main()
 }
 ```
 
-```
+<div class="term">
 ~]$ ./a7
 long double:            123.456789000000
 float from ld:          123.456787109375
 long double from fl:    123.456787109375
-```
+</div>
 
 ## Single-precision floating-point
 
@@ -535,7 +535,7 @@ int main()
 }
 ```
 
-```
+<div class="term">
 ~]$ ./d3
 63 -2147483648 | 31 -2147483648
 62  1073741824 | 30  1073741824
@@ -549,7 +549,7 @@ int main()
 34           4 |  2           4
 33           2 |  1           2
 32           1 |  0           1
-```
+<\div>
 
 But we should never rely on this! When we shift by values greater than the width of the data type in the example below, we get 0 as a result:
 
@@ -570,13 +570,13 @@ int main()
 }
 ```
 
-```
+<div class="term>
 ~]$ ./d4
 0
 0
 -2147483648
 1
-```
+<\div>
 
 Back to the binary conversion. How can we correct it?
 
@@ -599,10 +599,10 @@ int main()
 }
 ```
 
-```
+<div class="term>
 ~]$ ./d5
 1100000001011001000010000101000111101011100001010001111010111000
-```
+<\div>
 
 ### How a double is represented
 
@@ -793,11 +793,11 @@ int main()
 }
 ```
 
-``` bash
+<div class="term">
 ~]$ ./l2
 10001111 11000010 11110101 00101000 01011100 \
 10001111 01000010 11001000 00000101 01000000
-```
+</div>
 
 The output is in Little-endian order, so let's reverse the byte order
 
