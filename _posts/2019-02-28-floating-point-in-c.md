@@ -298,10 +298,10 @@ int main()
 }
 ```
 
-```
-$ ./f2
+<div class="term">
+~]$ ./f2
 01000010110010000100001010001111
-```
+</div>
 
 > Note: The code above does bit-wise comparison to display the binary value of a 32 bit integer. It contains a subtle potential bug that we will investigate when we look at doubles.
 
@@ -549,7 +549,7 @@ int main()
 34           4 |  2           4
 33           2 |  1           2
 32           1 |  0           1
-<\div>
+</div>
 
 But we should never rely on this! When we shift by values greater than the width of the data type in the example below, we get 0 as a result:
 
@@ -576,7 +576,7 @@ int main()
 0
 -2147483648
 1
-<\div>
+</div>
 
 Back to the binary conversion. How can we correct it?
 
@@ -602,7 +602,7 @@ int main()
 <div class="term>
 ~]$ ./d5
 1100000001011001000010000101000111101011100001010001111010111000
-<\div>
+</div>
 
 ### How a double is represented
 
