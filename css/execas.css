@@ -31,7 +31,7 @@ img {
 }
 
 .term {
-     background-color:#f9f5d7;
+     background-color:#ffffff;
      margin-left:0px;
      margin-right:5px;
      margin-top:0;
@@ -39,8 +39,8 @@ img {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 0px;
-     border:1px solid #928374;
-     border-left:4px solid #928374;
+     border:1px solid #427b58;
+     border-left:4px solid #427b58;
      white-space: pre;
      color:#3c3836;
      overflow: auto;
