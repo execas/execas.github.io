@@ -39,7 +39,7 @@ img {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 0px;
-     border:4px solid #b57614;
+     border:2px solid #b57614;
      border-left:4px solid #b57614;
      white-space: pre;
      color:#3c3836;
@@ -60,7 +60,7 @@ pre {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 12px;
-     border:4px solid #076678;
+     border:2px solid #076678;
      border-left:4px solid #076678;
      white-space: pre;
      overflow: auto;
