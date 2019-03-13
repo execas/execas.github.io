@@ -38,7 +38,7 @@ img {
      margin-bottom:0;
      padding-left: 10px;
      padding-bottom: 12px;
-     padding-top: 12px;
+     padding-top: 0px;
      border:1px solid #928374;
      border-left:4px solid #928374;
      white-space: pre;
@@ -46,7 +46,7 @@ img {
      overflow: auto;
      font-family: "Source Code Pro", monospace;
      font-size:13px;
-
+     whitespace: pre;
 }
 
 pre {
