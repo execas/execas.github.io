@@ -31,7 +31,7 @@ img {
 }
 
 .term {
-     background-color:#f2e5bc;
+     background-color:#bdae93;
      margin-left:0px;
      margin-right:5px;
      margin-top:0;
@@ -42,7 +42,7 @@ img {
      border:1px solid #458588;
      border-left:4px solid #458588;
      white-space: pre;
-     color:#282828;
+     color:#504945;
      overflow: auto;
      font-family: "Source Code Pro", monospace;
      font-size:13px;
