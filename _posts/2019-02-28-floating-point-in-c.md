@@ -25,12 +25,12 @@ int main()
 }
 ```
 
-```bash
+<div class="term">
 ~]$ ./a1
 sizeof(float):        32 bits
 sizeof(double):       64 bits
 sizeof(long double): 128 bits
-```
+</div>
 
 > Note: Compiling the above code on a 32-bit system, or using `gcc -m32 ...` may give a long double size of 96 bits.
 
