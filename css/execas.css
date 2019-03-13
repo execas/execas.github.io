@@ -39,10 +39,10 @@ img {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 0px;
-     border:1px solid #3c3836;
-     border-left:4px solid #3c3836;
+     border:1px solid #282828;
+     border-left:4px solid #282828;
      white-space: pre;
-     color:#3c3836;
+     color:#282828;
      overflow: auto;
      font-family: "Source Code Pro", monospace;
      font-size:13px;
