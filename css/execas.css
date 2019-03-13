@@ -39,8 +39,8 @@ img {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 0px;
-     border:1px solid #076678;
-     border-left:4px solid #076678;
+     border:1px solid #928374;
+     border-left:4px solid #928374;
      white-space: pre;
      color:#282828;
      overflow: auto;
@@ -60,8 +60,8 @@ pre {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 12px;
-     border:1px solid #928374;
-     border-left:4px solid #928374;
+     border:1px solid #076678;
+     border-left:4px solid #076678;
      white-space: pre;
      overflow: auto;
      /*border-radius: 5px 5px 5px 5px;     */
