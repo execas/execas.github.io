@@ -108,7 +108,7 @@ The effective rights mask, seen above as *mask* in the `getfacl` output, is used
 
 Since "zack" has full permissions, and the mask is rwx, he can for example do the following:
 
-</div>
+<div class="term">
 ~]$ touch /home/shared/test1
 </div>
 
