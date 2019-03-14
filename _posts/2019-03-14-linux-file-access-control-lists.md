@@ -142,8 +142,6 @@ other::---
 
 > The mask is recalculated every time an ACL entry is added or removed to "include the union of all permissions affected by the mask entry". Use the `-n` option of `setfacl` if this is not wanted.
 
-> Be aware that `ls -l` does not display the effective rights (a mask in the ACL may restrict effective rights).
-
 ## Default ACLs
 
 Default ACLs can only be set on directories. A directory will inherit its parent's default ACL as its ACL and default ACL. A file will inherit the parent's default ACL as its ACL.
