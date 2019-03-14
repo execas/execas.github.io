@@ -372,7 +372,7 @@ int main()
 
     /* exponent */
     int8_t e = -127;
-    uint8_t ew = 8; /* exponent width */
+    uint8_t ew = 8;  /* exponent width */
 
     for (int i = 1; i <= ew; i++)
         e += pow(2, (ew - i)) * b[i];
@@ -381,7 +381,7 @@ int main()
     /* mantissa */
     float m = 0.0f;
     float frac = 0.0f;
-    b[ew] = 1; /* add the missing 1. */
+    b[ew] = 1;  /* add the missing 1. */
 
     printf("Mantissa built with:\n");
     for (int i = ew; i < width; i++) {
@@ -671,7 +671,7 @@ int main()
 
     /* exponent */
     int16_t e = -1023;
-    uint8_t ew = 11; /* exponent width */
+    uint8_t ew = 11;  /* exponent width */
 
     for (int i = 1; i <= ew; i++)
         e += pow(2, (ew - i)) * b[i];
@@ -680,7 +680,7 @@ int main()
     /* mantissa */
     double m = 0;
     double frac = 0;
-    b[ew] = 1; /* add the missing 1. */
+    b[ew] = 1;  /* add the missing 1. */
 
     printf("Mantissa built with:\n");
     for (int i = ew; i < width; i++) {
@@ -859,7 +859,7 @@ int main()
     /* convert to binary */
     uint8_t b[80];
     uint8_t *vp = (uint8_t *)&v;
-    vp += 9; /* 10 first bytes in Little-endian are data, rest is padding */
+    vp += 9;  /* 10 first bytes in Little-endian are data, rest is padding */
 
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 8; j++)
@@ -871,7 +871,7 @@ int main()
 
     /* exponent */
     int16_t e = -16383;
-    uint8_t ew = 15; /* exponent width */
+    uint8_t ew = 15;  /* exponent width */
 
     for (int i = 1; i <= ew; i++)
         e += pow(2, (ew - i)) * b[i];
@@ -880,7 +880,7 @@ int main()
     /* mantissa */
     long double m = 0.0L;
     long double frac = 0.0L;
-    uint8_t ip = ew+1; /* integer part position */
+    uint8_t ip = ew+1;  /* integer part position */
 
     printf("Mantissa built with:\n");
     for (int i = ip; i < 80; i++) {
