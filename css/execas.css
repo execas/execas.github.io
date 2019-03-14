@@ -190,7 +190,7 @@ list of matching posts beneath tag name header
      margin-top: 0rem;
 }
 .tag-posts h3 a {
-    max-width: 250px;
+    max-width: 100px;
     color: #000000;
     white-space: nowrap;
     overflow: hidden;
