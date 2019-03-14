@@ -140,7 +140,7 @@ mask::r-x
 other::---
 </div>
 
-> The mask is recalculated every time an ACL entry is added or removed to "include the union of all permissions affected by the mask entry". Use the `-n` option of `getfacl` if this is not wanted.
+> The mask is recalculated every time an ACL entry is added or removed to "include the union of all permissions affected by the mask entry". Use the `-n` option of `setfacl` if this is not wanted.
 
 > Be aware that `ls -l` does not display the effective rights (a mask in the ACL may restrict effective rights).
 
