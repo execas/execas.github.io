@@ -72,7 +72,7 @@ Give "zack" full permissions:
 
 Use `-x` to remove entries from an ACL:
 
-<div class="term>
+<div class="term">
 ~]# setfacl -x u:zack:r /home/shared
 </div>
 
