@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Casting the void pointer in c
+title: Casting the void pointer in C
 date: 2019-01-31
 tags: [c, programming]
 ---
