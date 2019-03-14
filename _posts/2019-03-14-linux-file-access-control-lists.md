@@ -148,6 +148,8 @@ other::---
 
 Default ACLs can only be set on directories. A directory will inherit its parent's default ACL as its ACL and default ACL. A file will inherit the parent's default ACL as its ACL.
 
+Use the `-d` option to add a default ACL:
+
 <div class="term">
 ~]# setfacl -d -m u:zack:r /home/shared
 </div>
@@ -159,4 +161,4 @@ This will:
 - NOT change the existing entries in the ACL
 - NOT change the ACL for existing files and dirs in /home/shared
 
-Use `setfacl -k <dir>` to remove default ACLs.
+Use `setfacl -k <dir>` to remove default ACLs or the `-x` option to remove a specfic entry.
