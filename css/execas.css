@@ -166,13 +166,9 @@ list of matching posts beneath tag name header
 }
 
 .tag-posts {
-    width: 250px;
     padding-left: 0.3rem;
     list-style: none;
     margin-top: 0rem;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 
@@ -194,7 +190,11 @@ list of matching posts beneath tag name header
      margin-top: 0rem;
 }
 .tag-posts h3 a {
-     color: #000000;
+    max-width: 250px;
+    color: #000000;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .top-tagmarks {
