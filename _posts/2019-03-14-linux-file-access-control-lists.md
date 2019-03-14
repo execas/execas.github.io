@@ -57,7 +57,7 @@ The syntax for modifiying the acl is:
 Multiple ACL rules can be set simultaneously by using comma separation:
 
 <div class="term">
-~]# setfacl -m u:<user>:rwx,g:<group>:r <file>
+~]# setfacl -m u:&lt;user&gt;:rwx,g:&lt;group&gt;:r &lt;file&gt;
 </div>
 
 Give "zack" full permissions:
