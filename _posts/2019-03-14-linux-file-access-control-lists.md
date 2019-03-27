@@ -104,7 +104,7 @@ You can see information that is available through `ls -l` like owner, group and 
 
 ### Effective rights mask
 
-The effective rights mask, seen above as *mask* in the `getfacl` output, is used to restrict the available operations (read/write/execute) of user, group, others, specific users and specific groups. The mask denotes the maximum access rights. The mask entry was automatically added when `setfacl` was used to add "zack" to the ACL.
+The effective rights mask, seen above as *mask* in the `getfacl` output, is used to restrict the available operations (read/write/execute) of the owning group, specific users and specific groups. The mask denotes the maximum access rights. The mask entry was automatically added when `setfacl` was used to add "zack" to the ACL.
 
 Since "zack" has full permissions, and the mask is rwx, he can for example do the following:
 
