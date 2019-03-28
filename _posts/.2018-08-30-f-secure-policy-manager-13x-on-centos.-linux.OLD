@@ -1,9 +1,3 @@
----
-layout: post
-title: "F-Secure Policy Manager 13.x on CentOS Linux"
-date: 2018-08-30
-tags: [linux, security]
----
 
 *Policy Manager* is the tool used to manage and monitor hosts running F-Secure security software.
 
