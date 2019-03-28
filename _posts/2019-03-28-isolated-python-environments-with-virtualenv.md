@@ -66,11 +66,11 @@ When we activate the enviroment, things change:
 
 Now, we are free to install (specific versions of) packages using `pip install`, without worrying about how this will affect other projects or the system.
 
-Notice that the project's directory name appears inside parenthesis as a reminder that we have activate an isolated environment for the current terminal.
+Notice that the project directory name appears inside parentheses as a reminder that we have activated an isolated environment for the current terminal.
 
 ### Deactiving the isolated environment
 
-When we're finished working on the project, put things back to normal by deactivating the isolated environment:
+When we're finished working on the project, we put things back to normal by deactivating the isolated environment:
 
 <div class="term">
 (example) ~]$ deactivate
