@@ -5,7 +5,7 @@ date: 2019-03-28
 tags: [python, programming]
 ---
 
-Isolated Python environments are very useful for making sure that a project's dependencies and version requirements are fullfilled without affecting other projects or the host itself. It also makes it possible to install needed packages on a host without full admin access.
+Isolated Python environments are very useful for making sure that a project's dependencies and version requirements are fullfilled without affecting other projects or the host itself. It also makes it possible to install needed Python packages on a host without full admin access.
 
 ## Installation
 
@@ -23,55 +23,57 @@ If `virtualenv` is not installed, get it using `pip`:
 To activate an isolated ('virtual') environment, do the following:
 
 <div class="term">
-~]$ virtualenv /path/to/project/dir
-New python executable in /path/to/project/dir
+~]$ virtualenv example
+New python executable in example
 Installing setuptools, pip, wheel...done.
 </div>
 
-In addtion to the files already in the directory, we now got the following:
+In addition to the files already in the directory, we now got the following:
 
-- bin
-- include
-- lib
-- lib64
+- bin/
+- include/
+- lib/
+- lib64/
 
-The above command has prepared our isolated environment, but it isn't actived yet.
+The above command has prepared our isolated environment, but it isn't *active* yet.
 
 ### Activating the isolated environment
 
-If we step inside the folder, we can observe the following:
+Step inside the project directory:
 
 <div class="term">
-~]$ cd /path/to/project/dir
+~]$ cd example
+</div>
+
+On this system, we are using the default python installation, and `pip` isn't installed:
+
+<div class="term">
 ~]$ which python
 /bin/python
 ~]$ which pip
 /usr/bin/which: no pip in (/usr/bin:/usr/sbin...
 </div>
 
-On this system, we are using the default python installation, and `pip` isn't installed.
-
 When we activate the enviroment, things change:
 
 <div class="term">
 ~]$ source bin/activate
- whic
-(path/to/project/dir) ~] which python
-/path/to/project/dir/bin/python
-(path/to/project/dir) ~] which pip
-/path/to/project/dir/bin/pip
+(example) ~] which python
+~/example/bin/python
+(example) ~] which pip
+~/example/bin/pip
 </div>
 
 Now, we are free to install (specific versions of) packages using `pip install`, without worrying about how this will affect other projects or the system.
 
-Notice that the project folder appears inside parenthesis as a reminder that we have activate an isolated environment for the current terminal.
+Notice that the project's directory name appears inside parenthesis as a reminder that we have activate an isolated environment for the current terminal.
 
 ### Deactiving the isolated environment
 
-When we are finished working on the project, put things back to normal by deactivating the isolated environment:
+When we're finished working on the project, put things back to normal by deactivating the isolated environment:
 
 <div class="term">
-(/path/to/project/dir) ~]$ deactivate
+(example) ~]$ deactivate
 ~]$ which python
 $ which python
 /bin/python
