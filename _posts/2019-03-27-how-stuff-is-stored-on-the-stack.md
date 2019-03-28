@@ -114,7 +114,7 @@ The base pointer points to the bottom of the stack:
 $2 = (void *) 0x7fffffffe290
 </div>
 
-> Note: The difference between the hexadecimal values 290 to 270 is 32 in decimal.
+> Note: The difference between the hexadecimal values 290 and 270 is 32 in decimal.
 
 ```
 memory:
@@ -265,7 +265,7 @@ Floating-point numbers are also stored with the MSB at a higher address than the
 
 ## Arrays
 
-Arrays are collections of elemtents of a single type stored in a contiguous region of memory with no padding inbetween.
+Arrays are collections of elements of a single type stored in a contiguous region of memory with no padding inbetween.
 
 ```c
 /*
