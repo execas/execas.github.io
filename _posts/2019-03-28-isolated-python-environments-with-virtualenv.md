@@ -20,7 +20,7 @@ If `virtualenv` is not installed, get it using `pip`:
 
 ## Usage
 
-To activate an isolated ('virtual') environment, do the following:
+To create an isolated ('virtual') environment, do the following:
 
 <div class="term">
 ~]$ virtualenv example
