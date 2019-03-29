@@ -48,9 +48,9 @@ Step inside the project directory:
 On this system, we are using the default python installation, and `pip` isn't installed:
 
 <div class="term">
-~]$ which python
+example]$ which python
 /bin/python
-~]$ which pip
+example]$ which pip
 /usr/bin/which: no pip in (/usr/bin:/usr/sbin...
 </div>
 
@@ -58,9 +58,9 @@ When we activate the enviroment, things change:
 
 <div class="term">
 ~]$ source bin/activate
-(example) ~]$ which python
+(example) example]$ which python
 ~/example/bin/python
-(example) ~]$ which pip
+(example) example]$ which pip
 ~/example/bin/pip
 </div>
 
@@ -73,7 +73,7 @@ Notice that the project directory name appears inside parentheses as a reminder 
 When we're finished working on the project, we put things back to normal by deactivating the isolated environment:
 
 <div class="term">
-(example) ~]$ deactivate
-~]$ which python
+(example) example]$ deactivate
+example]$ which python
 /bin/python
 </div>
