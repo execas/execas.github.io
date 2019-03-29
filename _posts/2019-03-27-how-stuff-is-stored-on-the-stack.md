@@ -60,7 +60,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./s1
+<b>~]$</b> ./s1
 a: 0x7fff77fc3caf | 1
 b: 0x7fff77fc3cae | 2
 c: 0x7fff77fc3ca0 | 3
@@ -94,23 +94,23 @@ The stack pointer `rsp` (which points to the top of the stack - the lowest addre
 If we examine the executable in a debugger, we can get a really good look behind the scenes:
 
 <div class="term">
-~]$ gcc -g s1.c
-~]$ gdb a.out
-(gdb) break 16
-(gdb) run
+<b>~]$</b> gcc -g s1.c
+<b>~]$</b> gdb a.out
+<b>(gdb)</b> break 16
+<b>(gdb)</b> run
 </div>
 
 The stack pointer points to the top of the stack (the lowest address):
 
 <div class="term">
-(gdb) print $sp
+<b>(gdb)</b> print $sp
 $1 = (void *) 0x7fffffffe270
 </div>
 
 The base pointer points to the bottom of the stack:
 
 <div class="term">
-(gdb) print %rbp
+<b>(gdb)</b> print %rbp
 $2 = (void *) 0x7fffffffe290
 </div>
 
@@ -142,7 +142,7 @@ memory:
 All our variables are between the base pointer and the stack pointer:
 
 <div class="term">
-(gdb) x/32xb $rsp
+<b>(gdb)</b> x/32xb $rsp
 0x7fffffffe270: 0xe0    0x05    0x40    0x00    0x00    0x00    0x00    0x00
 0x7fffffffe278: 0xf0    0x49    0x02    0x00    0x00    0x00    0x04    0x00
 0x7fffffffe280: 0x03    0x00    0x00    0x00    0x00    0x00    0x00    0x00
@@ -161,20 +161,20 @@ On a Little-endian platform, the the most significant byte of a number - the oct
 The address of a variable points to the first byte of the variable (the LSB).
 
 <div class="term">
-(gdb) print &e
+<b>(gdb)</b> print &e
 $13 = (int32_t *) 0x7fffffffe278
 </div>
 
 The e varible is 32 bits, 4 bytes, and if we examine these addresses we can recognize them in the above output, on the second line going towards the right.
 
 <div class="term">
-(gdb) x/xb 0x7fffffffe278
+<b>(gdb)</b> x/xb 0x7fffffffe278
 0x7fffffffe278: 0xf0
-(gdb) x/xb 0x7fffffffe279
+<b>(gdb)</b> x/xb 0x7fffffffe279
 0x7fffffffe279: 0x49
-(gdb) x/xb 0x7fffffffe27a
+<b>(gdb)</b> x/xb 0x7fffffffe27a
 0x7fffffffe27a: 0x02
-(gdb) x/xb 0x7fffffffe27b
+<b>(gdb)</b> x/xb 0x7fffffffe27b
 0x7fffffffe27b: 0x00
 </div>
 
@@ -212,7 +212,7 @@ memory:
 If we examine the address of e as a word of bits, it is displayed in big endian order:
 
 <div class="term">
-(gdb) x/tw &e
+<b>(gdb)</b> x/tw &e
 0x7fffffffe278: 00000000000000100100100111110000
 </div>
 
@@ -242,7 +242,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./s2
+<b>~]$</b> ./s2
 a: 0x7ffd7c2c509c | 11.150000
 b: 0x7ffd7c2c5090 | 1.000000
 </div>
@@ -250,13 +250,13 @@ b: 0x7ffd7c2c5090 | 1.000000
 Let's have a look at how they are stored on the stack:
 
 <div class="term">
-~]$ gcc -g s2.c
-~]$ gdb a.out
-(gdb) break 13
-(gdb) run
-(gdb) x/4tb &a
+<b>~]$</b> gcc -g s2.c
+<b>~]$</b> gdb a.out
+<b>(gdb)</b> break 13
+<b>(gdb)</b> run
+<b>(gdb)</b> x/4tb &a
 0x7fffffffe28c: 01100110        01100110        00110010        01000001
-(gdb) x/8tb &b
+<b>(gdb)</b> x/8tb &b
 0x7fffffffe280: 00000000        00000000        00000000        00000000 \
                 00000000        00000000        11110000        00111111
 </div>
@@ -288,7 +288,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./s3
+<b>~]$</b> ./s3
 arr[0]: 0x7ffcab88c5f0 | 1
 arr[1]: 0x7ffcab88c5f4 | 100
 arr[2]: 0x7ffcab88c5f8 | 35000
@@ -348,13 +348,13 @@ movl    $6, -16(%rbp)
 We can examine the array using a debugger:
 
 <div class="term">
-~]$ gcc -g s3.c -std=c99
-~]$ gdb a.out
-(gdb) break 14
-(gdb) run
-(gdb) print &arr
+<b>~]$</b> gcc -g s3.c -std=c99
+<b>~]$</b> gdb a.out
+<b>(gdb)</b> break 14
+<b>(gdb)</b> run
+<b>(gdb)</b> print &arr
 $1 = (int32_t (*)[5]) 0x7fffffffe270
-(gdb) x/5dw &arr
+<b>(gdb)</b> x/5dw &arr
 0x7fffffffe270: 1       100     35000   -100
 0x7fffffffe280: 6
 </div>
@@ -362,7 +362,7 @@ $1 = (int32_t (*)[5]) 0x7fffffffe270
 The individual elements are of course stored in Little-endian format, as we can see when we examine the third element (35000):
 
 <div class="term">
-(gdb) x/4tb &arr[2]
+<b>(gdb)</b> x/4tb &arr[2]
 0x7fffffffe278: 10111000        10001000        00000000        00000000
 </div>
 
@@ -390,7 +390,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./s4
+<b>~]$</b> ./s4
 str1: 0x7ffc8a212138 | Hello, 1!
 str2: 0x7ffc8a212120 | Hello, 2!
 </div>
@@ -402,11 +402,11 @@ Again, notice that the variables are put on the stack in the order they are decl
 Using a debugger, let's see how strings are stored in memory:
 
 <div class="term">
-(gdb) break 13
-(gdb) run
-(gdb) print $rbp - $rsp
+<b>(gdb)</b> break 13
+<b>(gdb)</b> run
+<b>(gdb)</b> print $rbp - $rsp
 $1 = 32
-(gdb) x/32cb $rsp
+<b>(gdb)</b> x/32cb $rsp
 0x7fffffffe270: 72 'H'  101 'e' 108 'l' 108 'l' 111 'o' 44 ','  32 ' '  50 '2'
 0x7fffffffe278: 33 '!'  0 '\000'        64 '@'  0 '\000'        0 '\000'        0 '\000'        0 '\000'        0 '\000'
 0x7fffffffe280: 112 'p' -29 '\343'      -1 '\377'       -1 '\377'       -1 '\377'       127 '\177'      0 '\000'        0 '\000'
@@ -449,9 +449,9 @@ memory:
 But the characters of str1 are not seen. That's because str1 is a pointer to a string. The memory location of str1 on the stack contains the address to the memory where the actual string is stored:
 
 <div class="term">
-(gdb) x/xw &str1
+<b>(gdb)</b> x/xw &str1
 0x7fffffffe288: 0x00400610
-(gdb) x/50cb 0x00400610
+<b>(gdb)</b> x/50cb 0x00400610
 0x400610:       72 'H'  101 'e' 108 'l' 108 'l' 111 'o' 44 ','  32 ' '  49 '1'
 0x400618:       33 '!'  0 '\000'        115 's' 116 't' 114 'r' 49 '1'  58 ':'  32 ' '
 0x400620:       37 '%'  112 'p' 32 ' '  124 '|' 32 ' '  37 '%'  115 's' 10 '\n'
@@ -555,7 +555,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./e3
+<b>~]$</b> ./e3
 Size of a, b and c: 13
 Size of struct: 24
 </div>
@@ -563,7 +563,7 @@ Size of struct: 24
 We can use the gcc option `-Wpadded` to get warned about padding in structures:
 
 <div class="term">
-~]$ gcc e3.c -std=c99 -Wpadded
+<b>~]$</b> gcc e3.c -std=c99 -Wpadded
 e3.c: In function ‘main’:
 e3.c:13:17: warning: padding struct to align ‘b’ [-Wpadded]
          int64_t b;
@@ -600,7 +600,7 @@ int main()
 ```
 
 ```
-~]$ ./e4
+<b>~]$</b> ./e4
 Size of a, b and c: 13
 Size of struct: 16
 ```
@@ -638,7 +638,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./s8
+<b>~]$</b> ./s8
 (0x7ffe32d94880) d
 (0x7ffe32d94888) d.a = 10
 (0x7ffe32d94880) d.b = 200
