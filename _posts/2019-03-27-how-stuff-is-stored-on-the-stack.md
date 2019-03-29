@@ -12,7 +12,7 @@ The stack grows from high addresses to low.
 memory:
 
               high addresses
-     ===========
+     ___________
      | stack   |
      |---------|
      | |  |  | |
@@ -514,6 +514,7 @@ int main()
 ```
 
 <div class="term">
+<b>~]$ ./s5</b>
 72      :       H
 101     :       e
 108     :       l
@@ -555,7 +556,7 @@ int main()
 ```
 
 <div class="term">
-<b>~]$</b> ./e3
+<b>~]$</b> ./s6
 Size of a, b and c: 13
 Size of struct: 24
 </div>
@@ -563,7 +564,7 @@ Size of struct: 24
 We can use the gcc option `-Wpadded` to get warned about padding in structures:
 
 <div class="term">
-<b>~]$</b> gcc e3.c -std=c99 -Wpadded
+<b>~]$</b> gcc s6.c -std=c99 -Wpadded
 e3.c: In function ‘main’:
 e3.c:13:17: warning: padding struct to align ‘b’ [-Wpadded]
          int64_t b;
@@ -600,7 +601,7 @@ int main()
 ```
 
 ```
-<b>~]$</b> ./e4
+<b>~]$</b> ./s7
 Size of a, b and c: 13
 Size of struct: 16
 ```
@@ -645,5 +646,30 @@ int main()
 (0x7ffe32d9488c) d.c = 3
 </div>
 
-Observe that the structure itself, and the first element (b) have the same address, and that this is the lowest address.
+Observe that the structure itself and the first element (b) have the same address, and that this is the lowest address.
 The last element (c), has the highest address.
+
+```
+memory:
+
+              high addresses
+     ===========
+     | stack   |
+     |---------|
+     |   d.c   | 0x7ffe32d9488c
+     |---------|
+     |   d.a   | 0x7ffe32d94888
+     |---------|
+     | d / d.b | 0x7ffe32d94880
+     |---------|
+     | |  |  | |
+     | v  v  v |
+     |         |
+     |         |
+     | ^  ^  ^ |
+     | |  |  | |
+     |---------|
+     | heap    |
+     ===========
+              low addresses
+```
