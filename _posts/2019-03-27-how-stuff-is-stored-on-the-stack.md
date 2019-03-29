@@ -600,11 +600,11 @@ int main()
 }
 ```
 
-```
+<div class="term">
 <b>~]$</b> ./s7
 Size of a, b and c: 13
 Size of struct: 16
-```
+</div>
 
 We reduced the size of the structure by 8 bytes by simply rearranging the items. The general rule is putting large data types first.
 
