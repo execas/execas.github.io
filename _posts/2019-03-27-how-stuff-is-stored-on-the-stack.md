@@ -469,7 +469,8 @@ In the output above, we see the characters for str1 as well as the string litera
 
 In the assembly code, we observe the following:
 
-<div class="term">
+```assembly
+        ...
         .section        .rodata
 .LC0:
         .string "Hello, 1!"
@@ -488,7 +489,7 @@ In the assembly code, we observe the following:
         movw    $33, -24(%rbp)
 
         ...
-</div>
+```
 
 The address of the constant string (`.LC0`) is moved to the stack.
 A 64-bit decimal value is put in %rax, then pushed to the stack. Then a 16-bit decimal number is pushed to the stack.
