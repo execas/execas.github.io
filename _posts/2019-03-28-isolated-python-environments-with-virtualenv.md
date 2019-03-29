@@ -12,7 +12,7 @@ Isolated Python environments are very useful for making sure that a project's de
 If `virtualenv` is not installed, get it using `pip`:
 
 <div class="term">
-~]# pip install virtualenv
+**~]# pip install virtualenv**
 </div>
 
 > If `pip` is not installed, do `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` and then `python get-pip.py`, or try installing it using your package manager.
