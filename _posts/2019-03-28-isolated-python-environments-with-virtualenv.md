@@ -23,7 +23,7 @@ If `virtualenv` is not installed, get it using `pip`:
 To create an isolated ('virtual') environment, do the following:
 
 <div class="term">
-~]$ virtualenv example
+  <b>~]$</b> virtualenv example
 New python executable in example
 Installing setuptools, pip, wheel...done.
 </div>
@@ -42,25 +42,25 @@ The above command has prepared our isolated environment, but it isn't *active* y
 Step inside the project directory:
 
 <div class="term">
-~]$ cd example
+<b>~]$</b> cd example
 </div>
 
 On this system, we are using the default python installation, and `pip` isn't installed:
 
 <div class="term">
-example]$ which python
+<b>example]$</b> which python
 /bin/python
-example]$ which pip
+<b>example]$</b> which pip
 /usr/bin/which: no pip in (/usr/bin:/usr/sbin...
 </div>
 
 When we activate the enviroment, things change:
 
 <div class="term">
-~]$ source bin/activate
-(example) example]$ which python
+<b>example]$</b> source bin/activate
+<b>(example) example]$</b> which python
 ~/example/bin/python
-(example) example]$ which pip
+<b>(example) example]$</b> which pip
 ~/example/bin/pip
 </div>
 
@@ -73,7 +73,7 @@ Notice that the project directory name appears inside parentheses as a reminder 
 When we're finished working on the project, we put things back to normal by deactivating the isolated environment:
 
 <div class="term">
-(example) example]$ deactivate
-example]$ which python
+<b>(example) example]$</b> deactivate
+<b>example]$</b> which python
 /bin/python
 </div>
