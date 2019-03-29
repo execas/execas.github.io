@@ -514,7 +514,7 @@ int main()
 ```
 
 <div class="term">
-<b>~]$ ./s5</b>
+<b>~]$</b> ./s5
 72      :       H
 101     :       e
 108     :       l
