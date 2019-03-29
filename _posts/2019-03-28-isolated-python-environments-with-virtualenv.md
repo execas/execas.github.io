@@ -58,9 +58,9 @@ When we activate the enviroment, things change:
 
 <div class="term">
 ~]$ source bin/activate
-(example) ~] which python
+(example) ~]$ which python
 ~/example/bin/python
-(example) ~] which pip
+(example) ~]$ which pip
 ~/example/bin/pip
 </div>
 
@@ -75,6 +75,5 @@ When we're finished working on the project, we put things back to normal by deac
 <div class="term">
 (example) ~]$ deactivate
 ~]$ which python
-$ which python
 /bin/python
 </div>
