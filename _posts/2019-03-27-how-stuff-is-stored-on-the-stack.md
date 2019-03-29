@@ -471,6 +471,7 @@ In the assembly code, we observe the following:
 
 ```assembly
         ...
+
         .section        .rodata
 .LC0:
         .string "Hello, 1!"
