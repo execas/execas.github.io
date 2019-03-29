@@ -12,7 +12,7 @@ Isolated Python environments are very useful for making sure that a project's de
 If `virtualenv` is not installed, get it using `pip`:
 
 <div class="term">
-<b>~]# pip install virtualenv</b>
+<b>~]#</b> pip install virtualenv
 </div>
 
 > If `pip` is not installed, do `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` and then `python get-pip.py`, or try installing it using your package manager.
@@ -23,7 +23,7 @@ If `virtualenv` is not installed, get it using `pip`:
 To create an isolated ('virtual') environment, do the following:
 
 <div class="term">
-<b>~]$ virtualenv example</b>
+<b>~]$</b> virtualenv example
 New python executable in example
 Installing setuptools, pip, wheel...done.
 </div>
@@ -42,15 +42,15 @@ The above command has prepared our isolated environment, but it isn't *active* y
 Step inside the project directory:
 
 <div class="term">
-<b>~]$ cd example</b>
+<b>~]$</b> cd example
 </div>
 
 On this system, we are using the default python installation, and `pip` isn't installed:
 
 <div class="term">
-<b>example]$ which python</b>
+<b>example]$</b> which python
 /bin/python
-<b>example]$ which pip</b>
+<b>example]$</b> which pip
 /usr/bin/which: no pip in (/usr/bin:/usr/sbin...
 </div>
 
