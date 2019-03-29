@@ -565,11 +565,11 @@ We can use the gcc option `-Wpadded` to get warned about padding in structures:
 
 <div class="term">
 <b>~]$</b> gcc s6.c -std=c99 -Wpadded
-e3.c: In function ‘main’:
-e3.c:13:17: warning: padding struct to align ‘b’ [-Wpadded]
+s6.c: In function ‘main’:
+s6.c:13:17: warning: padding struct to align ‘b’ [-Wpadded]
          int64_t b;
                  ^
-e3.c:15:5: warning: padding struct size to alignment boundary [-Wpadded]
+s6.c:15:5: warning: padding struct size to alignment boundary [-Wpadded]
      };
      ^
 </div>
