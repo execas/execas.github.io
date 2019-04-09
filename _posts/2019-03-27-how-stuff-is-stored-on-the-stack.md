@@ -12,7 +12,7 @@ The stack grows from high addresses to low.
 memory:
 
               high addresses
-     ___________
+     ===========
      | stack   |
      |---------|
      | |  |  | |
