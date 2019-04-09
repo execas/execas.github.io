@@ -70,7 +70,7 @@ e: 0x7fff77fc3c98 | 150000
 
 > **Warning:** `%p` expects an argument of type `void *`, hence the cast.
 
-Notice that a, the first variable, has the highest address, while e, the last variable, has the lowest.
+Notice that *a*, the first variable, has the highest address, while *e*, the last variable, has the lowest.
 
 A compiler typically chooses the most efficient way to store the variables on the stack. This may involve taking care of alignment requirements so that processors have fast access to the data, so there may be padding between variables.
 
@@ -149,7 +149,7 @@ All our variables are between the base pointer and the stack pointer:
 0x7fffffffe288: 0x00    0x00    0x00    0x00    0x00    0x00    0x02    0x01
 </div>
 
-Starting from the bottom right and moving left, it is easy to spot the values of a to d. The value of e is not easily observable, but is fairly straightforward to decode if we take byte order into consideration.
+Starting from the bottom right and moving left, it is easy to spot the values of *a* to *d*. The value of *e* is not easily observable, but is fairly straightforward to decode if we take byte order into consideration.
 
 
 ### Byte order
@@ -209,7 +209,7 @@ memory:
               low addresses
 ```
 
-If we examine the address of e as a word of bits, it is displayed in big endian order:
+If we examine the address of *e* as a word of bits, it is displayed in big endian order:
 
 <div class="term">
 <b>(gdb)</b> x/tw &e
