@@ -7,9 +7,9 @@ tags: [c, linux, programming]
 
 ## The ELF file header
 
-The ELF file header appears at the start of every ELF file, and contains a lot of basic (but essential) information, and also serves as a sort of map to other important parts of the file.
+The ELF file header appears at the start of every ELF file. It contains a lot of basic (but essential) information, and also serves as a sort of map to other important parts of the file.
 
-`elf.h` defines file headers for 32-bit and 64-bit binaries. The 64-bit file header is defined as follows:
+`<elf.h>` defines file headers for 32-bit and 64-bit binaries. The 64-bit file header is defined as follows:
 
 ```c
 #define EI_NIDENT (16)
@@ -74,9 +74,9 @@ ELF Header:
 
 > Note: `-h` is the short option of `--file-header`
 
-The 'Magic' row corresponds to the `unsigned char e_ident[16]` array in the above file header structure.
+The **'Magic'** row corresponds to the `unsigned char e_ident[16]` array in the above file header structure.
 
-ELF files always begin with the bytes "7f 45 4c 46", as we can see in `elf.h` in the definitions following the file header structs:
+ELF files always begin with the bytes "7f 45 4c 46", as we can see in `<elf.h>` in the definitions following the file header structs:
 
 ```c
 /* Fields in the e_ident array.  The EI_* macros are indices into the
@@ -96,7 +96,9 @@ ELF files always begin with the bytes "7f 45 4c 46", as we can see in `elf.h` in
 #define ELFMAG3     'F'     /* Magic number byte 3 */
 ```
 
-Next, **'Class'**, **'Data'**, **'Version'**, **'OS/ABI'** and **'ABI VERSION'** are also part of `e_ident` array. The value of these can be seen in the `readelf` output's 'Magic' row, as well as on their dedicated rows.
+Next, **'Class'**, **'Data'**, **'Version'**, **'OS/ABI'** and **'ABI VERSION'** in the `readelf` output are also part of `e_ident` array.
+
+> Note: The value of these can be seen in the `readelf` output's **'Magic'** row, as well as on their dedicated rows.
 
 **'Class'** has position 4 in the array, and can be 0-3:
 
@@ -125,7 +127,7 @@ Next, **'Class'**, **'Data'**, **'Version'**, **'OS/ABI'** and **'ABI VERSION'**
                                /* Value must be EV_CURRENT */
 ```
 
-`EV_CURRENT` is defined farther down in `elf.h`:
+`EV_CURRENT` is defined farther down in `<elf.h>`:
 
 ```c
 /* Legal values for e_version (version).  */
@@ -165,7 +167,7 @@ Next, **'Class'**, **'Data'**, **'Version'**, **'OS/ABI'** and **'ABI VERSION'**
 #define EI_ABIVERSION   8   /* ABI version */
 ```
 
-Lastly, we have `EI_PAD`, which occupies the rest of the bytes. These bytes are not in use (reserved for future use) and are set to 0.
+Lastly, we have `EI_PAD`, which occupies the rest of the bytes of the `e_ident` array. These bytes are not in use (reserved for future use) and are set to 0.
 
 ```c
 #define EI_PAD      9       /* Byte index of padding bytes */
@@ -173,7 +175,7 @@ Lastly, we have `EI_PAD`, which occupies the rest of the bytes. These bytes are 
 
 Following the `e_ident` array, we have:
 
-- `e_type` (**'Type'** in the `readelf` output). This identifies the object file type as one of the following:
+`e_type` (**'Type'** in the `readelf` output). This identifies the object file type as one of the following:
 
 ```c
 /* Legal values for e_type (object file type).  */
@@ -190,7 +192,7 @@ Following the `e_ident` array, we have:
 #define ET_HIPROC   0xffff  /* Processor-specific range end */
 ```
 
-- `e_machine` (**'Machine'** in the `readelf` output). This specifies the required architecture for an individual file:
+`e_machine` (**'Machine'** in the `readelf` output). This specifies the required architecture for an individual file:
 
 ```c
 #define EM_NONE      0  /* No machine */
@@ -206,27 +208,21 @@ Following the `e_ident` array, we have:
 ...
 ```
 
-- `e_version` (**'Version'** in the `readelf` output). Discussed earlier.
+The rest of the entries are described in the below table:
 
-- `e_entry` (**'Entry point address'** in the `readelf` output). Specifies the virtual address the system transfers control to to begin execution of the program,
-
-- `e_phoff` (**'Start of program headers'** in the `readelf` output). Holds the program header table's offset in bytes. 0 if no prgoram header table.
-
-- `e_shoff` (**'Start of section headers'** in the `readelf` output). Holds the section header table's offset in bytes. 0 if no section header table.
-
-- `e_flags` (**'Flags'** in the `readelf` output). Holds processor-specific flags.
-
-- `e_ehsize` (**'Size of this header'** in the `readelf` output). Holds the size of the ELF header in bytes.
-
-- `e_phentsize` (**'Size of program headers'** in the `readelf output). Holds the size of one program header table entry in bytes. All entries are of same size.
-
-- `e_phnum` (**'Number of program headers'** in the `readelf` output). Holds the number of program header table entries.
-
-- `e_shentsize` (**'Size of section headers'** in the `readelf output). Holds the size of one section header table entry in bytes. All entries are of same size.
-
-- `e_shnum` (**'Number of section headers'** in the `readelf` output). Holds the number of section header table entries.
-
-- `e_shstrndx` (**'Section header string table index'** in the `readelf` output). Holds the section header string table index.
+|entry | readelf output | description
+|----- |------------|-------------|
+|`e_version` |**'Version'** | Discussed earlier.|
+|`e_entry` |**'Entry point address'** | Specifies the virtual address the system transfers control to to begin execution of the program,|
+|`e_phoff` |**'Start of program headers'** | Holds the program header table's offset in bytes. 0 if no prgoram header table.|
+|`e_shoff` |**'Start of section headers'** | Holds the section header table's offset in bytes. 0 if no section header table.|
+|`e_flags` |**'Flags'** | Holds processor-specific flags.|
+|`e_ehsize` |**'Size of this header'** | Holds the size of the ELF header in bytes.|
+|`e_phentsize` |**'Size of program headers'** | Holds the size of one program header table entry in bytes. All entries are of same size.|
+|`e_phnum` |**'Number of program headers'** | Holds the number of program header table entries.|
+|`e_shentsize` |**'Size of section headers'**| Holds the size of one section header table entry in bytes. All entries are of same size.|
+|`e_shnum` |**'Number of section headers'** | Holds the number of section header table entries.|
+|`e_shstrndx` |**'Section header string table index'** | Holds the section header string table index.|
 
 ### The file header in a sea of bytes
 
@@ -270,4 +266,4 @@ The first row is the 16 bytes of the `e_ident` array:
 `e_entry`, type Elf64_Addr (64 bits):
     - e0 03 40 00 00 00 00 00 00 is the address 0x4003e0
 
-These are followed by the remaining members of the ELF file header, and after those we are entering program header territory, but let's look at section headers first, since they are the next part `elf.h`.
+These are followed by the remaining members of the ELF file header, and after those we are entering program header territory, but let's look at section headers first, since they are the next part `<elf.h>`.
