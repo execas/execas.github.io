@@ -256,18 +256,18 @@ The first row is the 16 bytes of the `e_ident` array:
 
 `e_type` is next, type `Elf64_Half` (16 bits):
 
-- 02 00 (remember, Little-endian) is 2, which means an executable file.
+- 02 00 (remember, Little-endian) is 2, which means *executable file*.
 
 `e_machine`, type `Elf64_Half`:
 
-- 3e 00 is 62, which means AMD x86-64 architecture.
+- 3e 00 is 62, which means *AMD x86-64 architecture*.
 
 `e_version`, type Elf64_Word (32 bits):
 
-- 01 00 00 00 is 1, meaning current version.
+- 01 00 00 00 is 1, meaning *current version*.
 
 `e_entry`, type Elf64_Addr (64 bits):
 
-- e0 03 40 00 00 00 00 00 00 is the address 0x4003e0
+- e0 03 40 00 00 00 00 00 00 is the address 0x4003e0.
 
 These are followed by the remaining members of the ELF file header, and after those we are entering program header territory, but let's look at section headers first, since they are the next part `<elf.h>`.
