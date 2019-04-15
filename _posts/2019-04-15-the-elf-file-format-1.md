@@ -36,7 +36,7 @@ An ELF file looks something like this:
 
 ### The first lines of code
 
-All the code in `<elf.h> is defined inside an **#include guard** to prevent double inclusion:
+All the code in `<elf.h>` is defined inside an *#include guard* to prevent double inclusion:
 
 ```
 #ifndef _ELF_H
@@ -55,7 +55,7 @@ __END_DECLS
 
 The first line includes `<features.h>`, a Linux/glibc-specific header file containing feature test macros that "allow the programmer to control the definitions that are exposed by system header files when a program is compiled".
 
-See `$ man feature_test_macros` to learn more.
+> Note: See `$ man feature_test_macros` to learn more about features test macros.
 
 Next we got `__BEGIN_DECLS` (and `__END_DECLS`), which are defined as follows in `<sys/cdefs.h>` (included by `<features.h`>):
 
