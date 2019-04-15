@@ -246,13 +246,13 @@ The file header is at the beginning of a binary and begins with the magic bytes:
 
 The first row is the 16 bytes of the `e_ident` array:
 
-    - 7f 'E' 'L' 'F' (Magic bytes)
-    - 02 (class is ELF64)
-    - 01 (data encoding is 2's complement, little endian)
-    - 01 (version is current)
-    - 00 (OS/ABI is UNIX - System V)
-    - 00 (ABI version is 0)
-    - the remaining 7 bytes is padding
+- 7f 'E' 'L' 'F' (Magic bytes)
+- 02 (class is ELF64)
+- 01 (data encoding is 2's complement, little endian)
+- 01 (version is current)
+- 00 (OS/ABI is UNIX - System V)
+- 00 (ABI version is 0)
+- the remaining 7 bytes is padding
 
 `e_type` is next, type `Elf64_Half` (16 bits):
 
