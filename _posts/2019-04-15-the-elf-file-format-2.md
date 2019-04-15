@@ -7,7 +7,9 @@ tags: [c, linux, programming]
 
 ## The ELF file header
 
-The ELF file header appears at the start of every ELF file, and serves as both a map  and `elf.h` defines file headers for 32-bit and 64-bit binaries. The 64-bit file header is defined as follows:
+The ELF file header appears at the start of every ELF file, and contains a lot of basic (but essential) information, and also serves as a sort of map to other important parts of the file.
+
+`elf.h` defines file headers for 32-bit and 64-bit binaries. The 64-bit file header is defined as follows:
 
 ```c
 #define EI_NIDENT (16)
@@ -44,7 +46,7 @@ Compilation of the code below will produce an ELF 64-bit binary on an x86_64 Lin
 int main() {}
 ```
 
-We can use `readelf` to examine the file header of the binary:
+We can use `readelf` to examine the file header of this binary:
 
 <div class="term">
 cas@localhost:~]$ readelf -h c1
@@ -72,8 +74,9 @@ ELF Header:
 
 > Note: `-h` is the short option of `--file-header`
 
-The 'Magic' row corresponds to the `unsigned char e_ident[16]` array.
-ELF files always begin with the bytes "7f 45 4c 46", as we can see in `elf.h` in the definitions following the fil header structs:
+The 'Magic' row corresponds to the `unsigned char e_ident[16]` array in the above file header structure.
+
+ELF files always begin with the bytes "7f 45 4c 46", as we can see in `elf.h` in the definitions following the file header structs:
 
 ```c
 /* Fields in the e_ident array.  The EI_* macros are indices into the
@@ -93,7 +96,7 @@ ELF files always begin with the bytes "7f 45 4c 46", as we can see in `elf.h` in
 #define ELFMAG3     'F'     /* Magic number byte 3 */
 ```
 
-Next, 'Class', 'Data', 'Version', 'OS/ABI' and 'ABI VERSION' are part of `e_ident` array as well. The value of these can be seen in the `readelf` output's 'Magic' row, as well as on their dedicated rows.
+Next, **'Class'**, **'Data'**, **'Version'**, **'OS/ABI'** and **'ABI VERSION'** are also part of `e_ident` array. The value of these can be seen in the `readelf` output's 'Magic' row, as well as on their dedicated rows.
 
 **'Class'** has position 4 in the array, and can be 0-3:
 
@@ -154,7 +157,7 @@ Next, 'Class', 'Data', 'Version', 'OS/ABI' and 'ABI VERSION' are part of `e_iden
 #define ELFOSABI_STANDALONE 255     /* Standalone (embedded) application */
 ```
 
-> Note: ABI stands for application binary interface.
+> Note: ABI stands for Application Binary Interface.
 
 **'ABI Version'** has position 8 in the array, and is typically set to 0 by applications:
 
@@ -162,7 +165,7 @@ Next, 'Class', 'Data', 'Version', 'OS/ABI' and 'ABI VERSION' are part of `e_iden
 #define EI_ABIVERSION   8   /* ABI version */
 ```
 
-Lastly, we have 'EI_PAD', which occupies the rest of the bytes. These bytes are not in use (reserved for future use) and are set to 0.
+Lastly, we have `EI_PAD`, which occupies the rest of the bytes. These bytes are not in use (reserved for future use) and are set to 0.
 
 ```c
 #define EI_PAD      9       /* Byte index of padding bytes */
@@ -246,6 +249,7 @@ The file header is at the beginning of a binary and begins with the magic bytes:
 </div>
 
 The first row is the 16 bytes of the `e_ident` array:
+
     - 7f 'E' 'L' 'F' (Magic bytes)
     - 02 (class is ELF64)
     - 01 (data encoding is 2's complement, little endian)
