@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The ELF file format 1: Introduction & the basic types
+title: The ELF file format 1: Introduction and the basic types
 date: 2019-04-15
 tags: [c, linux, programming]
 ---
