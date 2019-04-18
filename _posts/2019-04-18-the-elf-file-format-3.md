@@ -108,25 +108,25 @@ typedef struct
 
 `sh_addralign` holds a value for taking care of a section's alignment requirements. The section's address  (`sh_addr`) will be a multiple of this value.
 
-`sh_entsize` holds the size of each entry if the section holds a table of fized-size entries (like a symbol table). Set to 0 if section does not hold such a table.
+`sh_entsize` holds the size of each entry if the section holds a table of fixed-size entries (like a symbol table). Set to 0 if section does not hold such a table.
 
 ### Understanding the ELF section header table
 
-The start of the section headers (actually the section header table) is specified in the file header:
+The start of the section headers (actually of the section header *table*) is specified in the file header:
 
 <div class="term">
-~]$ readelf -h c1 | grep sec
+<b>~]$</b> readelf -h c1 | grep sec
   Start of section headers:          6408 (bytes into file)
   Size of section headers:           64 (bytes)
   Number of section headers:         31
 </div>
 
-The section header table is at the end of the ELF file.
+The section header table is at the end of the ELF file, an is an array of section headers.
 
-We can examine the header table by dumping the hex with an offset to the beginning of the section headers.
+We can examine the section header table by dumping the hex with an offset to the beginning of the section headers (the section header table).
 
 <div class="term">
-~]$ hexdump -C -s 6408 c1|head
+<b>~]$</b> hexdump -C -s 6408 c1|head
 00001908  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 *
 00001948  1b 00 00 00 01 00 00 00  02 00 00 00 00 00 00 00  |................|
@@ -142,7 +142,7 @@ We can examine the header table by dumping the hex with an offset to the beginni
 Now, let's compare this to the output from `readelf`:
 
 <div class="term">
-~]$ readelf -SW c1
+<b>~]$</b> readelf -SW c1
 There are 31 section headers, starting at offset 0x1908:
 
 Section Headers:
@@ -220,7 +220,7 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 - The section header string table index (`_eshstrndx`) is the last 2 bytes of the file header (see `<elf.h>` file header structure).
 
 <div class="term">
-~]$ hexdump -C -s 62 -n 2
+<b>~]$</b> hexdump -C -s 62 -n 2
 0000003e  1e 00                                             |..|
 00000040
 </div>
@@ -236,7 +236,7 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 - The offset of the first section header is found at `e_shoff` in the file header):
 
 <div class="term">
-~]$ hexdump -C -s 40 -n 8
+<b>~]$</b> hexdump -C -s 40 -n 8
 00000028  08 19 00 00 00 00 00 00                           |........|
 00000030
 </div>
@@ -248,7 +248,7 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 Since every section header is 64 bytes, the `.shstrtab` header can be found using:
 
 <div class="term">
-~]$ hexdump -C -s `python -c "print 6408 + (30*64)"` -n 64 c1
+<b>~]$</b> hexdump -C -s `python -c "print 6408 + (30*64)"` -n 64 c1
 00002088  11 00 00 00 03 00 00 00  00 00 00 00 00 00 00 00  |................|
 00002098  00 00 00 00 00 00 00 00  f5 17 00 00 00 00 00 00  |................|
 000020a8  0c 01 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
@@ -260,7 +260,7 @@ The `.shrstrtab` header has the `sh_offset` entry which stores the offset of the
 The `sh_size` entry, 4 bytes, is found in the (first half of) the first column of the third row: 00 00 01 0c.
 
 <div class="term">
-~]$ hexdump -C -s 0x17f5 c1 -n 0x010c
+<b>~]$</b> hexdump -C -s 0x17f5 c1 -n 0x010c
 000017f5  00 2e 73 79 6d 74 61 62  00 2e 73 74 72 74 61 62  |..symtab..strtab|
 00001805  00 2e 73 68 73 74 72 74  61 62 00 2e 69 6e 74 65  |..shstrtab..inte|
 00001815  72 70 00 2e 6e 6f 74 65  2e 41 42 49 2d 74 61 67  |rp..note.ABI-tag|
@@ -308,7 +308,7 @@ The remaining entries are also easily deciphered as long as you know the entries
 We can view the hexdump of a section using `readelf`:
 
 <div class="term">
-~]$ readelf -x .init c1
+<b>~]$</b> readelf -x .init c1
 
 Hex dump of section '.init':
   0x00400390 4883ec08 488b055d 0c200048 85c07405 H...H..]. .H..t.
@@ -319,7 +319,7 @@ Hex dump of section '.init':
 Sections containing machine instructions (like `.init`, `.fini` and `.text` can be more easily analyzed using `objdump` (note that the same hex data is still displayed):
 
 <div class="term">
-~]$ objdump -j .init -d c1
+<b>~]$</b> objdump -j .init -d c1
 c1:     file format elf64-x86-64
 
 

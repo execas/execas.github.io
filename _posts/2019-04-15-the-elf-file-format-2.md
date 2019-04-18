@@ -49,7 +49,7 @@ int main() {}
 We can use `readelf` to examine the file header of this binary:
 
 <div class="term">
-cas@localhost:~]$ readelf -h c1
+<b>~]$</b> readelf -h c1
 ELF Header:
   Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
   Class:                             ELF64
@@ -231,7 +231,7 @@ Now that we have looked at all the members of the `Elf64_Ehdr`, we can try to us
 The file header is at the beginning of a binary and begins with the magic bytes:
 
 <div class="term">
-~]$ hexdump -C c1|head
+<b>~]$</b> hexdump -C c1|head
 00000000  7f 45 4c 46 02 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
 00000010  02 00 3e 00 01 00 00 00  e0 03 40 00 00 00 00 00  |..>.......@.....|
 00000020  40 00 00 00 00 00 00 00  08 19 00 00 00 00 00 00  |@...............|
