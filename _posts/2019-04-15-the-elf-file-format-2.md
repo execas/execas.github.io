@@ -213,7 +213,7 @@ The rest of the entries are described in the below table:
 |entry | readelf output | description
 |----- |------------|-------------|
 |`e_version` |**'Version'** | Discussed earlier.|
-|`e_entry` |**'Entry point address'** | Specifies the virtual address the system transfers control to to begin execution of the program,|
+|`e_entry` |**'Entry point address'** | Specifies the virtual address the system transfers control to to begin execution of the program.|
 |`e_phoff` |**'Start of program headers'** | Holds the program header table's offset in bytes. 0 if no prgoram header table.|
 |`e_shoff` |**'Start of section headers'** | Holds the section header table's offset in bytes. 0 if no section header table.|
 |`e_flags` |**'Flags'** | Holds processor-specific flags.|

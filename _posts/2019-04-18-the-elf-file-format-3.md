@@ -6,7 +6,7 @@ tags: [c, linux, programming]
 ---
 
 
-## Sections headers
+## Section headers
 
 A section header contains information about a section, like its name, location in the file and type. An ELF file will have multiple section headers, organized in a *section header table*.
 
@@ -106,7 +106,7 @@ typedef struct
 
 `sh_link` and `sh_info` are used differently depending on the section type. The first holds an index to the section header table, while the latter holds "extra information". As an example, if the section type is `SHT_DYNAMIC`, `sh_link` will hold the index of the required string table, while `sh_info` will be 0.
 
-`sh_addralign` holds a value for taking care of a sections alignment requirements. The section's address  (`sh_addr`) will be a multiple of this value.
+`sh_addralign` holds a value for taking care of a section's alignment requirements. The section's address  (`sh_addr`) will be a multiple of this value.
 
 `sh_entsize` holds the size of each entry if the section holds a table of fized-size entries (like a symbol table). Set to 0 if section does not hold such a table.
 
@@ -296,7 +296,7 @@ The remaining entries are also easily deciphered as long as you know the entries
 | `.text`| executable instructions|
 | `.init`/`.fini`| machine instructions for initialization/termination|
 | `.symtab` and `.strtab` | symbol table and symbol table entries (strings)|
-| `.dynsym` and `.dynstr | dynamic linking symbol table and dynamic symbol table entries (strings)|
+| `.dynsym` and `.dynstr` | dynamic linking symbol table and dynamic symbol table entries (strings)|
 | `.shstrtab`| section header names (strings)|
 | `.symtab`| symbol table|
 | `.dynamic`| dynamic linking information|
