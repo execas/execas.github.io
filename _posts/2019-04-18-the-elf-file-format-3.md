@@ -292,7 +292,7 @@ The remaining entries are also easily deciphered as long as you know the entries
 | `.interp` | pathname of the program interpreter|
 | `.bss` |  uninitialized data|
 | `.data`| initialized data|
-| `.rodata| read-only data|
+| `.rodata`| read-only data|
 | `.text`| executable instructions|
 | `.init`/`.fini`| machine instructions for initialization/termination|
 | `.symtab` and `.strtab` | symbol table and symbol table entries (strings)|
