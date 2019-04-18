@@ -325,9 +325,9 @@ c1:     file format elf64-x86-64
 
 Disassembly of section .init:
 
-0000000000400390 <_init>:
+0000000000400390 &lt;_init&gt;:
   400390:       48 83 ec 08             sub    $0x8,%rsp
-  400394:       48 8b 05 5d 0c 20 00    mov    0x200c5d(%rip),%rax        # 600ff8 <__gmon_start__>
+  400394:       48 8b 05 5d 0c 20 00    mov    0x200c5d(%rip),%rax        # 600ff8 &lt;__gmon_start__&gt;
   40039b:       48 85 c0                test   %rax,%rax
   40039e:       74 05                   je     4003a5 <_init+0x15>
   4003a0:       e8 2b 00 00 00          callq  4003d0 <.plt.got>
