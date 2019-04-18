@@ -26,7 +26,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a1
+<b>~]$</b> ./a1
 sizeof(float):        32 bits
 sizeof(double):       64 bits
 sizeof(long double): 128 bits
@@ -65,7 +65,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a2
+<b>~]$</b> ./a2
 Max value
 --------------------------
 float:       3.40282e+38
@@ -121,7 +121,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a3
+<b>~]$</b> ./a3
 f != d
 </div>
 
@@ -145,7 +145,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a4
+<b>~]$</b> ./a4
 f = 1.10000002384185791016
 d = 1.10000000000000008882
 </div>
@@ -184,7 +184,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a5
+<b>~]$</b> ./a5
 d:  1.1000000000000000888178420
 l:  1.1000000000000000888178420
 ls: 1.1000000000000000000216840
@@ -217,7 +217,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a6
+<b>~]$</b> ./a6
 100
 100
 </div>
@@ -246,7 +246,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./a7
+<b>~]$</b> ./a7
 long double:            123.456789000000
 float from ld:          123.456787109375
 long double from fl:    123.456787109375
@@ -299,7 +299,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./f2
+<b>~]$</b> ./f2
 01000010110010000100001010001111
 </div>
 
@@ -400,7 +400,7 @@ int main()
 ```
 
 <div class="term">
-~] ./f3
+<b>~] </b>./f3
 Exponent: 6
 
 Mantissa built with:
@@ -440,7 +440,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./f4
+<b>~]$</b> ./f4
 a = 100.12999725
 </div>
 
@@ -469,7 +469,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./d1
+<b>~]$</b> ./d1
 -4586625597563396424
 </div>
 
@@ -495,7 +495,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./d2
+<b>~]$</b> ./d2
 1110101110000101000111101011100011101011100001010001111010111000
 </div>
 
@@ -536,7 +536,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./d3
+<b>~]$</b> ./d3
 63 -2147483648 | 31 -2147483648
 62  1073741824 | 30  1073741824
 61   536870912 | 29   536870912
@@ -571,7 +571,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./d4
+    ~]$ ./d4
 0
 0
 -2147483648
@@ -600,7 +600,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./d5
+<b>~]$</b> ./d5
 1100000001011001000010000101000111101011100001010001111010111000
 </div>
 
@@ -699,7 +699,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./d6
+<b>~]$</b> ./d6
 Exponent: 6
 
 Mantissa built with:
@@ -765,7 +765,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./l1
+<b>~]$</b> ./l1
 143 194 245 40 92 143 66 200 5 64 0 0 0 0 0 0
 </div>
 
@@ -899,7 +899,7 @@ int main()
 ```
 
 <div class="term">
-~]$ ./l3
+<b>~]$</b> ./l3
 Exponent: 6
 
 Mantissa built with:
