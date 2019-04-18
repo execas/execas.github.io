@@ -121,7 +121,7 @@ The start of the section headers (actually of the section header *table*) is spe
   Number of section headers:         31
 </div>
 
-The section header table is at the end of the ELF file, an is an array of section headers.
+The section header table is at the end of the ELF file, and is an array of section headers.
 
 We can examine the section header table by dumping the hex with an offset to the beginning of the section headers (the section header table).
 
@@ -208,10 +208,10 @@ For the next section header, let's try to decode it from the hex data using what
 00001978  01 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 </div>
 
-The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifies the location of a null-terminated string in the section header string table (`.shstrtab`). The index of `.shstrtab` in the section header table is specified in `e_shstrndx in the ELF file header.
+The name, `sh_name` in `Elf64_Shdr`, is of type `Elf64_Word` (32 bits) and specifies the location of a null-terminated string in the section header string table (`.shstrtab`). The index of `.shstrtab` in the section header table is specified in `e_shstrndx in the ELF file header.
 
 - The section header string table (`.shstrtab`) header is part of the section header table.
-- The `e_shstrndx` in the file header specifies it's index in the section header table.
+- The `e_shstrndx` in the file header specifies its index in the section header table.
 - The value of `sh_name` specifies the location of the section name in `.shstrtab`.
 
 **Finding the section header string table index**
@@ -231,9 +231,10 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 
 **Finding the section header string table**
 
-- A section header is 64 bytes (see from `e_shentsize` in the file header hexdump)
-- Section headers are at the end of the ELF file
-- The offset of the first section header is found at `e_shoff` in the file header):
+- A section header is 64 bytes (see `e_shentsize` in the file header hexdump).
+- Section headers are at the end of the ELF file.
+
+The offset of the first section header is found at `e_shoff` in the file header):
 
 <div class="term">
 <b>~]$</b> hexdump -C -s 40 -n 8
