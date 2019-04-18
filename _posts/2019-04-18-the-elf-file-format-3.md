@@ -102,15 +102,13 @@ typedef struct
 
 `sh_offset` holds the byte offset from the beginning of the file to the first byte of the section.
 
-`sh_size` holds the section's size in bytesj
+`sh_size` holds the section's size in bytes.
 
-`sh_link` holds the section header table index link, which is in
+`sh_link` and `sh_info` are used differently depending on the section type. The first holds an index to the section header table, while the latter holds "extra information". As an example, if the section type is `SHT_DYNAMIC`, `sh_link` will hold the index of the required string table, while `sh_info` will be 0.
 
-`sh_info` contains addtional 
+`sh_addralign` holds a value for taking care of a sections alignment requirements. The section's address  (`sh_addr`) will be a multiple of this value.
 
-`sh_addralign` 
-
-`sh_entsize`
+`sh_entsize` holds the size of each entry if the section holds a table of fized-size entries (like a symbol table). Set to 0 if section does not hold such a table.
 
 ### Understanding the ELF section header table
 
@@ -193,7 +191,7 @@ All the data that is nicely presented in the `readelf` output, is available to u
 
 Since a section header is 64 bytes, that corresponds to 4 lines of hexdump output.
 
-The first 4 lines are 0 (the asteriks hides three lines consisting of zeroes). This is the NULL DFVDFV. All entries are 0.
+The first 4 lines are 0 (the asteriks hides three lines consisting of zeroes). All ELF files have a section header in index 0 of the section header table with all entries set to zero.
 
 <div class="term">
 00001908  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
@@ -203,7 +201,7 @@ The first 4 lines are 0 (the asteriks hides three lines consisting of zeroes). T
 
 For the next section header, let's try to decode it from the hex data using what we've learned:
 
-<div class=term>
+<div class="term">
 00001948  1b 00 00 00 01 00 00 00  02 00 00 00 00 00 00 00  |................|
 00001958  38 02 40 00 00 00 00 00  38 02 00 00 00 00 00 00  |8.@.....8.......|
 00001968  1c 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
@@ -221,7 +219,7 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 - The file header is the 64 first bytes of the ELF file (see `e_ehsize` in the hexdump of the file header).
 - The section header string table index (`_eshstrndx`) is the last 2 bytes of the file header (see `<elf.h>` file header structure).
 
-<div class=term>
+<div class="term">
 ~]$ hexdump -C -s 62 -n 2
 0000003e  1e 00                                             |..|
 00000040
@@ -237,7 +235,7 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 - Section headers are at the end of the ELF file
 - The offset of the first section header is found at `e_shoff` in the file header):
 
-<div class=term>
+<div class="term">
 ~]$ hexdump -C -s 40 -n 8
 00000028  08 19 00 00 00 00 00 00                           |........|
 00000030
@@ -249,7 +247,7 @@ The name, `sh_name` in `Elf64_Shdr` is of type Elf64_Word (32 bits) and specifie
 
 Since every section header is 64 bytes, the `.shstrtab` header can be found using:
 
-<div class=term>
+<div class="term">
 ~]$ hexdump -C -s `python -c "print 6408 + (30*64)"` -n 64 c1
 00002088  11 00 00 00 03 00 00 00  00 00 00 00 00 00 00 00  |................|
 00002098  00 00 00 00 00 00 00 00  f5 17 00 00 00 00 00 00  |................|
