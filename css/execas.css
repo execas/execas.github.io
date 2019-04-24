@@ -77,11 +77,12 @@ pre code {
 }
 
 code {
-     background-color: #f6f8fa;
+     /*background-color: #f6f8fa;*/
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
      color:#000000;
      font-size:12px;
+     font-weight:bold;
      padding:1px 2px;
 }
 
