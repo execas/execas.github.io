@@ -327,7 +327,7 @@ memory:
               low addresses
 ```
 
-Since the first element is at the lowest address, and there is no padding between elements, we can use indexes (`arr[i]` or offsets (`*(arr + i)`) to read or write specific elements of the array.
+Since the first element is at the lowest address, and there is no padding between elements, we can use indexes (`arr[i]`) or offsets (`*(arr + i)`) to read or write specific elements of the array.
 
 
 ### Assembly
