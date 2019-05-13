@@ -28,7 +28,8 @@ img {
 }
 
 .term {
-     background-color:#f6f8fa;
+     /*background-color:#f6f8fa;*/
+     background-color:#eeeeee;
      margin-left:0px;
      margin-right:5px;
      margin-top:0;
