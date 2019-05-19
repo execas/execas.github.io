@@ -28,7 +28,8 @@ img {
 }
 
 .term {
-     background-color:#f6f8fa;
+     /*background-color:#f6f8fa;*/
+     background-color:#fafafa;
      margin-left:0px;
      margin-right:5px;
      margin-top:0;
@@ -73,15 +74,16 @@ pre code {
      color:#282828;
      border-width: 0px;
      border-radius:0px;
+     font-weight:normal;
      padding:0;
 }
 
 code {
-     background-color: #f6f8fa;
+     /*background-color: #f6f8fa;*/
      font-family: "Source Code Pro", monospace;
      whitespace:normal;
-     color:#000000;
-     font-size:12px;
+     color:#222222;
+     font-size:14px;
      padding:1px 2px;
 }
 
@@ -98,12 +100,10 @@ blockquote {
 
 
 }
-/*
+
 blockquote code {
-     padding:0px 1px;
      font-size:12px;
 }
-*/
 
 blockquote p {
      line-height: 1.3em;
