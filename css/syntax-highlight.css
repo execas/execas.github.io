@@ -3,6 +3,9 @@
 .highlight .cm {
   color: #458588;
 }
+.highlight .gp {
+  color: #cc6600;
+}
 
 /*
 .highlight .cp {
@@ -47,9 +50,7 @@
 .highlight .go {
   color: #888888;
 }
-.highlight .gp {
-  color: #555555;
-}
+
 .highlight .gs {
   font-weight: bold;
 }
