@@ -12,7 +12,7 @@ Isolated Python environments are very useful for making sure that a project's de
 If `virtualenv` is not installed, get it using `pip`:
 
 ```bash 
-<b>~]#</b> pip install virtualenv
+# pip install virtualenv
 ```
 
 > If `pip` is not installed, do `curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py` and then `python get-pip.py`, or try installing it using your package manager.
@@ -48,19 +48,19 @@ $ cd example
 On this system, we are using the default python installation, and `pip` isn't installed:
 
 ```bash 
-<b>example]$</b> which python
+example]$ which python
 /bin/python
-<b>example]$</b> which pip
+example]$ which pip
 /usr/bin/which: no pip in (/usr/bin:/usr/sbin...
 ```
 
 When we activate the enviroment, things change:
 
 ```bash 
-<b>example]$</b> source bin/activate
-<b>(example) example]$</b> which python
+example]$ source bin/activate
+(example) example]$ which python
 ~/example/bin/python
-<b>(example) example]$</b> which pip
+(example) example]$ which pip
 ~/example/bin/pip
 ```
 
@@ -73,7 +73,7 @@ Notice that the project directory name appears inside parentheses as a reminder 
 When we're finished working on the project, we put things back to normal by deactivating the isolated environment:
 
 ```bash 
-<b>(example) example]$</b> deactivate
-<b>example]$</b> which python
+(example) example]$ deactivate
+example]$ which python
 /bin/python
 ```

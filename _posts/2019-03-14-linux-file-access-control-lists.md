@@ -27,8 +27,8 @@ Install the `acl` package, it contains `getfacl` and `setfacl`.
 Create a new directory, and remove permissions for everyone except owner (root):
 
 ```bash 
-<b>~]#</b> mkdir /home/shared
-<b>~]#</b> chmod 700 /home/shared
+# mkdir /home/shared
+# chmod 700 /home/shared
 ```
 
 Now, as a regular user, the directory cannot be entered (execute permissions), listed (read permissions) or written to (write permissions).
@@ -45,7 +45,7 @@ touch: cannot touch '/home/shared/foo': Permission denied
 The user "zack" is in the category "others" and therefore has no permissions to the directory. `setfacl` can be used to grant him alone permissions:
 
 ```bash 
-<b>~]#</b> setfacl -m u:zack:x /home/shared
+# setfacl -m u:zack:x /home/shared
 ```
 
 The `setfacl -m` modifies the ACL for a specified file or directory.
@@ -57,13 +57,13 @@ The syntax for modifiying the acl is:
 Multiple ACL rules can be set simultaneously by using comma separation:
 
 ```bash 
-<b>~]#</b> setfacl -m u:&lt;user&gt;:rwx,g:&lt;group&gt;:r &lt;file&gt;
+# setfacl -m u:<user>:rwx,g:<group>:r <file>;
 ```
 
 Give "zack" full permissions:
 
 ```bash 
-<b>~]#</b> setfacl -m u:zack:rwx /home/shared
+# setfacl -m u:zack:rwx /home/shared
 ```
 
 > Use the `-R` option set the ACL recursively to a directory and its files and subdirectories.
@@ -73,7 +73,7 @@ Give "zack" full permissions:
 Use `-x` to remove entries from an ACL:
 
 ```bash 
-<b>~]#</b> setfacl -x u:zack:r /home/shared
+# setfacl -x u:zack:r /home/shared
 ```
 
 ## "Getting" ACLs
@@ -88,7 +88,7 @@ drwx------+ 2 root root 17 Dec 10 20:15 /home/shared
 `getfacl` can be used to view the ACL of a file or directory:
 
 ```bash 
-<b>~]#</b> getfacl /home/shared
+# getfacl /home/shared
 getfacl: Removing leading '/' from absolute path names
 # file: home/shared
 # owner: root
@@ -115,7 +115,7 @@ $ touch /home/shared/test1
 The mask can be modified using `setfacl`:
 
 ```bash 
-<b>~]#</b> setfacl -m m:rx /home/shared
+# setfacl -m m:rx /home/shared
 ```
 
 Now, since the mask (think *maximum access rights*) is `rx`, "zack" can't write to the shared directory:
@@ -128,7 +128,7 @@ touch: cannot touch '/home/shared/test2': Permission denied
 Notice that the mask value is changed:
 
 ```bash 
-<b>~]#</b> getfacl /home/shared/
+# getfacl /home/shared/
 getfacl: Removing leading '/' from absolute path names
 # file: home/shared/
 # owner: root
@@ -149,7 +149,7 @@ Default ACLs can only be set on directories. A directory will inherit its parent
 Use the `-d` option to add a default ACL:
 
 ```bash 
-<b>~]#</b> setfacl -d -m u:zack:r /home/shared
+# setfacl -d -m u:zack:r /home/shared
 ```
 
 This will:

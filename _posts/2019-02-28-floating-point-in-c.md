@@ -400,7 +400,7 @@ int main()
 ```
 
 ```bash 
-<b>~] </b>./f3
+~] ./f3
 Exponent: 6
 
 Mantissa built with:
