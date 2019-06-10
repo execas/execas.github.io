@@ -59,14 +59,14 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s1
+```bash 
+$ ./s1
 a: 0x7fff77fc3caf | 1
 b: 0x7fff77fc3cae | 2
 c: 0x7fff77fc3ca0 | 3
 d: 0x7fff77fc3c9e | 4
 e: 0x7fff77fc3c98 | 150000
-</div>
+```
 
 > **Warning:** `%p` expects an argument of type `void *`, hence the cast.
 
@@ -93,26 +93,26 @@ The stack pointer `rsp` (which points to the top of the stack - the lowest addre
 
 If we examine the executable in a debugger, we can get a really good look behind the scenes:
 
-<div class="term">
-<b>~]$</b> gcc -g s1.c
-<b>~]$</b> gdb a.out
+```bash 
+$ gcc -g s1.c
+$ gdb a.out
 <b>(gdb)</b> break 16
 <b>(gdb)</b> run
-</div>
+```
 
 The stack pointer points to the top of the stack (the lowest address):
 
-<div class="term">
+```bash 
 <b>(gdb)</b> print $sp
 $1 = (void *) 0x7fffffffe270
-</div>
+```
 
 The base pointer points to the bottom of the stack:
 
-<div class="term">
+```bash 
 <b>(gdb)</b> print %rbp
 $2 = (void *) 0x7fffffffe290
-</div>
+```
 
 > Note: The difference between the hexadecimal values 290 and 270 is 32 in decimal.
 
@@ -141,13 +141,13 @@ memory:
 
 All our variables are between the base pointer and the stack pointer:
 
-<div class="term">
+```bash 
 <b>(gdb)</b> x/32xb $rsp
 0x7fffffffe270: 0xe0    0x05    0x40    0x00    0x00    0x00    0x00    0x00
 0x7fffffffe278: 0xf0    0x49    0x02    0x00    0x00    0x00    0x04    0x00
 0x7fffffffe280: 0x03    0x00    0x00    0x00    0x00    0x00    0x00    0x00
 0x7fffffffe288: 0x00    0x00    0x00    0x00    0x00    0x00    0x02    0x01
-</div>
+```
 
 Starting from the bottom right and moving left, it is easy to spot the values of *a* to *d*. The value of *e* is not easily observable, but is fairly straightforward to decode if we take byte order into consideration.
 
@@ -160,14 +160,14 @@ On a Little-endian platform, the the most significant byte of a number - the oct
 
 The address of a variable points to the first byte of the variable (the LSB).
 
-<div class="term">
+```bash 
 <b>(gdb)</b> print &e
 $13 = (int32_t *) 0x7fffffffe278
-</div>
+```
 
 The e varible is 32 bits, 4 bytes, and if we examine these addresses we can recognize them in the above output, on the second line going towards the right.
 
-<div class="term">
+```bash 
 <b>(gdb)</b> x/xb 0x7fffffffe278
 0x7fffffffe278: 0xf0
 <b>(gdb)</b> x/xb 0x7fffffffe279
@@ -176,7 +176,7 @@ The e varible is 32 bits, 4 bytes, and if we examine these addresses we can reco
 0x7fffffffe27a: 0x02
 <b>(gdb)</b> x/xb 0x7fffffffe27b
 0x7fffffffe27b: 0x00
-</div>
+```
 
 > Note: We could get the same output using `x/4xb`.
 
@@ -211,10 +211,10 @@ memory:
 
 If we examine the address of *e* as a word of bits, it is displayed in big endian order:
 
-<div class="term">
+```bash 
 <b>(gdb)</b> x/tw &e
 0x7fffffffe278: 00000000000000100100100111110000
-</div>
+```
 
 This above bits are easily converted to 150000.
 
@@ -241,17 +241,17 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s2
+```bash 
+$ ./s2
 a: 0x7ffd7c2c509c | 11.150000
 b: 0x7ffd7c2c5090 | 1.000000
-</div>
+```
 
 Let's have a look at how they are stored on the stack:
 
-<div class="term">
-<b>~]$</b> gcc -g s2.c
-<b>~]$</b> gdb a.out
+```bash 
+$ gcc -g s2.c
+$ gdb a.out
 <b>(gdb)</b> break 13
 <b>(gdb)</b> run
 <b>(gdb)</b> x/4tb &a
@@ -259,7 +259,7 @@ Let's have a look at how they are stored on the stack:
 <b>(gdb)</b> x/8tb &b
 0x7fffffffe280: 00000000        00000000        00000000        00000000 \
                 00000000        00000000        11110000        00111111
-</div>
+```
 
 Floating-point numbers are also stored with the MSB at a higher address than the LSB, which can be easily verfied by converting.
 
@@ -287,14 +287,14 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s3
+```bash 
+$ ./s3
 arr[0]: 0x7ffcab88c5f0 | 1
 arr[1]: 0x7ffcab88c5f4 | 100
 arr[2]: 0x7ffcab88c5f8 | 35000
 arr[3]: 0x7ffcab88c5fc | -100
 arr[4]: 0x7ffcab88c600 | 6
-</div>
+```
 
 The first element of the array has the lowest address, and the last element has the highest, so the stack looks like this:
 
@@ -347,9 +347,9 @@ movl    $6, -16(%rbp)
 
 We can examine the array using a debugger:
 
-<div class="term">
-<b>~]$</b> gcc -g s3.c -std=c99
-<b>~]$</b> gdb a.out
+```bash 
+$ gcc -g s3.c -std=c99
+$ gdb a.out
 <b>(gdb)</b> break 14
 <b>(gdb)</b> run
 <b>(gdb)</b> print &arr
@@ -357,14 +357,14 @@ $1 = (int32_t (*)[5]) 0x7fffffffe270
 <b>(gdb)</b> x/5dw &arr
 0x7fffffffe270: 1       100     35000   -100
 0x7fffffffe280: 6
-</div>
+```
 
 The individual elements are of course stored in Little-endian format, as we can see when we examine the third element (35000):
 
-<div class="term">
+```bash 
 <b>(gdb)</b> x/4tb &arr[2]
 0x7fffffffe278: 10111000        10001000        00000000        00000000
-</div>
+```
 
 00000000 00000000 10001000 10111000 is 35000.
 
@@ -389,11 +389,11 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s4
+```bash 
+$ ./s4
 str1: 0x7ffc8a212138 | Hello, 1!
 str2: 0x7ffc8a212120 | Hello, 2!
-</div>
+```
 
 Again, notice that the variables are put on the stack in the order they are declared.
 
@@ -401,7 +401,7 @@ Again, notice that the variables are put on the stack in the order they are decl
 
 Using a debugger, let's see how strings are stored in memory:
 
-<div class="term">
+```bash 
 <b>(gdb)</b> break 13
 <b>(gdb)</b> run
 <b>(gdb)</b> print $rbp - $rsp
@@ -411,7 +411,7 @@ $1 = 32
 0x7fffffffe278: 33 '!'  0 '\000'        64 '@'  0 '\000'        0 '\000'        0 '\000'        0 '\000'        0 '\000'
 0x7fffffffe280: 112 'p' -29 '\343'      -1 '\377'       -1 '\377'       -1 '\377'       127 '\177'      0 '\000'        0 '\000'
 0x7fffffffe288: 16 '\020'       6 '\006'        64 '@'  0 '\000'        0 '\000'        0 '\000'        0 '\000'        0 '\000'
-</div>
+```
 
 When we look at all the bytes in memory between the stack and base pointer, we can easily spot str2:
 
@@ -448,7 +448,7 @@ memory:
 
 But the characters of str1 are not seen. That's because str1 is a pointer to a string. The memory location of str1 on the stack contains the address to the memory where the actual string is stored:
 
-<div class="term">
+```bash 
 <b>(gdb)</b> x/xw &str1
 0x7fffffffe288: 0x00400610
 <b>(gdb)</b> x/50cb 0x00400610
@@ -459,7 +459,7 @@ But the characters of str1 are not seen. That's because str1 is a pointer to a s
 0x400630:       112 'p' 32 ' '  124 '|' 32 ' '  37 '%'  115 's' 10 '\n' 0 '\000'
 0x400638:       1 '\001'        27 '\033'       3 '\003'        59 ';'  52 '4'  0 '\000'        0 '\000'        0 '\000'
 0x400640:       5 '\005'        0 '\000'
-</div>
+```
 
 In the output above, we see the characters for str1 as well as the string literals we supplied to printf.
 
@@ -515,8 +515,8 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s5
+```bash 
+$ ./s5
 72      :       H
 101     :       e
 108     :       l
@@ -525,7 +525,7 @@ int main()
 44      :       ,
 32      :
 50      :       2
-</div>
+```
 
 The 16-bit decimal number (in Little-endian) is 01100101 00000000 which translates to '!' followed by '\0'.
 
@@ -557,16 +557,16 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s6
+```bash 
+$ ./s6
 Size of a, b and c: 13
 Size of struct: 24
-</div>
+```
 
 We can use the gcc option `-Wpadded` to get warned about padding in structures:
 
-<div class="term">
-<b>~]$</b> gcc s6.c -std=c99 -Wpadded
+```bash 
+$ gcc s6.c -std=c99 -Wpadded
 s6.c: In function ‘main’:
 s6.c:13:17: warning: padding struct to align ‘b’ [-Wpadded]
          int64_t b;
@@ -574,7 +574,7 @@ s6.c:13:17: warning: padding struct to align ‘b’ [-Wpadded]
 s6.c:15:5: warning: padding struct size to alignment boundary [-Wpadded]
      };
      ^
-</div>
+```
 
 When warned about padding, we can see if we're able to reduce the size of the structure by rearranging items:
 
@@ -602,11 +602,11 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s7
+```bash 
+$ ./s7
 Size of a, b and c: 13
 Size of struct: 16
-</div>
+```
 
 We reduced the size of the structure by 8 bytes by simply rearranging the items. The general rule is putting large data types first.
 
@@ -640,13 +640,13 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./s8
+```bash 
+$ ./s8
 (0x7ffe32d94880) d
 (0x7ffe32d94888) d.a = 10
 (0x7ffe32d94880) d.b = 200
 (0x7ffe32d9488c) d.c = 3
-</div>
+```
 
 Observe that the structure itself and the first element (b) have the same address, and that this is the lowest address.
 The last element (c), has the highest address.

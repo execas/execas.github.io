@@ -25,12 +25,12 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a1
+```bash 
+$ ./a1
 sizeof(float):        32 bits
 sizeof(double):       64 bits
 sizeof(long double): 128 bits
-</div>
+```
 
 > Note: Compiling the above code on a 32-bit system, or using `gcc -m32 ...` may give a long double size of 96 bits.
 
@@ -64,8 +64,8 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a2
+```bash 
+$ ./a2
 Max value
 --------------------------
 float:       3.40282e+38
@@ -77,7 +77,7 @@ Min value
 float:       1.17549e-38
 double:      2.22507e-308
 long double: 3.3621e-4932
-</div>
+```
 
 ### Printing
 
@@ -120,10 +120,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a3
+```bash 
+$ ./a3
 f != d
-</div>
+```
 
 The comparison fails since the double does a better job at representing 1.1:
 
@@ -144,11 +144,11 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a4
+```bash 
+$ ./a4
 f = 1.10000002384185791016
 d = 1.10000000000000008882
-</div>
+```
 
 The two numbers above are clearly not equal. They are also clearly not exactly 1.1.
 
@@ -183,12 +183,12 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a5
+```bash 
+$ ./a5
 d:  1.1000000000000000888178420
 l:  1.1000000000000000888178420
 ls: 1.1000000000000000000216840
-</div>
+```
 
 Notice that *l* is equal to *d*, since the unsuffixed floating constant was first converted to a double, while *ls*, a true long double, is the better representation of 1.1.
 
@@ -216,11 +216,11 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a6
+```bash 
+$ ./a6
 100
 100
-</div>
+```
 
 > Sidenote: If we excluded the casting to `int32_t` above, we would get undefined behavior since the format specifier would not match the data type of the passed variable. Always make sure that the conversion character matches the data type of the argument.
 
@@ -245,12 +245,12 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./a7
+```bash 
+$ ./a7
 long double:            123.456789000000
 float from ld:          123.456787109375
 long double from fl:    123.456787109375
-</div>
+```
 
 ## Single-precision floating-point
 
@@ -274,10 +274,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./f1
+```bash 
+$ ./f1
 1120420495
-</div>
+```
 
 Now, let's have a look at this data in binary:
 
@@ -298,10 +298,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./f2
+```bash 
+$ ./f2
 01000010110010000100001010001111
-</div>
+```
 
 > Note: The code above does bit-wise comparison to display the binary value of a 32 bit integer. It contains a subtle potential bug that we will investigate when we look at doubles.
 
@@ -399,7 +399,7 @@ int main()
 }
 ```
 
-<div class="term">
+```bash 
 <b>~] </b>./f3
 Exponent: 6
 
@@ -417,7 +417,7 @@ Mantissa built with:
 Mantissa: 1.56453121
 
 Result: (-1)^0 * 1.56453121 * 2^6 = 100.12999725
-</div>
+```
 
 ### Precision
 
@@ -439,10 +439,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./f4
+```bash 
+$ ./f4
 a = 100.12999725
-</div>
+```
 
 > Note: Repeated calculations using floating-point numbers can cause errors to accumulate.
 
@@ -468,10 +468,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./d1
+```bash 
+$ ./d1
 -4586625597563396424
-</div>
+```
 
 ### Binary (and some undefined behavior)
 
@@ -494,10 +494,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./d2
+```bash 
+$ ./d2
 1110101110000101000111101011100011101011100001010001111010111000
-</div>
+```
 
 Something went wrong, even though it may not be obvious to us at first glance, or even without first trying to convert it to a double. 
 
@@ -535,8 +535,8 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./d3
+```bash 
+$ ./d3
 63 -2147483648 | 31 -2147483648
 62  1073741824 | 30  1073741824
 61   536870912 | 29   536870912
@@ -549,7 +549,7 @@ int main()
 34           4 |  2           4
 33           2 |  1           2
 32           1 |  0           1
-</div>
+```
 
 But we should never rely on this! When we shift by values greater than the width of the data type in the example below, we get 0 as a result:
 
@@ -570,13 +570,13 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./d4
+```bash 
+$ ./d4
 0
 0
 -2147483648
 1
-</div>
+```
 
 Back to the binary conversion. How can we correct it?
 
@@ -599,10 +599,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./d5
+```bash 
+$ ./d5
 1100000001011001000010000101000111101011100001010001111010111000
-</div>
+```
 
 ### How a double is represented
 
@@ -698,8 +698,8 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./d6
+```bash 
+$ ./d6
 Exponent: 6
 
 Mantissa built with:
@@ -730,7 +730,7 @@ Mantissa built with:
 Mantissa: 1.56453125
 
 Result: (-1)^1 * 1.56453125 * 2^6 = -100.129999999999995
-</div>
+```
 
 Even more precision is offered by the long double data type.
 
@@ -764,10 +764,10 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./l1
+```bash 
+$ ./l1
 143 194 245 40 92 143 66 200 5 64 0 0 0 0 0 0
-</div>
+```
 
 The size of the long double is 16 bytes (128 bits) on this system. The long double can store 80 bits, which means 48 bits (6 bytes) are padded. As we can see from the output above, this must be the last 6 bytes (which are actually the first 6 bytes since the above output is Little-endian).
 
@@ -793,11 +793,11 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./l2
+```bash 
+$ ./l2
 10001111 11000010 11110101 00101000 01011100 \
 10001111 01000010 11001000 00000101 01000000
-</div>
+```
 
 The output is in Little-endian order, so let's reverse the byte order
 
@@ -898,8 +898,8 @@ int main()
 }
 ```
 
-<div class="term">
-<b>~]$</b> ./l3
+```bash 
+$ ./l3
 Exponent: 6
 
 Mantissa built with:
@@ -936,7 +936,7 @@ Mantissa built with:
 Mantissa: 1.56453125
 
 Result: (-1)^1 * 1.56453125 * 2^6 = -100.1299999999999999975019981946
-</div>
+```
 
 ### float, double or long double?
 

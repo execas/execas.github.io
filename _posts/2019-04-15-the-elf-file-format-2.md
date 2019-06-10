@@ -48,8 +48,8 @@ int main() {}
 
 We can use `readelf` to examine the file header of this binary:
 
-<div class="term">
-<b>~]$</b> readelf -h c1
+```bash 
+$ readelf -h c1
 ELF Header:
   Magic:   7f 45 4c 46 02 01 01 00 00 00 00 00 00 00 00 00
   Class:                             ELF64
@@ -70,7 +70,7 @@ ELF Header:
   Size of section headers:           64 (bytes)
   Number of section headers:         31
   Section header string table index: 30
-</div>
+```
 
 > Note: `-h` is the short option of `--file-header`
 
@@ -230,8 +230,8 @@ Now that we have looked at all the members of the `Elf64_Ehdr`, we can try to us
 
 The file header is at the beginning of a binary and begins with the magic bytes:
 
-<div class="term">
-<b>~]$</b> hexdump -C c1|head
+```bash 
+$ hexdump -C c1|head
 00000000  7f 45 4c 46 02 01 01 00  00 00 00 00 00 00 00 00  |.ELF............|
 00000010  02 00 3e 00 01 00 00 00  e0 03 40 00 00 00 00 00  |..>.......@.....|
 00000020  40 00 00 00 00 00 00 00  08 19 00 00 00 00 00 00  |@...............|
@@ -242,7 +242,7 @@ The file header is at the beginning of a binary and begins with the magic bytes:
 00000070  08 00 00 00 00 00 00 00  03 00 00 00 04 00 00 00  |................|
 00000080  38 02 00 00 00 00 00 00  38 02 40 00 00 00 00 00  |8.......8.@.....|
 00000090  38 02 40 00 00 00 00 00  1c 00 00 00 00 00 00 00  |8.@.............|
-</div>
+```
 
 The first row is the 16 bytes of the `e_ident` array:
 

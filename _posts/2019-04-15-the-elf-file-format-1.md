@@ -70,7 +70,7 @@ Next we got `__BEGIN_DECLS` (and `__END_DECLS`), which are defined as follows in
 #endif
 ```
 
-The next lines of code defines the standard ELF types.
+The following lines of code defines the standard ELF types.
 
 ## Standard ELF Types
 

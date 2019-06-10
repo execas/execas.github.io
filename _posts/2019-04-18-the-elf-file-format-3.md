@@ -114,19 +114,19 @@ typedef struct
 
 The start of the section headers (actually of the section header *table*) is specified in the file header:
 
-<div class="term">
-<b>~]$</b> readelf -h c1 | grep sec
+```bash 
+$ readelf -h c1 | grep sec
   Start of section headers:          6408 (bytes into file)
   Size of section headers:           64 (bytes)
   Number of section headers:         31
-</div>
+```
 
 The section header table is at the end of the ELF file, and is an array of section headers.
 
 We can examine the section header table by dumping the hex with an offset to the beginning of the section headers (the section header table).
 
-<div class="term">
-<b>~]$</b> hexdump -C -s 6408 c1|head
+```bash 
+$ hexdump -C -s 6408 c1|head
 00001908  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 *
 00001948  1b 00 00 00 01 00 00 00  02 00 00 00 00 00 00 00  |................|
@@ -137,12 +137,12 @@ We can examine the section header table by dumping the hex with an offset to the
 00001998  54 02 40 00 00 00 00 00  54 02 00 00 00 00 00 00  |T.@.....T.......|
 000019a8  20 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  | ...............|
 000019b8  04 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
-</div>
+```
 
 Now, let's compare this to the output from `readelf`:
 
-<div class="term">
-<b>~]$</b> readelf -SW c1
+```bash 
+$ readelf -SW c1
 There are 31 section headers, starting at offset 0x1908:
 
 Section Headers:
@@ -183,7 +183,7 @@ Key to Flags:
   L (link order), O (extra OS processing required), G (group), T (TLS),
   C (compressed), x (unknown), o (OS specific), E (exclude),
   l (large), p (processor specific)
-</div>
+```
 
 > Note `readelf -SW` is short for `readelf --section-headers --wide`.
 
@@ -193,20 +193,20 @@ Since a section header is 64 bytes, that corresponds to 4 lines of hexdump outpu
 
 The first 4 lines are 0 (the asteriks hides three lines consisting of zeroes). All ELF files have a section header in index 0 of the section header table with all entries set to zero.
 
-<div class="term">
+```bash 
 00001908  00 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 *
-</div>
+```
 
 
 For the next section header, let's try to decode it from the hex data using what we've learned:
 
-<div class="term">
+```bash 
 00001948  1b 00 00 00 01 00 00 00  02 00 00 00 00 00 00 00  |................|
 00001958  38 02 40 00 00 00 00 00  38 02 00 00 00 00 00 00  |8.@.....8.......|
 00001968  1c 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 00001978  01 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
-</div>
+```
 
 The name, `sh_name` in `Elf64_Shdr`, is of type `Elf64_Word` (32 bits) and specifies the location of a null-terminated string in the section header string table (`.shstrtab`). The index of `.shstrtab` in the section header table is specified in `e_shstrndx in the ELF file header.
 
@@ -219,11 +219,11 @@ The name, `sh_name` in `Elf64_Shdr`, is of type `Elf64_Word` (32 bits) and speci
 - The file header is the 64 first bytes of the ELF file (see `e_ehsize` in the hexdump of the file header).
 - The section header string table index (`_eshstrndx`) is the last 2 bytes of the file header (see `<elf.h>` file header structure).
 
-<div class="term">
-<b>~]$</b> hexdump -C -s 62 -n 2
+```bash 
+$ hexdump -C -s 62 -n 2
 0000003e  1e 00                                             |..|
 00000040
-</div>
+```
 
 001e is 30 in decimal. The `.shstrtab` section header has index 30 in the section header table.
 
@@ -236,11 +236,11 @@ The name, `sh_name` in `Elf64_Shdr`, is of type `Elf64_Word` (32 bits) and speci
 
 The offset of the first section header is found at `e_shoff` in the file header):
 
-<div class="term">
-<b>~]$</b> hexdump -C -s 40 -n 8
+```bash 
+$ hexdump -C -s 40 -n 8
 00000028  08 19 00 00 00 00 00 00                           |........|
 00000030
-</div>
+```
 
 1908 is 6408 in decimal.
 
@@ -248,20 +248,20 @@ The offset of the first section header is found at `e_shoff` in the file header)
 
 Since every section header is 64 bytes, the `.shstrtab` header can be found using:
 
-<div class="term">
-<b>~]$</b> hexdump -C -s `python -c "print 6408 + (30*64)"` -n 64 c1
+```bash 
+$ hexdump -C -s `python -c "print 6408 + (30*64)"` -n 64 c1
 00002088  11 00 00 00 03 00 00 00  00 00 00 00 00 00 00 00  |................|
 00002098  00 00 00 00 00 00 00 00  f5 17 00 00 00 00 00 00  |................|
 000020a8  0c 01 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 000020b8  01 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 000020c8
-</div>
+```
 
 The `.shrstrtab` header has the `sh_offset` entry which stores the offset of the section. These 8 bytes are in the second column of the second row: 00 00 00 00 00 00 17 f5.
 The `sh_size` entry, 4 bytes, is found in the (first half of) the first column of the third row: 00 00 01 0c.
 
-<div class="term">
-<b>~]$</b> hexdump -C -s 0x17f5 c1 -n 0x010c
+```bash 
+$ hexdump -C -s 0x17f5 c1 -n 0x010c
 000017f5  00 2e 73 79 6d 74 61 62  00 2e 73 74 72 74 61 62  |..symtab..strtab|
 00001805  00 2e 73 68 73 74 72 74  61 62 00 2e 69 6e 74 65  |..shstrtab..inte|
 00001815  72 70 00 2e 6e 6f 74 65  2e 41 42 49 2d 74 61 67  |rp..note.ABI-tag|
@@ -280,7 +280,7 @@ The `sh_size` entry, 4 bytes, is found in the (first half of) the first column o
 000018e5  67 6f 74 2e 70 6c 74 00  2e 64 61 74 61 00 2e 62  |got.plt..data..b|
 000018f5  73 73 00 2e 63 6f 6d 6d  65 6e 74 00              |ss..comment.|
 00001901
-</div>
+```
 
 Now, to find the name, we count 0x1b bytes (see the `sh_name` data in the section header we are currently analyzing) into the section to find ".interp".
 
@@ -308,19 +308,19 @@ The remaining entries are also easily deciphered as long as you know the entries
 
 We can view the hexdump of a section using `readelf`:
 
-<div class="term">
-<b>~]$</b> readelf -x .init c1
+```bash 
+$ readelf -x .init c1
 
 Hex dump of section '.init':
   0x00400390 4883ec08 488b055d 0c200048 85c07405 H...H..]. .H..t.
   0x004003a0 e82b0000 004883c4 08c3              .+...H....
 
-</div>
+```
 
 Sections containing machine instructions (like `.init`, `.fini` and `.text` can be more easily analyzed using `objdump` (note that the same hex data is still displayed):
 
-<div class="term">
-<b>~]$</b> objdump -j .init -d c1
+```bash 
+$ objdump -j .init -d c1
 c1:     file format elf64-x86-64
 
 
@@ -334,7 +334,7 @@ Disassembly of section .init:
   4003a0:       e8 2b 00 00 00          callq  4003d0 <.plt.got>
   4003a5:       48 83 c4 08             add    $0x8,%rsp
   4003a9:       c3                      retq
-</div>
+```
 
 > Note: `objdump -j <section> -d` is short for `objdump --section <section> --disassemble`.
 
