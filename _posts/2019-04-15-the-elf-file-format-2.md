@@ -270,4 +270,4 @@ The first row is the 16 bytes of the `e_ident` array:
 
 - e0 03 40 00 00 00 00 00 00 is the address 0x4003e0.
 
-These are followed by the remaining members of the ELF file header, and after those we are entering program header territory, but let's look at section headers first, since they are the next part `<elf.h>`.
+These are followed by the remaining members of the ELF file header, and after those we are entering program header territory, but let's look at section headers first, since they are the next part of `<elf.h>`.
