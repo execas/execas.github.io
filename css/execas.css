@@ -33,9 +33,9 @@ pre {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 12px;
-     border-left:4px solid #282828;
      white-space: pre;
-     border: 1px solid #707070;
+     border: 1px solid #efefef;
+     border-left:4px solid #282828;
      overflow: auto;
      /*border-radius: 5px 5px 5px 5px;     */
 
