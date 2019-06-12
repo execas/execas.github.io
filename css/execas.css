@@ -7,7 +7,7 @@ body {
      /*font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Sans", sans-serif;*/
      /*font-family:"Lato","Helvetica Neue",Helvetica,Arial,sans-serif;*/
      font-weight: 400;
-     color: #000000;
+     color: #24292e;
      font-size: 16px;
      background-color: #ffffff;
 }
@@ -35,7 +35,7 @@ pre {
      padding-top: 12px;
      white-space: pre;
      border: 1px solid #efefef;
-     border-left:4px solid #d1d5da;
+     border-left:4px solid #efefef;
      overflow: auto;
      /*border-radius: 5px 5px 5px 5px;     */
 
