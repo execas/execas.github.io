@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The ELF file format 3. Section headers.
+title: The ELF file format 3. Section headers
 date: 2019-04-18
 tags: [c, linux, programming]
 ---
