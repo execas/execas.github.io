@@ -318,7 +318,7 @@ END: postinfo
 
 .post table {
      border-collapse: collapse;
-     border: 1px solid #ccc;
+     border: 1px solid #efefef;
      width: 100%;
 }
 
@@ -326,16 +326,16 @@ END: postinfo
      padding: 4px;
      padding-left: 10px;
      padding-right: 10px;
-     border: 1px solid #ccc;
+     border: 1px solid #efefef;
 }
 
 .post tr {
-     border: 1px solid #ccc;
+     border: 1px solid #efefef;
 }
 
 .post th {
-     border: 1px solid #ccc;
-     background-color: #eee;
+     border: 1px solid #efefef;
+     background-color: #d1d5da;
 }     
 
 div:empty {
