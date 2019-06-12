@@ -6,3 +6,4 @@ tagline: ''
 highlighter: rouge
 
 theme: jekyll-theme-dinky
+show_downloads: 'false'
