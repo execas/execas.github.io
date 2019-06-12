@@ -17,7 +17,7 @@ body {
      max-width: 718px;
      background-color: #ffffff;
      margin: 0 auto; 
-     border: 1px solid #f6f8fa;
+     border: 1px solid #d1d5da;
 }
 
 img {
@@ -26,27 +26,6 @@ img {
      margin-left: auto;
      margin-right: auto;
 }
-
-.term {
-     /*background-color:#f6f8fa;*/
-     background-color:#fafafa;
-     margin-left:0px;
-     margin-right:5px;
-     margin-top:0;
-     margin-bottom:0;
-     padding-left: 10px;
-     padding-bottom: 12px;
-     padding-top: 0px;
-     border-left:4px solid #707070;
-     border:1px solid #707070;
-     white-space: pre;
-     color:#282828;
-     overflow: auto;
-     font-family: "Source Code Pro", monospace;
-     font-size:13px;
-     whitespace: pre;
-}
-
 pre {
      background-color:#ffffff;
      margin-left:0px;
@@ -54,9 +33,9 @@ pre {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 12px;
-     border: 1px solid #707070;
      border-left:4px solid #282828;
      white-space: pre;
+     border: 1px solid #707070;
      overflow: auto;
      /*border-radius: 5px 5px 5px 5px;     */
 
