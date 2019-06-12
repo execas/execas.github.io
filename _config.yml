@@ -5,5 +5,5 @@ about_page: '/about.html'
 tagline: ''
 highlighter: rouge
 
-theme: jekyll-theme-dinky
+theme: jekyll-theme-midnight
 show_downloads: 'false'
