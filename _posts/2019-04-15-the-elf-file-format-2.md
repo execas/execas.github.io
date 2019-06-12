@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The ELF file format 2. The ELF file header.
+title: The ELF file format 2. The ELF file header
 date: 2019-04-15
 tags: [c, linux, programming]
 ---
