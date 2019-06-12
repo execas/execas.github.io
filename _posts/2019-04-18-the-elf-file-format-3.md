@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The ELF file format 3. Section headers.
+title: The ELF file format 3. Section headers
 date: 2019-04-18
 tags: [c, linux, programming]
 ---
@@ -208,7 +208,7 @@ For the next section header, let's try to decode it from the hex data using what
 00001978  01 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00  |................|
 ```
 
-The name, `sh_name` in `Elf64_Shdr`, is of type `Elf64_Word` (32 bits) and specifies the location of a null-terminated string in the section header string table (`.shstrtab`). The index of `.shstrtab` in the section header table is specified in `e_shstrndx in the ELF file header.
+The name, `sh_name` in `Elf64_Shdr`, is of type `Elf64_Word` (32 bits) and specifies the location of a null-terminated string in the section header string table (`.shstrtab`). The index of `.shstrtab` in the section header table is specified in `e_shstrndx` in the ELF file header.
 
 - The section header string table (`.shstrtab`) header is part of the section header table.
 - The `e_shstrndx` in the file header specifies its index in the section header table.
