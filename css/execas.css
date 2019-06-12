@@ -13,7 +13,7 @@ body {
 }
 
 #wrapper {
-     padding: 0px 25px 70px 25px;
+     padding: 15px 25px 70px 25px;
      max-width: 718px;
      background-color: #ffffff;
      margin: 0 auto; 
@@ -224,7 +224,7 @@ postinfo: title, date, tags
        
 .post-title {
      font-size: 3rem;
-     color:#1d2021;
+     color:#000000;
      margin-bottom:0.5rem;
 }
 
@@ -262,13 +262,14 @@ END: postinfo
 }
      
 .post h2 {
-     color: #000000;
+     color: #282828;
      /*color: #d33682;*/
      font-size: 2rem;
      margin-top: 2.5rem;
      margin-bottom:1rem;
      padding-bottom: 10px;
      width: 90%;
+     border-bottom: 1px solid #f6f8fa;
      border-bottom: 1px solid #f6f8fa;
 }
 
