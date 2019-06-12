@@ -37,8 +37,8 @@ img {
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 0px;
-     border:1px solid #707070;
      border-left:4px solid #707070;
+     border:1px solid #707070;
      white-space: pre;
      color:#282828;
      overflow: auto;
