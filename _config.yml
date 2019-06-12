@@ -5,4 +5,4 @@ about_page: '/about.html'
 tagline: ''
 highlighter: rouge
 
-theme: jekyll-theme-minimal
+theme: jekyll-theme-dinky
