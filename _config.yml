@@ -4,6 +4,3 @@ home_page: '/index.html'
 about_page: '/about.html'
 tagline: ''
 highlighter: rouge
-
-theme: jekyll-theme-midnight
-show_downloads: 'false'
