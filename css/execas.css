@@ -35,11 +35,11 @@ pre {
      padding-top: 12px;
      white-space: pre;
      border: 1px solid #d1d5da;
-     border-left:4px solid #efefef;
+     border-left:4px solid #d1d5da;
      overflow: auto;
      color:#000000;
      /*border-radius: 5px 5px 5px 5px;     */
-     scrollbar-color: #707070 #d1d5da;
+     scrollbar-color: #909090 #d1d5da;
 
 }
 
