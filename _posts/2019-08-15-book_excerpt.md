@@ -5,10 +5,11 @@ date: 2019-08-15
 tags: [security, linux, programming, c]
 ---
 
+*Currently writing a book about finding, exploiting, and preventing vulnerabilities in Linux applications. Here's an excerpt.*
+
 Chapter 2. Vulnerabilities
 ================================================================================
 
-*Currently writing a book about finding, exploiting, and preventing vulnerabilities in Linux applications. Here's an excerpt.*
 
 In this chapter we will look at vulnerability classes, how these can be exploited, and the countermeasures that retire old exploitation techniques and give birth to new ones.
 
