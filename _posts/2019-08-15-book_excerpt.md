@@ -1,7 +1,7 @@
 ---
 layout: post
-title: The ELF file format 3. Section headers
-date: 2019-04-18
+title: Book excerpt
+date: 2019-08-15
 tags: [security, linux, programming, c]
 ---
 
