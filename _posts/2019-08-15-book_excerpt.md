@@ -1,3 +1,10 @@
+---
+layout: post
+title: The ELF file format 3. Section headers
+date: 2019-04-18
+tags: [security, linux, programming, c]
+---
+
 Chapter 2. Vulnerabilities
 ================================================================================
 
