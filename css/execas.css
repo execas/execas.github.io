@@ -341,3 +341,13 @@ END: postinfo
 div:empty {
    display: none;
 }
+.header {
+     font-family: 'Inconsolata', monospace;
+     margin-bottom:0;
+     background-color:#282828;
+     color: #f6f8fa;
+     margin:0 auto;
+     max-width: 720px;
+     padding: 10px 24px 10px 24px;
+     border:1px solid #282828;
+}
