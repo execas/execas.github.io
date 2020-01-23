@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Buffer overflow - countermeasure 1: NX bit
+title: "Buffer overflow - countermeasure 1: NX bit"
 date: 2020-01-04
 tags: [security, linux, programming, vulnerabilities]
 ---
