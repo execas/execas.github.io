@@ -118,13 +118,13 @@ p {
      margin:0 auto;
      max-width: 720px;
      padding: 10px 24px 10px 24px;
-     border:1px solid #282828;
+     border:1px solid #efefef;
 }
 
 .header h1 {
      font-size: 3rem;
      margin-right: 2rem;
-     color: #ffffff;
+     color: #000000;
      display: inline;
      margin-top: 0px;
      margin-bottom:0px;
