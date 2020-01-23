@@ -59,7 +59,7 @@ int main()
 }
 ```
 
-```bash 
+```bash
 $ ./s1
 a: 0x7fff77fc3caf | 1
 b: 0x7fff77fc3cae | 2
@@ -89,7 +89,7 @@ movl    $150000, -24(%rbp)
     ...
 ```
 
-The stack pointer `rsp` (which points to the top of the stack - the lowest address) is decreased by 32, then the variables are pushed onto the stack.
+The stack pointer `rsp` (which points to the top of the stack - the lowest address) is decreased by 32, then the variables are copied onto the stack. With another compiler or a different system, the `push` instruction could be used instead.
 
 If we examine the executable in a debugger, we can get a really good look behind the scenes:
 
@@ -141,7 +141,7 @@ memory:
 
 All our variables are between the base pointer and the stack pointer:
 
-```bash 
+```bash
 (gdb) x/32xb $rsp
 0x7fffffffe270: 0xe0    0x05    0x40    0x00    0x00    0x00    0x00    0x00
 0x7fffffffe278: 0xf0    0x49    0x02    0x00    0x00    0x00    0x04    0x00
@@ -160,14 +160,14 @@ On a Little-endian platform, the the most significant byte of a number - the oct
 
 The address of a variable points to the first byte of the variable (the LSB).
 
-```bash 
+```bash
 (gdb) print &e
 $13 = (int32_t *) 0x7fffffffe278
 ```
 
 The e varible is 32 bits, 4 bytes, and if we examine these addresses we can recognize them in the above output, on the second line going towards the right.
 
-```bash 
+```bash
 (gdb) x/xb 0x7fffffffe278
 0x7fffffffe278: 0xf0
 (gdb) x/xb 0x7fffffffe279
@@ -211,7 +211,7 @@ memory:
 
 If we examine the address of *e* as a word of bits, it is displayed in big endian order:
 
-```bash 
+```bash
 (gdb) x/tw &e
 0x7fffffffe278: 00000000000000100100100111110000
 ```
