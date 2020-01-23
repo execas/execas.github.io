@@ -343,7 +343,7 @@ div:empty {
 }
 .footer {
      font-family: 'Inconsolata', monospace;
-     margin-bottom:0;     
+     margin-bottom:15;     
      background-color:#fcfcfc;
      color: #000000;
      margin:0 auto;
