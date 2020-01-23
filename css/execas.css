@@ -341,7 +341,7 @@ END: postinfo
 div:empty {
    display: none;
 }
-.header {
+.footer {
      font-family: 'Inconsolata', monospace;
      margin-bottom:0;
      background-color:#282828;
