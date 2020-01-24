@@ -8,7 +8,7 @@ tags: [security, linux, programming, vulnerabilities]
 Countermeasure 2: Address Space Layout Randomization (ASLR)
 ------------------------------
 
-Address space layout randomization (ASLR) randomizes the position of (certain) segments in the process's address space. This makes it difficult to exploit a vulnerable program by for example jumping to functions, chaining instructions togheter (ROP) and executing injected code, since all of these methods require the addresses of functions, instructions, environment variables, the stack and so on.
+Address space layout randomization (ASLR) randomizes the position of segments in the process's address space. This makes it difficult to exploit a vulnerable program by for example jumping to functions, chaining instructions togheter (ROP) and executing injected code, since all of these methods require the addresses of functions, instructions, environment variables, the stack and so on.
 
 ASLR is enabled by default on Linux. We have disabled ASLR in all examples so far by using:
 
@@ -22,9 +22,9 @@ It can be re-enabled by rebooting or by using:
 $ sudo sh -c "echo 2 > /proc/sys/kernel/randomize_va_space"
 ```
 
-> We can also use `sysctl -a -r randomize` to view its value, and `sudo sysctl kernel.randomize_va_space=1` (do tab completion) to activate. PERMANENT?
+> We can also use `sysctl -a -r randomize` to view its value, and `sudo sysctl kernel.randomize_va_space=1` (use tab completion) to activate.
 
-> ASLR on Linux also has a 1 value in addition to 0 and 2. It enables ASLR, but does not randomize the address space for data segements. CHECK!
+> ASLR on Linux also has a 1 value in addition to 0 and 2. It enables ASLR, but does not randomize the address space for data segements.
 
 ### What is randomized?
 
@@ -88,4 +88,3 @@ $ ./a.out; ./a.out
 ```
 
 > In gdb, `disable-randomization` is on by default, so we need to turn it off to see the effects of an active ASLR on the pie executable.
-
