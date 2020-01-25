@@ -27,15 +27,15 @@ img {
      margin-right: auto;
 }
 pre {
-     background-color:#ffffff;
+     background-color:#fdfdfd;
      margin-left:0px;
      margin-right:5px;
      padding-left: 10px;
      padding-bottom: 12px;
      padding-top: 12px;
      white-space: pre;
-     border: 1px solid #d1d5da;
-     border-left:4px solid #d1d5da;
+     border: 1px solid #efefef;
+     border-left:4px solid #efefef;
      overflow: auto;
      color:#000000;
      /*border-radius: 5px 5px 5px 5px;     */
