@@ -9,7 +9,7 @@ body {
      font-weight: 400;
      color: #24292e;
      font-size: 16px;
-     background-color: #707070;
+     background-color: #909090;
 }
 
 #wrapper {
@@ -34,7 +34,7 @@ pre {
      padding-bottom: 12px;
      padding-top: 12px;
      white-space: pre;
-     border: 1px solid #666666;
+     border: 1px solid #707070;
      border-left:4px solid #444444;
      overflow: auto;
      color:#000000;
