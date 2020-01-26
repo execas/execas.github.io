@@ -15,7 +15,7 @@ body {
 #wrapper {
      padding: 15px 25px 70px 25px;
      max-width: 718px;
-     background-color: #ccc;
+     background-color: #dddddd;
      margin: 0 auto; 
      border: 1px solid #000000;
 }
@@ -51,7 +51,7 @@ pre code {
      border-style: none;
      whitespace: pre;
      font-size:13px;
-     background-color:#ffffff;
+     background-color:#fdfdfd;
      color:#282828;
      border-width: 0px;
      border-radius:0px;
