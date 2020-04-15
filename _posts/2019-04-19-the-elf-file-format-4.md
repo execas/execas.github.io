@@ -52,7 +52,7 @@ typedef struct
 #define PT_HIPROC	0x7fffffff	/* End of processor-specific */
 ```
 
-`p_flags` holds the segments flags. As an example, a text segment will typically be executable and readable, while a data segment may be readable and writeable. The values are defined in `<elf.h>`:
+`p_flags` holds the segment's flags. As an example, a text segment will typically be executable and readable, while a data segment may be readable and writeable. The values are defined in `<elf.h>`:
 
 ```c
 #define PF_X		(1 << 0)	/* Segment is executable */
@@ -66,9 +66,9 @@ typedef struct
 
 `p_vaddr` is the virtual address of the segment's first byte in memory.
 
-`p_paddr` is used on systems where physical addressing is relevant
+`p_paddr` is used on systems where physical addressing is relevant.
 
-`p_filesz` is the number of bytes in the file image of the segments.
+`p_filesz` is the number of bytes in the file image of the segment.
 
 `p_memsz` is the number of bytes in the memory image of the segment.
 
@@ -77,7 +77,7 @@ typedef struct
 
 ### Understanding the ELF program header table
 
-The start of the program headers (actually of the program header *table*) is specified in the file header.
+The start of the program headers (actually of the program header *table*) is specified in the file header:
 
 ```bash
 $ readelf -h c1 | grep prog
@@ -86,7 +86,7 @@ Size of program headers:           56 (bytes)
 Number of program headers:         9
 ```
 
-As with sections headers, we could use this information to read out the bytes using a tool like `xxd` or `hexdump`, but this is left as an exercise for the reader. We will instead start by looking at how `readelf` displays this information:
+As with sections headers, we could use this information to read out the bytes using a tool like `xxd` or `hexdump`, but this is left as an exercise for the reader. We will instead look at how `readelf` displays this information:
 
 ```bash
 $ readelf -lW c1
@@ -121,12 +121,14 @@ Program Headers:
    08     .init_array .fini_array .jcr .dynamic .got
 ```
 
+> Note: `readelf -lW` is short for `readelf --program-headers --wide`.
+
 First, we get information about the file type and entry point, as well as the number of progam headers and their starting offset.
 
 Next follows the program headers, and all the information we saw as part of the `Elf64_Phdr` structure is displayed here (from left to right): `p_type`, `p_offset`, `p_vaddr`, `p_paddr`, `p_filesz`, `p_memsz`, `p_flags` and `p_align`. Note for example that the stack is readable and writeable, but not executable.
 
 At the end of the output listing is a section to segment mapping. Note that the number corresponds to a program header printed above, e.g. 07 is the `GNU_STACK` header. Most segments contain one or more sections, but it may not be clear how this mapping is done.
 
-The answer is really simple. Look at the address and offset of for example 02. Note the address and offset. View the section headers by using `readelf -SW c1`. Note that `.interp` is the first and `.eh_frame` is the last section in the range defined by the segment's address and offset. Look at another segment and confirm the same.
+The answer is really simple. Look at the address and offset of for example 02. Note the address and offset. View the section headers by using `readelf -SW`. Note that `.interp` is the first and `.eh_frame` is the last section in the range defined by the segment's address and offset. Look at another segment and confirm the same.
 
-Next, we'll look at the various tools we can use to study and make sense of ELF files.
+Next, we'll look at the various tools and commands we can use to study and make sense of ELF files.
