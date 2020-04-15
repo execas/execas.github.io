@@ -286,7 +286,7 @@ Now, to find the name, we count 0x1b bytes (see the `sh_name` data in the sectio
 
 The remaining entries are also easily deciphered as long as you know the entries, the order of these in the data, and the amount of bytes reserved for each of them (see `<elf.h>`).
 
-### Important section headers
+### Some important section headers
 
 | section | description |
 |---------|-------------|
@@ -303,8 +303,8 @@ The remaining entries are also easily deciphered as long as you know the entries
 | `.dynamic`| dynamic linking information|
 | `.got`| global offset table|
 | `.plt`| procedure linkage table|
-| `.relNAME`| procedure linkage table|
-| `.relaNAME`| procedure linkage table|
+| `.relNAME`| relocation information |
+| `.relaNAME`| relocation information |
 
 We can view the hexdump of a section using `readelf`:
 
@@ -338,4 +338,4 @@ Disassembly of section .init:
 
 > Note: `objdump -j <section> -d` is short for `objdump --section <section> --disassemble`.
 
-
+Next, we'll have a look at program headers.

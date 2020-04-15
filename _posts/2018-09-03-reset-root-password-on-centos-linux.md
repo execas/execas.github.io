@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reset root password on CentOS Linux
+title: Reset root password on Linux
 date: 2018-09-03
 tags: [linux,security]
 ---

@@ -558,4 +558,4 @@ $ echo $?
 
 > There are of course a bunch of other ways to zero out `%rdi`. See if you can find another gadget to do this.
 
-Now that you're comfortable with the basics of return-oriented programming, doing a return-to-libc attack on 32-bit and 64-bit systems should be about equally easy. In a later article, we will study some of the more advanced possibilites of return-orented programming.
+Now that you're comfortable with the basics of return-oriented programming, doing a return-to-libc attack on 32-bit and 64-bit systems should be about equally easy. In a later article, we will study some of the more advanced possibilites of return-oriented programming.

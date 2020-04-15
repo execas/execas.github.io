@@ -120,7 +120,7 @@ Next, **'Class'**, **'Data'**, **'Version'**, **'OS/ABI'** and **'ABI VERSION'**
 #define ELFDATANUM      3
 ```
 
-**'Version'** has position 5 in the array, and must be `EV_CURRENT`:
+**'Version'** has position 6 in the array, and must be `EV_CURRENT`:
 
 ```c
 #define EI_VERSION  6          /* File version byte index */
