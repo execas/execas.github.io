@@ -5,8 +5,6 @@ date: 2019-04-19
 tags: [c, linux, programming]
 ---
 
-CHECK physical addresses
-
 ## Program headers
 
 As covered in the previous post, *section* headers contain information about *sections*. *Program* headers contain information about *segments*. Segments often contain one or more sections. Sections are the view used for linking and relocation, segments are the view used for execution (by the OS and dynamic linker).
@@ -68,7 +66,7 @@ typedef struct
 
 `p_vaddr` is the virtual address of the segment's first byte in memory.
 
-`p_paddr` CHECK THIS
+`p_paddr` is used on systems where physical addressing is relevant
 
 `p_filesz` is the number of bytes in the file image of the segments.
 
