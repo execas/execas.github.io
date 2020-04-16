@@ -137,7 +137,7 @@ The `hexdump`, `xxd` and `od` commands can also be used.
 
 ### strings
 
-The `strings` command can print strings of printable characters from any file.
+The `strings` command can display strings of printable characters from any file.
 
 ```bash
 $ strings c1
@@ -157,7 +157,7 @@ The option `-a` tells `strings` to scan the whole file (not just those in loadab
 
 ### readelf
 
-We can use `readelf -p <section name/number> <file>` to display printable string of a section along with their offset in the section.
+We can use `readelf -p <section name/number> <file>` to display printable strings of a section along with their offset in that section.
 
 ```bash
 $ readelf -p .shstrtab c1
