@@ -11,11 +11,11 @@ This post will cover some of the basic tools and commands we can use to investig
 
 ### readelf
 
-We have already covered `readelf -S` and `readelf -l`, which diplay information about the section headers and program /segment headers, respectively. These are often used with the `-W` option which gives more readable output on modern terminals. We also saw how `readelf -h` could be used to display the information in the ELF header.
+We have already covered `readelf -S` and `readelf -l`, which diplay information about the section headers and program/segment headers, respectively. These are often used with the `-W` option to produce more readable output on modern terminals. We also saw how `readelf -h` could be used to display the information in the ELF header.
 
 ### objdump
 
-If you can't or don't want to use `readelf`, the `objdump` tool can display the same information:
+The `objdump` tool can display a lot of the same information as `readelf`:
 
 Sections:
 
@@ -87,7 +87,7 @@ filesz 0x00000000000001f0 memsz 0x00000000000001f0 flags r--
 ...
 ```
 
-Some header info is available using the `objdump -f <file>` command
+Some header info is available using the `objdump -f <file>` command.
 
 ### file
 
@@ -116,7 +116,7 @@ Hex dump of section '.text':
 ...
 ```
 
-An alternative is `objdump -s -j <section name> <file>:
+An alternative is `objdump -s -j <section name> <file>`:
 
 ```bash
 $ objdump -s -j .text c1
@@ -150,6 +150,10 @@ GLIBC_2.2.5
 UH-0
 ...
 ```
+
+The default is at least 4 printable characters for a byte sequence to be considered a string.
+
+The option `-a` tells `strings` to scan the whole file (not just those in loadable, initialized data sections). See `man strings`.
 
 ### readelf
 
@@ -225,7 +229,7 @@ Disassembly of section .init:
 
 ### ndisasm
 
-The NetWide Disassembler (you may know `nasm` - the NetWide Assembler) can be used to disassemble files and display the output in Intel syntax (as opposed to AT&T syntax, which is prevalent in Linux). The command needs a `-b <bit mode> parameter (16, 32, 64)`:
+The NetWide Disassembler (you may know `nasm` - the NetWide Assembler) can be used to disassemble files and display the output in Intel syntax (as opposed to AT&T syntax, which is prevalent in Linux). The command needs a `-b <bit mode> parameter` (16, 32, 64)`:
 
 ```
 $ ndisasm -b64 c1
@@ -238,7 +242,7 @@ $ ndisasm -b64 c1
 
 As you can see, by default disassembly is done from the start of the file. `ndisasm` is a simple disassembler which has no understanding of object file formats. It is best used for disassembling flat binary files (binary files with no headers) since it treats all bytes as instructions.
 
-Try using the `-e` option with and offset, and `-o` with an address to see if you can disassemble the first few instructions of `.init` similarly to how `objdump` did above. Read `man ndisasm`.
+Try using the `-e` option with an offset, and `-o` with an address to see if you can disassemble the first few instructions of `.init` similarly to how `objdump` did above. Read `man ndisasm`.
 
 > Note: `objdump` can also display Intel syntax with `objdump -M intel -d <file>`.
 
