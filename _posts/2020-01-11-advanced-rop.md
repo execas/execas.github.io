@@ -126,7 +126,7 @@ In gdb, we can see that this region contains following:
 ...
 ```
 
-With all the information gathered, below is our in unfinished exploit:
+With all the information gathered, below is our unfinished exploit:
 
 ```python
 # r2l2_exploit2.py
@@ -245,7 +245,7 @@ $13 = 0
 
 The man-page states *if the file offset is at or past the end of file, no bytes are read, and read() returns zero*.
 
-Knowing this, we can use `lseek()`, with `SEEK_SET` to reposition the file offset to where we need it.
+Knowing this, we can use `lseek()` with `SEEK_SET` to reposition the file offset to where we need it.
 
 First we need to figure out the proper offset, which is the location of our shellcode:
 
