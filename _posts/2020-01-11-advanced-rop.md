@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Buffer overflow - advanced ROP: rwx memory for shellcode
+title: "Buffer overflow - advanced ROP: rwx memory for shellcode"
 date: 2020-01-11
 tags: [security, linux, programming, vulnerabilities]
 ---
