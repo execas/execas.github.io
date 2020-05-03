@@ -5,7 +5,7 @@ date: 2018-09-03
 tags: [linux,security]
 ---
 
-The following shows how easy it is to reset the root password on a Linux system. Disabling booting from external devices and setting a boot password can hinder someone using this method with malicious purpose.
+The following shows how easy it is to reset the root password on a Linux system. Disabling booting from external devices and setting a boot password can hinder someone using this method with malicious intent.
 
 ## Booting into emergency mode
 
