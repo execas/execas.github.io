@@ -5,7 +5,7 @@ date: 2020-01-12
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-In this post will use ROP to infect a program with malicious code.
+In this post we'll use ROP to infect a program with malicious code.
 
 
 ## The vulnerable program
@@ -16,7 +16,7 @@ The program below is vulnerable to a buffer overflow in both the `chat()` and `n
 ```c
 /*
  * r2l3.c
- * gcc r2l3.c -fno-stack-protector -o r2l2
+ * gcc r2l3.c -fno-stack-protector -o r2l3
  */
 #include <stdio.h>
 
