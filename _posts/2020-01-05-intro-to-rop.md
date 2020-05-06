@@ -5,16 +5,13 @@ date: 2020-01-05
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-Return-oriented programming (ROP)
-------------------------------
-
 Return-oriented programming (ROP) solves the problem of the non-executable stack.
 
 ROP is about selecting and executing instructions that are already in memory (as part of the program code or linked shared libraries) to perform desired actions.
 
 To get started with this topic we'll cover the most basic variant, the Return-to-libc attack.
 
-### Return-to-libc
+## Return-to-libc
 
 We will begin with the following 32-bit program:
 
@@ -204,7 +201,7 @@ We use `echo $$` to get the pid of the shell, then suspend the job to get back t
 
 > Use `fg` to resume the suspended job.
 
-### Intro to 64-bit ROP
+## Intro to 64-bit ROP
 
 The reason we started looking at ROP with a 32-bit program is, as stated, that it's simpler. If we were to do the same exploit as above on 64-bit, we immediately encounter an obstacle: 32-bit programs use the stack to pass function arguments, while 64-bit programs use registers How do we get the required function arguments into the correct regiters (like the address of "/bin/sh" to `system()` in `%rdi`) when we can only write to the stack?
 

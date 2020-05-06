@@ -5,8 +5,6 @@ date: 2019-04-19
 tags: [c, linux, programming]
 ---
 
-## Program headers
-
 As covered in the previous post, *section* headers contain information about *sections*. *Program* headers contain information about *segments*. Segments often contain one or more sections. Sections are the view used for linking and relocation, segments are the view used for execution (by the OS and dynamic linker).
 
 `<elf.h>` defines progam headers for 32-bit and 64-bit binaries. The 64-bit program header is defined as follows:
@@ -75,7 +73,7 @@ typedef struct
 `p_align` holds a value for taking care of the segment's alignment requirements.
 
 
-### Understanding the ELF program header table
+## Understanding the ELF program header table
 
 The start of the program headers (actually of the program header *table*) is specified in the file header:
 

@@ -5,9 +5,6 @@ date: 2020-01-04
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-Countermeasure 1: NX bit
-------------------------------
-
 The NX bit (no-execute) is a countermeasure that prevents execution of code on the stack. If a program's stack is *not* marked as executable, the exploits we've looked at so far will not work. On modern systems and processors, a non-executable stack is the default.
 
 > No-execute has many names, including *data execution prevention* (DEP), *W^X* and *executable-space protection*.

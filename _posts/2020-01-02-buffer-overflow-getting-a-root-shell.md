@@ -9,7 +9,7 @@ The vulnerable program from the previous article spawned a shell when we exploit
 
 There are multiple ways to go from normal user privilege to super user privilege, and we'll look more at this later, but for now we'll focus on SUID binaries.
 
-### SUID binaries
+## SUID binaries
 
 When root is the owner of a file, and the SUID/setuid bit is set, the program runs (when executed by a normal user) with the highest privlege.
 
@@ -26,7 +26,7 @@ When we execute the above program, we run it with using our *real* user ID (the 
 
 > The SUID bit makes a program run with the *owner's* privileges. It is displayed as "s" in the file permissions (e.g. `ls -l` output).
 
-### Prevent privilege drop in bash
+## Prevent privilege drop in bash
 
 Running the same exploit as earlier, on the now SUID root `bo_vuln1`, we still get a shell with no special privileges:
 

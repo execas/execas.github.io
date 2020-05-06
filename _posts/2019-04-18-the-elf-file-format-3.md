@@ -6,8 +6,6 @@ tags: [c, linux, programming]
 ---
 
 
-## Section headers
-
 A section header contains information about a section, like its name, location in the file and type. An ELF file will have multiple section headers, organized in a *section header table*.
 
 `<elf.h>` defines section headers for 32-bit and 64-bit binaries. The 64-bit section header is defined as follows:
@@ -110,7 +108,7 @@ typedef struct
 
 `sh_entsize` holds the size of each entry if the section holds a table of fixed-size entries (like a symbol table). Set to 0 if section does not hold such a table.
 
-### Understanding the ELF section header table
+## Understanding the ELF section header table
 
 The start of the section headers (actually of the section header *table*) is specified in the file header:
 
@@ -286,7 +284,7 @@ Now, to find the name, we count 0x1b bytes (see the `sh_name` data in the sectio
 
 The remaining entries are also easily deciphered as long as you know the entries, the order of these in the data, and the amount of bytes reserved for each of them (see `<elf.h>`).
 
-### Some important section headers
+## Some important section headers
 
 | section | description |
 |---------|-------------|

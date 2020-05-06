@@ -5,12 +5,9 @@ date: 2020-01-03
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-Other places to put shellcode
-------------------------------
-
 Continuing with old school exploitation, we'll look at a few variations of shellcode injection.
 
-### Shellcode in an environment variable
+## Shellcode in an environment variable
 
 Consider the program below:
 
@@ -106,7 +103,7 @@ Note that `$PWD` is set first, `$SHLVL` is set last, and that `$PWD` is used in 
 
 > Tip: A huge NOP-sled in front of the shellcode can make *guessing* the correct address easier.
 
-### Shellcode in command line argument *n*
+## Shellcode in command line argument *n*
 
 Another option for exploiting the above program is putting the shellcode in the second command line argument and using the first command line argument to fill the buffer and overwrite ret.
 
@@ -141,7 +138,7 @@ Note the space (" ") separating the arguments. To find the address of the second
 
 > `environ` is on the stack before `argv`.
 
-The shellcode starts after the b's and NUL, at 0x7fffffffef7f.
+The shellcode starts after the b's and NULL, at 0x7fffffffef7f.
 
 > Since the progam is compiled with debugging information (`-g`), `p argv` shows the *address of the address* to the command line arguments. You can view strings stored at the address with `x/`*N*`s *argv` or by using `p argv[`*N*`]`.
 

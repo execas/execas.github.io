@@ -6,8 +6,6 @@ tags: [security, linux, programming, vulnerabilities]
 ---
 
 
-## ROP to get RWX memory for shellcode
-
 Return-oriented programming can be used to change the access protections of a vulnerable process's memory regions to give us an area from which we can execute shellcode. Continuing to exploit r2l2, we will use the `mprotect()` syscall to turn a region of memory RWX, then inject and execute shellcode.
 
 From `man mprotect`, we know that `mprotect()` requires three arguments:

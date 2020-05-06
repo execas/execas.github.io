@@ -5,9 +5,6 @@ date: 2020-01-15
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-Countermeasure 2: Address Space Layout Randomization (ASLR)
-------------------------------
-
 Address space layout randomization (ASLR) randomizes the position of segments in the process's address space. This makes it difficult to exploit a vulnerable program by for example jumping to functions, chaining instructions togheter (ROP) and executing injected code, since all of these methods require the addresses of functions, instructions, environment variables, the stack and so on.
 
 ASLR is enabled by default on Linux. We have disabled ASLR in all examples so far by using:
@@ -24,7 +21,7 @@ $ sudo sh -c "echo 2 > /proc/sys/kernel/randomize_va_space"
 
 > We can also use `sysctl -a -r randomize` to view its value, and `sudo sysctl kernel.randomize_va_space=1` (use tab completion) to activate.
 
-> ASLR on Linux also has a 1 value in addition to 0 and 2. It enables ASLR, but does not randomize the address space for data segements.
+> ASLR on Linux also has a 1 value in addition to 0 and 2. It enables ASLR, but does not randomize the address space for data segments.
 
 ### What is randomized?
 
@@ -66,7 +63,6 @@ An executable itself will not be at a random address unless compiled as a *posit
 int main() {
     printf("%p\n", main);
 }
-
 ```
 
 > The above code prints the address of `main`.

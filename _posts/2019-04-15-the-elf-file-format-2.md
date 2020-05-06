@@ -5,8 +5,6 @@ date: 2019-04-15
 tags: [c, linux, programming]
 ---
 
-## The ELF file header
-
 The ELF file header appears at the start of every ELF file. It contains a lot of basic (but essential) information, and also serves as a sort of map to other important parts of the file.
 
 `<elf.h>` defines file headers for 32-bit and 64-bit binaries. The 64-bit file header is defined as follows:
@@ -33,7 +31,7 @@ typedef struct
 } Elf64_Ehdr;
 ```
 
-### Understanding the ELF file header
+## Understanding the ELF file header
 
 Compilation of the code below will produce an ELF 64-bit binary on an x86_64 Linux machine that we will examine to better understand the ELF file header.
 
@@ -224,7 +222,7 @@ The rest of the entries are described in the below table:
 |`e_shnum` |**'Number of section headers'** | Holds the number of section header table entries.|
 |`e_shstrndx` |**'Section header string table index'** | Holds the section header string table index.|
 
-### The file header in a sea of bytes
+## The file header in a sea of bytes
 
 Now that we have looked at all the members of the `Elf64_Ehdr`, we can try to use what we've learned to recognize the header in a sea of bytes.
 

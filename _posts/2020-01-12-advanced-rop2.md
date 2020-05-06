@@ -5,12 +5,10 @@ date: 2020-01-12
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-## ROP to infect a running program
-
 In this post will use ROP to infect a program with malicious code.
 
 
-### The vulnerable program
+## The vulnerable program
 
 The program below is vulnerable to a buffer overflow in both the `chat()` and `net()` functions. The former takes user input and outputs to the screen. The latter simulates reading data over a network, and is the function we'll exploit.
 
@@ -86,11 +84,11 @@ def bncpy(dest, src, n):
 
 We could of course put all needed bytes through `fscanf()` directly (as long as we avoid badchars), then use `bncpy()` or similar to copy the data to where we want it, but I think it's funny jumping all over libc collecting tiny pieces here and there.
 
-### The exploit
+## The exploit
 
 Below, the multiple steps of the exploit are described.
 
-#### Use `mprotect()` to set the memory area of the code cave and `.plt` to writeable.
+### Use `mprotect()` to set the memory area of the code cave and `.plt` to writeable.
 
 After `rip` is in our control, `mprotect()` is called. This was covered in the previous post.
 
@@ -101,7 +99,7 @@ length = struct.pack("<Q", 1)
 prot   = struct.pack("<Q", 7)
 ```
 
-#### Overwrite jump to `scanf()` with jump to a code cave.
+### Overwrite jump to `scanf()` with jump to a code cave.
 
 We will hijack the call to `scanf()` in `chat()` to move execution to our malicious code:
 
@@ -140,7 +138,7 @@ To jump to our code cave, we turn the jump in `scanf@plt` to this:
    0x0000000000401060 <+0>:     e9 9b 02 00 00  jmpq   0x401300
 ```
 
-#### Put a template attack string in the code cave
+### Put a template attack string in the code cave
 
 A template attack string is written to 0x401400. This will be used to generate a "fresh" attack string each time `scanf()` is called by `chat()`
 
@@ -163,7 +161,7 @@ e.g. "echo":
 
 > `strings -tx` can also be useful for `grep`'ing needed strings, as covered in the previous post.
 
-#### Put malicious code at the start of the code cave
+### Put malicious code at the start of the code cave
 
 This code will run each time `scanf()` is called from `chat()`:
 
@@ -218,7 +216,7 @@ Again, we find the bytes we need in memory, and use `bncpy()`.
 0x7ffff7e65228
 ```
 
-#### Continue executing the program
+### Continue executing the program
 
 After the program has been infected, the execution will continue at `main+15`
 
@@ -235,7 +233,7 @@ After the program has been infected, the execution will continue at `main+15`
    0x0000000000401235 <+35>:    jmp    0x401221 <main+15>
 ```
 
-#### Code for the complete exploit
+### Code for the complete exploit
 
 ```python
 # r2l3_exploit.py
@@ -422,7 +420,7 @@ gotostart = struct.pack("<Q", 0x401221)
 print pad + smpro + hijack + writeEcho() + writeCode() + gotostart
 ```
 
-### Running the exploit
+## Running the exploit
 
 Send the exploit data to the program:
 
@@ -519,6 +517,6 @@ Thanks, so are you!
 I got a big secret. Wanna know?
 ```
 
-### A challenge
+## A challenge
 
 Write a script or program that can automatically search for byte sequences in a binary and build a payload like the one we used in the exploit.

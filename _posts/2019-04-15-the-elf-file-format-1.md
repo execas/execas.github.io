@@ -5,7 +5,7 @@ date: 2019-04-15
 tags: [c, linux, programming]
 ---
 
-In this series of articles we will look at the ELF file format by studying the `<elf.h>` header file in detail.
+In this series of posts we'll look at the ELF file format by studying the `<elf.h>` header file in detail.
 
 ## Introduction
 
