@@ -116,7 +116,7 @@ p {
      background-color:#fcfcfc;
      color: #f6f8fa;
      margin:0 auto;
-     max-width: 720px;
+     max-width: 718px;
      padding: 10px 24px 10px 24px;
      border:1px solid #efefef;
 }
@@ -347,7 +347,7 @@ div:empty {
      background-color:#fcfcfc;
      color: #000000;
      margin:0 auto;
-     max-width: 720px;
+     max-width: 718px;
      padding: 10px 24px 10px 24px;
      border:1px solid #efefef;
 }
