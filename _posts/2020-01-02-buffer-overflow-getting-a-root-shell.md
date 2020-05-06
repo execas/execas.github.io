@@ -5,9 +5,6 @@ date: 2020-01-02
 tags: [security, linux, programming, vulnerabilities]
 ---
 
-Getting a root shell
-------------------------------
-
 The vulnerable program from the previous article spawned a shell when we exploited it, but the shell did not get us any special permissions. That's to be expected, as the vulnerable program ran with normal user privileges.
 
 There are multiple ways to go from normal user privilege to super user privilege, and we'll look more at this later, but for now we'll focus on SUID binaries.
