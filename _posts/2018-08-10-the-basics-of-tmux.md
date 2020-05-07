@@ -5,7 +5,7 @@ date: 2018-08-10
 tags: [linux, tools]
 ---
 
-**tmux** is a terminal multiplexer. It makes using the terminal more user friendly, more flexible and more fun.
+**tmux** is a terminal multiplexer. It makes using the terminal more organized, flexible and fun.
 
 ## Sessions
 
@@ -19,7 +19,7 @@ To start a new *tmux* session, execute the following command in the terminal:
 $ tmux new -s <sessionName>
 ```
 
-Alternatively you can skip naming the session and it will be assigned a number instead of a name.
+Alternatively, you can skip naming the session and it will be assigned a number instead of a name.
 
 ```
 $ tmux
@@ -27,7 +27,7 @@ $ tmux
 
 ### Renaming a session
 
-While in a session, you can rename it by using `C-b $ <newSessionName>`. Alternatively you can rename a session using:
+While in a session, you can rename it by using `C-b $ <newSessionName>`. Alternatively, you can rename a session using:
 
 ```
 $ tmux rename-session -t <oldName> <newName>
@@ -39,7 +39,7 @@ Use `C-b d` to detach from a session.
 
 ### Listing sessions
 
-While in a session, use `C-b s` to open the session selector. Alternatively you can list sessions using:
+While in a session, use `C-b s` to open the session selector. Alternatively, you can list sessions using:
 
 ```
 $ tmux list-sessions
@@ -75,7 +75,7 @@ While in a session, use the `C-b s` session selector.
 
 ### Killing a session
 
-If the session has no windows left, it will be killed automatically. Alternatively you can use:
+If the session has no windows left, it will be killed automatically. Alternatively, you can use:
 
 ```
 $ tmux kill-session -t <sessionName>
@@ -84,7 +84,7 @@ $ tmux kill-session -t <sessionName>
 ## Windows
 
 Sessions can contain multiple windows. If you just created a session, it will have one window. Each new window has a fresh prompt.
-By default a list of the session's windows is visible on the last line, with a star marking the current window.
+By default, a list of the session's windows is visible on the last line, with a star marking the current window.
 
 ### Creating a new window
 
@@ -92,7 +92,7 @@ While in a session, use `C-b c` to create a new window.
 
 ### Renaming windows
 
-To rename the current window, use `C-b , <newWindowName>`. Alternatively you can rename a window using:
+To rename the current window, use `C-b , <newWindowName>`. Alternatively, you can rename a window using:
 
 ```
 $ tmux rename-window -t <oldName> <newName>
@@ -148,4 +148,4 @@ Use `C-b x` to kill a pane and its window.
 
 ## Help
 
-While in a session, use `C-b ?` to view all shortcuts. Tmux also has a great man-page.
+While in a session, use `C-b ?` to view all shortcuts. tmux also has a great man-page.
