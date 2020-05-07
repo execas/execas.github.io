@@ -8,7 +8,7 @@ tags: [security, linux, programming, vulnerabilities]
 
 Return-oriented programming can be used to change the access protections of a vulnerable process's memory regions to give us an area from which we can execute shellcode. Continuing to exploit r2l2, we will use the `mprotect()` syscall to turn a region of memory RWX, then inject and execute shellcode.
 
-## mprotect
+## mprotect()
 
 From `man mprotect`, we know that `mprotect()` requires three arguments:
 
@@ -69,7 +69,7 @@ Notice that to get 0xa into `rax`, we first use a gadget to move the value 7 int
 
 The next challenge is to put shellcode in our RWX memory.
 
-## read
+## read()
 
 We are going to use the `read()` system call to get the shellcode from stdin.
 
@@ -203,7 +203,7 @@ $7 = 65 'A'
 $8 = 10 '\n'
 ```
 
-Some might now instantly remember that `scanf()` leaves a newline in the STDIN buffer, and think that the solution might then be to simply call `getchar()` from our shellcode before calling `read()` to get rid of the newline. But this is not a solution, because the problem is a bit more complicated.
+Some might now instantly remember that `scanf()` leaves a newline in the STDIN buffer, and think that the solution might then be to simply call `getchar()` from our shellcode to get rid of the newline before calling `read()`. But this is not a solution, because the problem is a bit more complicated.
 
 Let's do some experiments. In the debugger, right after the `mprotect()` syscall has finished, we take note of the following:
 
@@ -295,7 +295,7 @@ This all boils down this (from `stdin` man-page):
 
 *Note that mixing use of `FILE`s and raw file descriptors can produce unexpected results and should generally be avoided.*
 
-### The alternative
+### pread()
 
 In our finished exploit, there's another system call we can use instead of `lseek()` + `read()`:
 
