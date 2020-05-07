@@ -5,7 +5,7 @@ date: 2019-03-28
 tags: [python, programming]
 ---
 
-Isolated Python environments are very useful for making sure that a project's dependencies and version requirements are fullfilled without affecting other projects or the host itself. It also makes it possible to install needed Python packages on a host without full admin access.
+Isolated Python environments are very useful for making sure that a project's dependencies and version requirements are fulfilled without affecting other projects or the host itself. It also makes it possible to install needed Python packages on a host without full admin access.
 
 ## Installation
 

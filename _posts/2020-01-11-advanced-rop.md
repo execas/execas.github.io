@@ -199,7 +199,6 @@ Let's do some experiments. In the debugger, right after the `mprotect()` syscall
 
 ```bash
 (gdb) call (int)scanf("%s", 0x404000)
-$10 = 1
 (gdb) x/4xb 0x404000
 0x404000:       0x41    0x41    0x41    0x41
 ```
@@ -208,9 +207,6 @@ The incredibly dangerous `gets()` also gets it right:
 
 ```bash
 (gdb) call (char *)gets(0x404000)
-$11 = 0x404000 ""
-(gdb)
-$12 = 0x404000 "AAAA"
 (gdb) x/4xb 0x404000
 0x404000:       0x41    0x41    0x41    0x41
 ```

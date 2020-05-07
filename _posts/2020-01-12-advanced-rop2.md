@@ -218,9 +218,10 @@ Again, we find the bytes we need in memory, and use `bncpy()`.
 
 ### Continue executing the program
 
-After the program has been infected, the execution will continue at `main+15`
+After the program has been infected, the execution will continue at `main+15`:
 
 ```
+(gdb) disas main
    0x0000000000401212 <+0>:     push   %rbp
    0x0000000000401213 <+1>:     mov    %rsp,%rbp
    0x0000000000401216 <+4>:     sub    $0x10,%rsp
@@ -481,7 +482,7 @@ Remove the exploit data to prevent another buffer overflow:
 $ echo foo > /tmp/network
 ```
 
-Back in gdb, use `ni` to go execute our malicious code one instruction at a time. You will see the template string being copied, user input being accepted and copied to complete the "evil" string that will be used by `system()` and so on.
+Back in gdb, use `ni` to go execute our malicious code one instruction at a time. You will see the template string being copied, user input being accepted and copied to complete the "evil" string that will be used by `system()`, and so on.
 
 Disable breakpoints and continue the program to observe that it runs as usual for the user,  accepting input and printing output.
 

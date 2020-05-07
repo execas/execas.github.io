@@ -78,7 +78,7 @@ sh-4.4#
 
 On 32-bit systems "/bin/sh -p" shellcode is easy to create since arguments to functions are passed on the stack, but on 64-bit it's difficult since registers are used to pass arguments (the string with the "-p" option is too long for a register).
 
-> We'll look more at the challenges of writing shellcode in a later chapter.
+> We'll look more at the challenges of writing shellcode in a later post.
 
 An alternative to using the `-p` option is to use a shellcode which first runs `setuid()` to set the user identity to uid 0 (root), then execute a shell. Let's grab a shellcode from shell-storm.org.
 
