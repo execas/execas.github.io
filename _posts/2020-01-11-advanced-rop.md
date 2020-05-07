@@ -8,6 +8,8 @@ tags: [security, linux, programming, vulnerabilities]
 
 Return-oriented programming can be used to change the access protections of a vulnerable process's memory regions to give us an area from which we can execute shellcode. Continuing to exploit r2l2, we will use the `mprotect()` syscall to turn a region of memory RWX, then inject and execute shellcode.
 
+## mprotect
+
 From `man mprotect`, we know that `mprotect()` requires three arguments:
 
 ```c
@@ -67,6 +69,8 @@ Notice that to get 0xa into `rax`, we first use a gadget to move the value 7 int
 
 The next challenge is to put shellcode in our RWX memory.
 
+## read
+
 We are going to use the `read()` system call to get the shellcode from stdin.
 
 > We could also use `open()` and `read()` to get the shellcode from e.g. a file, or `strcpy` to copy the shellcode from an environment variable. There are several other possibilities as well.
@@ -88,6 +92,8 @@ We will use a gadget zero out `%rax` for the syscall (we have already found a sy
 > search /1/ xor rax, rax
 0x000000000009bb89: xor rax, rax; ret;
 ```
+
+### The memory area
 
 Now that we got all the gadgets, we need to find a memory area to turn rwx. I've chosen to go with this region:
 
@@ -123,6 +129,8 @@ In gdb, we can see that this region contains following:
 0x404040:       0x0000000000000000      0x0000000000000000
 ...
 ```
+
+## The exploit
 
 With all the information gathered, below is our unfinished exploit:
 
@@ -166,6 +174,8 @@ print pad + smpro + sread
 print shellcode
 ```
 
+## Running the exploit
+
 Now do `python r2l2_exploit2.py > exploit`, so you can easily use `run < exploit` in gdb.
 
 If you step through this in `gdb`, by for example breaking at the end of `cp`, then using `si` to watch values being popped into registers (set `display/i $rip` first), inspecting all registers before the syscall by using `i r rax rdi rsi rdx`, and then confirming if the syscalls have the desired outcome, you will notice:
@@ -173,6 +183,8 @@ If you step through this in `gdb`, by for example breaking at the end of `cp`, t
 - the memory area is correctly set as RWX
     - `i proc` in gdb to get the PID, then do `cat /proc/<PID>/maps`  or `pmap <PID>` in the shell
 - no A's are written to the buffer (use `x/10xb 0x404000` to peek at the buffer)
+
+### Troubleshooting
 
 If you in gdb do `call (char)getchar()` a few times, you will get:
 
@@ -283,6 +295,8 @@ This all boils down this (from `stdin` man-page):
 
 *Note that mixing use of `FILE`s and raw file descriptors can produce unexpected results and should generally be avoided.*
 
+### The alternative
+
 In our finished exploit, there's another system call we can use instead of `lseek()` + `read()`:
 
 ```
@@ -304,6 +318,8 @@ The system call number must also be updated:
 $ grep pread /usr/include/asm/unistd_64.h
 #define __NR_pread64 17
 ```
+
+## The finished exploit
 
 To complete our exploit we also need to change the shellcode to real shellcode, and finish with a jump to the shellcode. The last gadgets we need are:
 
@@ -360,6 +376,8 @@ print pad + smpro + spread + jmptosh
 print shellcode
 ```
 
+### Exploitation
+
 Running the exploit, we get the following:
 
 
@@ -384,6 +402,8 @@ Debugging the core dump with gdb, it's easy to understand what has happened:
 ```
 
 The program has crashed while executing our shellcode.
+
+#### More troubleshooting
 
 Looking at the memory area supposed to contain our shellcode, we see it clearly doesn't:
 
@@ -444,7 +464,9 @@ $
 
 So we can execute any type of shellcode we want, for example a reverse or bind shell.
 
-Here's an example of running the exploit with a random bind shell I found on shell-storm:
+### Executing a bind shell
+
+Here's an example of running the exploit with a random bind shell found on shell-storm:
 
 ```
 shellcode = ("\x48\x31\xc0"
