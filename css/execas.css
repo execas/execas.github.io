@@ -27,7 +27,7 @@ img {
      margin-right: auto;
 }
 pre {
-     background-color:#fafafa;
+     background-color:#fdfdfd;
      margin-left:0px;
      margin-right:5px;
      padding-left: 10px;
@@ -51,7 +51,7 @@ pre code {
      border-style: none;
      whitespace: pre;
      font-size:13px;
-     background-color:#fafafa;
+     background-color:#fdfdfd;
      color:#282828;
      border-width: 0px;
      border-radius:0px;
