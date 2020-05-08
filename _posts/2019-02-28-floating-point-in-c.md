@@ -344,7 +344,7 @@ Before calculating the mantissa, there is an omitted "1." we need to add back (a
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
 
-### Code to illustate convertion from binary to single-precision floating-point
+### Code to illustate conversion from binary to single-precision floating-point
 
 ```c
 /*
@@ -643,7 +643,7 @@ Before calculating the mantissa, there is an omitted "1." we need to add back (a
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
 
-### Code to illustate convertion from binary to double-precision floating-point
+### Code to illustate conversion from binary to double-precision floating-point
 
 ```c
 /*
@@ -840,7 +840,7 @@ For floats and doubles, there is an omitted "1" that we have to add back before 
 
 Now, from left to right (including the bit before the decimal point),the bits of this n-bit string represent the numbers [1, 1/2¹,1/2²,..., 1/2ⁿ]. To calculate the mantissa, the fractions corresponding to a 1 are summed.
 
-### Code to illustate convertion from binary to long double
+### Code to illustate conversion from binary to long double
 
 ```c
 /*
