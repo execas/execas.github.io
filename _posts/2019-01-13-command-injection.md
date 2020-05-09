@@ -69,11 +69,11 @@ If possible, do not use user input as part of commands. If not, take note of the
 Decide what sort of data should be accepted.
 Reject or transform data that does not match whitelisting pattterns.
 
-For the example program above, we could accept only lowercase characters, or we could also include digits and some special characters (*/*, *.*, *~*, etc.).
+For the program above, we could for example accept only lowercase characters, or we could also include digits and some special characters like '/', '.', '~' and so on.
 
-The risk is accepting to much (e.g. some special characters, like *;* in this case) or not enough (e.g. *_* and *-* may be needed).
+The risk is accepting to much (e.g. some special characters, like ';' in this case) or not enough (e.g. '_' and '-' may be needed).
 
-> Regular expressions (regex) can for example be used to define whitelisting patters.
+> Regular expressions (regex) is one way of defining whitelisting patterns.
 
 > Rejecting is in most cases a better choice than transforming.
 
@@ -84,9 +84,9 @@ An alternative to whitelisting, and often considered inferior.
 Decide what sort of data should be rejected.
 Accept all data not matching blacklisting patterns (and perhaps transform other data until they match).
 
-For the example program above, we could reject *;*, *&* and the space character.
+For the program above, we could for example reject ';', '&' and the space character.
 
-The risk is not rejecting to little (can you think of all possibilities hackers could discover?) or too much.
+The risk is rejecting to little (can you think of all possibilities hackers could discover?) or too much.
 
 
 ### Validate
@@ -107,6 +107,6 @@ $ ./mailtool accounts
 Hijacked!
 ```
 
-This could be mitigated by instead using the full path e.g. `/usr/bin/path`.
+This could be mitigated by instead using the full path, e.g. `/usr/bin/path`.
 
 Programs may use data from for example environment variables and files that can be modified by a user, so these can also be vectors in a command injection attack.
