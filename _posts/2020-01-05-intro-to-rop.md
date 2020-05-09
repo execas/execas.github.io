@@ -389,13 +389,13 @@ $ ldd r2l2
 And then find the offset of the string and functions:
 
 ```
-$ strings -tx /lib64/libc-2.28.so  | grep bin/sh
+$ strings -tx /lib64/libc.so.6  | grep bin/sh
  186519 /bin/sh
-$ readelf -s /lib64/libc-2.28.so | grep system@
+$ readelf -s /lib64/libc.so.6 | grep system@
 ...
 1418: 0000000000045c30    45 FUNC    WEAK   DEFAULT   14 system@@GLIBC_2.2.5
 ...
-$ readelf -s /lib64/libc-2.28.so | grep exit
+$ readelf -s /lib64/libc.so.6 | grep exit
 ...
 135: 000000000003ae30    32 FUNC    GLOBAL DEFAULT   14 exit@@GLIBC_2.2.5
 ...
