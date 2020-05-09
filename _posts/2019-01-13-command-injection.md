@@ -9,7 +9,7 @@ Programs vulnerable to command injection attacks allow an attacker to execute ar
 
 ## Classic example
 
-Below is a classic example, written in C. A program output a user specified file, substituting "@" with " at ".
+Below is a classic example, written in C.
 
 ```c
 #include <stdio.h>
@@ -27,6 +27,8 @@ int main(int argc, char *argv[])
 ```
 
 ### Expected result
+
+The program outputs a user specified file, substituting "@" with " at ".
 
 ```bash
 $ ./mailtool accounts
@@ -52,13 +54,13 @@ daemon:x:2:2:daemon:/sbin:/sbin/nologin
 ...
 ```
 
-The command injection could be anything, like a bind or reverse shell with `nc`, deletion of important files, output of information and so on, depending on the privileges the progam runs with. A suid root program is of course the worst possible scenario, as there is no limit to what an attacker is able to do.
+The command injection could be anything, like a bind or reverse shell with `nc`, deletion of important files, output of information and so on, depending on the privileges the program runs with. A suid root program is of course the worst possible scenario, as there is no limit to what an attacker is able to do.
 
-The vulnerable progam can be anything from small utility progams and tools, to a web application which executes system commands based on user input in its back end.
+The vulnerable programs can be anything from small utility programs and tools, to a web application which executes system commands based on user input in its back end.
 
 ## Mitigation
 
-The problem boils down to input validation and sanitization. All inputs need to be identified, as we'll see shortly.
+The problem boils down to input validation and sanitization.
 
 If possible, do not use user input as part of commands. If not, take note of the following:
 
@@ -67,18 +69,22 @@ If possible, do not use user input as part of commands. If not, take note of the
 Decide what sort of data should be accepted.
 Reject or transform data that does not match whitelisting pattterns.
 
-For the example program above, we could accept only lowercase characters, or we could also include digits and some special characters ("/", ".", "~", etc.).
+For the example program above, we could accept only lowercase characters, or we could also include digits and some special characters (*/*, *.*, *~*, etc.).
 
-The risk is accepting to much (e.g. some special characters, like ";", are not good in the case) or not enough (e.g. "_" and "-" may be needed).
+The risk is accepting to much (e.g. some special characters, like *;* in this case) or not enough (e.g. *_* and *-* may be needed).
 
-> RegEx expressions can for example be used to define whitelisting patters.
+> Regular expressions (regex) can for example be used to define whitelisting patters.
+
+> Rejecting is in most cases a better choice than transforming.
 
 ### Blacklist
+
+An alternative to whitelisting, and often considered inferior.
 
 Decide what sort of data should be rejected.
 Accept all data not matching blacklisting patterns (and perhaps transform other data until they match).
 
-For the example program above, we could reject ";", "&", " ".
+For the example program above, we could reject *;*, *&* and the space character.
 
 The risk is not rejecting to little (can you think of all possibilities hackers could discover?) or too much.
 
@@ -103,4 +109,4 @@ Hijacked!
 
 This could be mitigated by instead using the full path e.g. `/usr/bin/path`.
 
-Programs can use data from environment variables and files that can be modified by a user, so these can also be vectors in a command injection attack.
+Programs may use data from for example environment variables and files that can be modified by a user, so these can also be vectors in a command injection attack.
