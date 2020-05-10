@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 }
 ```
 
-> Here, `system()` is used, but there are a bunch of functions in C and other languages that can execute a file (`execl(), `popen()`, `os.popen()` and so on). There are also functions which interpret data as code (like Python's `eval()`).
+> Here, `system()` is used, but there are a bunch of functions in C and other languages that can execute a file (`execl()`, `popen()`, `os.popen()` and so on). There are also functions which interpret data as code (like Python's `eval()`).
 
 ### Expected result
 
