@@ -69,9 +69,9 @@ If possible, do not use user input as part of commands. If not, take note of the
 Decide what sort of data should be accepted.
 Reject or transform data that does not match whitelisting pattterns.
 
-For the program above, we could for example accept only lowercase characters, or we could also include digits and some special characters like '/', '.', '~' and so on.
+For the program above, we could for example accept only lowercase characters, or we could also include digits and some special characters like **/**, **.**, **~** and so on.
 
-The risk is accepting to much (e.g. some special characters, like ';' in this case) or not enough (e.g. '_' and '-' may be needed).
+The risk is accepting to much (e.g. some special characters, like **;** in this case) or not enough (e.g. **_** and **-** may be needed).
 
 > Regular expressions (regex) is one way of defining whitelisting patterns.
 
@@ -84,7 +84,7 @@ An alternative to whitelisting, and often considered inferior.
 Decide what sort of data should be rejected.
 Accept all data not matching blacklisting patterns (and perhaps transform other data until they match).
 
-For the program above, we could for example reject ';', '&' and the space character.
+For the program above, we could for example reject **;**, **&** and the space character.
 
 The risk is rejecting to little (can you think of all possibilities hackers could discover?) or too much.
 
