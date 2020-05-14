@@ -2,7 +2,7 @@
 layout: post
 title: "SQL injection"
 date: 2018-12-20
-tags: [security, webapp, linux, programming, vulnerabilities]
+tags: [security, web app, linux, programming, vulnerabilities]
 ---
 
 Injection flaws, most commonly associated with SQL injection, are a constant feature of just about every list of top security risks, including the lastest OWASP Top Ten.
