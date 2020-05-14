@@ -15,6 +15,8 @@ In this post we'll look at a few examples of SQL injections, and how you can get
 
 Using Python scripting and an example database is a good way to experiment with SQL injections.
 
+Get an example database:
+
 ```bash
 $ git clone https://github.com/datacharmer/test_db
 $ cd test_db
