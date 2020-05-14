@@ -97,7 +97,7 @@ conn.close()
 
 ### Expected usage
 
-The user inputs 1999, and the everything works as intended:
+The user inputs `1999`, and the everything works as intended:
 
 ```
 Welcome, Valter
@@ -116,7 +116,7 @@ SELECT salary,from_date FROM salaries WHERE from_date>='1999-01-01' AND emp_no=1
 
 #### Malicious usage
 
-A malicious user inputs "' AND emp_no=10998-- " to view another employee's salary information:
+A malicious user inputs "`' AND emp_no=10998-- `" to view another employee's salary information:
 
 ```
 Welcome, Valter
@@ -136,9 +136,9 @@ The user input transforms the SQL query to:
 SELECT salary,from_date FROM salaries WHERE from_date>='' AND emp_no=10998-- -01-01' AND emp_no=10099
 ```
 
-> "-- " (dash, dash, space) marks the start of a comment.
+> "`-- `" (dash, dash, space) marks the start of a comment.
 
-The malicious user would need some insight into how the database and queries are structured, or be able to do experimentation to acheive the above. An injection that can be more easily found is "'-- " (single quote, dash, dash, space) , which dumps all salaries.
+The malicious user would need some insight into how the database and queries are structured, or be able to do experimentation to achieve the above. An injection that can be more easily found is "`'-- `" (single quote, dash, dash, space) , which dumps all salaries.
 
 #### Remediation
 
@@ -194,11 +194,11 @@ else:
 conn.close()
 ```
 
-> Note that `multi=True` is set in the curs.execute(), meaning multiple statements can be executed in one operation.
+> Note that `multi=True` is set in the `curs.execute()`, meaning multiple statements can be executed in one operation.
 
 #### Expected usage
 
-The user inputs 10099, and is informed that the employee is not found:
+The user inputs `10099`, and is informed that the employee is not found:
 
 ```
 Welcome, Leon
@@ -208,7 +208,7 @@ Employee ID: 10099<ENTER>
 Employee not found in Development dept.
 ```
 
-The user inputs 13627, and is displayed the salary information:
+The user inputs `13627`, and is shown the salary information:
 
 ```
 Welcome, Leon
@@ -224,9 +224,9 @@ A malicious user is in this example able to manipulate the first query built wit
 
 With some knowledge about SQL, we can try to leak, manipulate or destroy database data.
 
-> Some interesting commands include `SELECT`, `INSERT`, `UPDATE`, `DROP` and `SELECT LOAD_FILE("/some/file")`.
+> Some useful commands include `SELECT`, `INSERT`, `UPDATE`, `DROP` and `SELECT LOAD_FILE("/some/file")`.
 
-There are, however, limitations to what can be acheived based on how the application is built and the database permissions.
+There are, however, limitations to what can be achieved based on how the application is built and the database permissions.
 
 In our example the output is limited due to how query results are handled and displayed, and the number of stacked queries that will be executed is also limited as a result of how the iterator returned by `curs.execute` is used.
 
@@ -287,7 +287,7 @@ $result = mysqli_query($GLOBALS["___mysqli_ston"], $query) or die(...
 
 > `_$POST` is an associative array containing variables passed via the `HTTP POST` method (which transfers information in HTTP headers).
 
-A new addition here is `mysqli_real_escape_string()`, which will return an escaped string (or False on error). It simply prepends backslashes to `NUL` (`\x00`), `\n`, `\r`, `\`, `'`, `"` and `SUB` (`\x1a` -- `Ctrl-z`).
+A new addition here is `mysqli_real_escape_string()`, which will return an escaped string (or `False` on error). It simply prepends backslashes to `NUL` (`\x00`), `\n`, `\r`, `\`, `'`, `"` and `SUB` (`\x1a` -- `Ctrl-z`).
 
 The output code and the die message are the same as for *low*.
 
@@ -353,7 +353,7 @@ generateSessionToken();
 
 > `_$GET` is an associative array containing variables passed via URL parameters ("`.php?v1=1&v2=2`").
 
-Nothing is done unless `id` is a number, and `id` is inserted into the query string using `bindParam()` with data type `int`. The SQL query itself uses `LIMIT 1`, and output is only displayed if 1 row was returned for the SQL query.
+If`id` is a not a number, nothing is done. If it is, then `id` is inserted into the query string using `bindParam()` with data type `int`. The SQL query specifies `LIMIT 1`, and output is only displayed if exactly one row was returned for the SQL query.
 
 
 
