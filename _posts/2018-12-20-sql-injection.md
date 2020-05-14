@@ -52,7 +52,7 @@ Damn Vulnerable Web App (DVWA) is a great tool to experiment with SQL injection 
 Run DVWA with Docker:
 
 ```
-$ systemctl start docker
+$ sudo systemctl start docker
 $ docker run --rm -it -p 80:80 vulnerables/web-dvwa
 [+] Starting mysql...
 [ ok ] Starting MariaDB database server: mysqld.
@@ -128,7 +128,6 @@ From year: ' AND emp_no=10998-- <ENTER>
 1999-08-07: $66050
 2000-08-06: $68437
 2001-08-06: $68449
-
 ```
 
 The user input transforms the SQL query to:
@@ -139,7 +138,7 @@ SELECT salary,from_date FROM salaries WHERE from_date>='' AND emp_no=10998-- -01
 
 > "-- " (dash, dash, space) marks the start of a comment.
 
-The malicious user would need some insight into how the database and queries are structured, or be able to do experimentation to acheive the above. An injection that can be more easily found is "'-- ", which dumps all salaries.
+The malicious user would need some insight into how the database and queries are structured, or be able to do experimentation to acheive the above. An injection that can be more easily found is "'-- " (single quote, dash, dash, space) , which dumps all salaries.
 
 #### Remediation
 
@@ -223,19 +222,19 @@ Name: Gennadi Yoshizawa, Salary: $56740
 
 A malicious user is in this example able to manipulate the first query built with input data, but is also able to execute multiple queries (*stacked queries*), which opens up a lot of interesting possibilities.
 
-With some knowledge about SQL, we can in try to leak, manipulate or destroy database data.
+With some knowledge about SQL, we can try to leak, manipulate or destroy database data.
 
-> Some interesting commands include `SELECT`, INSERT`, `UPDATE`, `DROP` and `SELECT LOAD_FILE("/some/file").
+> Some interesting commands include `SELECT`, `INSERT`, `UPDATE`, `DROP` and `SELECT LOAD_FILE("/some/file")`.
 
 There are, however, limitations to what can be acheived based on how the application is built and the database permissions.
 
-In our example the output is limited due to how query results are handled and displayed, and the number of stacked queries is also limited as a result of how the iterator returned by `curs.execute` is used.
+In our example the output is limited due to how query results are handled and displayed, and the number of stacked queries that will be executed is also limited as a result of how the iterator returned by `curs.execute` is used.
 
 > Interesting: The `conn.commit()` method is not used. What are the results of this?
 
 ### Example 3: DVWA
 
-Try out SQL injection in DVWA. You can change the security settings to make the exploitaiton more challenging (the security level can be set to low, medium, high or impossible).
+Try out SQL injection in DVWA. You can change the security settings to make the exploitation more challenging (the security level can be set to low, medium, high or impossible).
 
 #### Code analysis
 
@@ -252,7 +251,7 @@ $query  = "SELECT first_name, last_name FROM users WHERE user_id = '$id';";
 $result = mysqli_query($GLOBALS["___mysqli_ston"],  $query ) or die(...
 ```
 
-> `mysqli_query()` does not support multiple queries. `mysqli_multi_query()` does.
+> `mysqli_query()` does not support stacked queries. `mysqli_multi_query()` does.
 
 > `$_REQUEST` is an associative array (`key, value` pairs) that contains the contents of `$_GET`, `$_POST` and `_$COOKIE`. 
 
@@ -286,11 +285,11 @@ $query  = "SELECT first_name, last_name FROM users WHERE user_id = $id;";
 $result = mysqli_query($GLOBALS["___mysqli_ston"], $query) or die(...
 ```
 
-> `_$POST` is an associative array containing variables passed via the `HTTP POST` method (which transfers informaiton in HTTP headers).
+> `_$POST` is an associative array containing variables passed via the `HTTP POST` method (which transfers information in HTTP headers).
 
-A new addition here is `mysqli_real_escape_string()`, which will return an escaped string (or False on error). It simply prepends backslashes to NUL ('\x00'), \n, \r, \, ', " and SUB ('\x1a' -- Ctrl-z).
+A new addition here is `mysqli_real_escape_string()`, which will return an escaped string (or False on error). It simply prepends backslashes to `NUL` (`\x00`), `\n`, `\r`, `\`, `'`, `"` and `SUB` (`\x1a` -- `Ctrl-z`).
 
-The output and die code is the same as for *low*.
+The output code and the die message are the same as for *low*.
 
 With the *high security level* activated, the `id` variable is now set in `session-input.php`:
 
@@ -351,7 +350,8 @@ generateSessionToken();
 ```
 
 > `CSRF` will be covered in another post.
-> `_$GET` is an associative array containing variables passed via URL parameters (".php?v1=1&v2=2").
+
+> `_$GET` is an associative array containing variables passed via URL parameters ("`.php?v1=1&v2=2`").
 
 Nothing is done unless `id` is a number, and `id` is inserted into the query string using `bindParam()` with data type `int`. The SQL query itself uses `LIMIT 1`, and output is only displayed if 1 row was returned for the SQL query.
 
@@ -359,6 +359,6 @@ Nothing is done unless `id` is a number, and `id` is inserted into the query str
 
 ## SQL and database Security
 
-As we saw in the above examples, input validation and sanitization are - like for many other vulnerabilites - key. Malicious input can leak, manipulate or destroy database data.
+As we saw in the above examples, input validation and sanitization are - like for many other vulnerabilites - key. Malicious input data can leak, manipulate or destroy database data.
 
 There are multiple security measures that will help to secure databases. In the next post we'll cover SQL and database security in detail.
