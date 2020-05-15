@@ -97,7 +97,7 @@ for i in res:
 conn.close()
 ```
 
-### Expected usage
+#### Expected usage
 
 The user inputs `1999`, and the everything works as intended:
 
