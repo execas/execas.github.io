@@ -31,7 +31,7 @@ Group ownership can be changed using the `chgrp` command:
 [henry:~]$ chgrp lawyers foo
 ```
 
-Or by using `chown <user>.<group> <file>`.
+Or by using `chown .<group> <file>`.
 
 To change both ownership and group ownership, use:
 
